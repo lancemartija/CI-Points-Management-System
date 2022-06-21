@@ -11,8 +11,7 @@ if (!isset($_SESSION['userid'])) {
   exit;
 }
 
-require_once('../layouts/header.php');
-require_once('../layouts/navbar.php');
-require_once('../layouts/sidebar.php');
-// require_once('../layouts/main.php');
-require_once('../layouts/footer.php');
+?>
+
+<h1>User Dashboard</h1>
+<a href="../includes/logout.inc.php">log out</a>
