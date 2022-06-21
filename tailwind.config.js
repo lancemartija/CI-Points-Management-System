@@ -1,11 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './*.{html, php}',
-    './admin/*.{html, php}',
-    './admin/**/*.{html, php}',
-    './user/*.{html, php}',
-    './user/**/*.{html, php}',
+    './*.php',
+    './admin/*.php',
+    './admin/**/*.php',
+    './user/*.php',
+    './user/**/*.php',
   ],
   theme: {
     extend: {},
