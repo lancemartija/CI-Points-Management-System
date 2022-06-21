@@ -16,27 +16,27 @@ class RegisterContr extends Register
   public function registerUser()
   {
     if ($this->emptyInput() == false) {
-      header("location: ../register.php?error=emptyinput");
+      header("Location: ../register.php?error=emptyinput");
       exit;
     }
 
     if ($this->invalidEmail() == false) {
-      header("location: ../register.php?error=invalidemail");
+      header("Location: ../register.php?error=invalidemail");
       exit;
     }
 
     if ($this->StrongPwd() == false) {
-      header("location: ../register.php?error=weakpassword");
+      header("Location: ../register.php?error=weakpassword");
       exit;
     }
 
     if ($this->pwdMatch() == false) {
-      header("location: ../register.php?error=passwordnotmatched");
+      header("Location: ../register.php?error=passwordnotmatched");
       exit;
     }
 
     if ($this->emailTakenCheck() == false) {
-      header("location: ../register.php?error=emailalreadytaken");
+      header("Location: ../register.php?error=emailalreadytaken");
       exit;
     }
 

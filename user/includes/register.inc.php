@@ -15,5 +15,5 @@ if (isset($_POST['submit'])) {
 
   $register->registerUser();
 
-  header('location: ../view/userinfo.php');
+  header('Location: ../view/userinfo.php');
 }

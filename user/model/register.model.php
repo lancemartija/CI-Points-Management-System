@@ -14,7 +14,7 @@ class Register extends Dbh
 
     if (!$stmt->execute([$email, $hashedPwd, $this->date])) {
       $stmt = null;
-      header("location: ../register.php?error=stmtfailed");
+      header("Location: ../register.php?error=stmtfailed");
       exit;
     }
 
@@ -77,7 +77,7 @@ class Register extends Dbh
 
     if (!$stmt->execute([$email])) {
       $stmt = null;
-      header("location: ../register.php?error=stmtfailed");
+      header("Location: ../register.php?error=stmtfailed");
       exit;
     }
 
