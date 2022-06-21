@@ -11,9 +11,8 @@ if (!isset($_SESSION['userid'])) {
   exit;
 }
 
-require_once("../layouts/header.php");
-?>
-
-<h1>dashboard</h1>
-
-<?php require_once("../layouts/footer.php"); ?>
+require_once('../layouts/header.php');
+require_once('../layouts/navbar.php');
+require_once('../layouts/sidebar.php');
+// require_once('../layouts/main.php');
+require_once('../layouts/footer.php');
