@@ -17,7 +17,7 @@
             </form>
           </li>
           <li>
-            <a href="#" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 group <?= ($data['title'] == 'Dashboard') ? 'bg-gray-100' : ''; ?>">
+            <a href="../view/dashboard.php" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 group <?= ($data['title'] == 'Dashboard') ? 'bg-gray-100' : ''; ?>">
               <svg class="w-6 h-6 transition duration-75 group-hover:text-gray-900 <?= ($data['title'] == 'Dashboard') ? 'text-gray-900' : 'text-gray-500'; ?>" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
                 <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
@@ -26,7 +26,7 @@
             </a>
           </li>
           <li>
-            <a href="#" class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group <?= ($data['title'] == 'Users') ? 'bg-gray-100' : ''; ?>">
+            <a href="../view/user.php" class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group <?= ($data['title'] == 'Users') ? 'bg-gray-100' : ''; ?>">
               <svg class="w-6 h-6 transition duration-75 group-hover:text-gray-900 <?= ($data['title'] == 'Users') ? 'text-gray-900' : 'text-gray-500'; ?>" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
               </svg>
@@ -34,7 +34,7 @@
             </a>
           </li>
           <li>
-            <a href="#" class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group <?= ($data['title'] == 'Department') ? 'bg-gray-100' : ''; ?>">
+            <a href="../view/department.php" class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group <?= ($data['title'] == 'Department') ? 'bg-gray-100' : ''; ?>">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 transition duration-75 group-hover:text-gray-900 <?= ($data['title'] == 'Department') ? 'text-gray-900' : 'text-gray-500'; ?> viewBox=" 0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clip-rule="evenodd" />
               </svg>
@@ -42,7 +42,7 @@
             </a>
           </li>
           <li>
-            <a href="#" class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group <?= ($data['title'] == 'CI Activities') ? 'bg-gray-100' : ''; ?>">
+            <a href="../view/CI_Activities.php" class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group <?= ($data['title'] == 'CI Activities') ? 'bg-gray-100' : ''; ?>">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 transition duration-75 group-hover:text-gray-900 <?= ($data['title'] == 'CI Activities') ? 'text-gray-900' : 'text-gray-500'; ?>" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
               </svg>
@@ -50,7 +50,7 @@
             </a>
           </li>
           <li>
-            <a href="#" class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group <?= ($data['title'] == 'CIP Requests') ? 'bg-gray-100' : ''; ?>">
+            <a href="../view/CIP_Request.php" class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group <?= ($data['title'] == 'CIP Requests') ? 'bg-gray-100' : ''; ?>">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 transition duration-75 group-hover:text-gray-900 <?= ($data['title'] == 'CIP Requests') ? 'text-gray-900' : 'text-gray-500'; ?>" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M5 3a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H5zm0 2h10v7h-2l-1 2H8l-1-2H5V5z" clip-rule="evenodd" />
               </svg>
@@ -58,7 +58,7 @@
             </a>
           </li>
           <li>
-            <a href="#" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 group <?= ($data['title'] == 'Reports') ? 'bg-gray-100' : ''; ?>">
+            <a href="../view/report.php" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 group <?= ($data['title'] == 'Reports') ? 'bg-gray-100' : ''; ?>">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 transition duration-75 group-hover:text-gray-900 <?= ($data['title'] == 'Reports') ? 'text-gray-900' : 'text-gray-500'; ?>" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
               </svg>
