@@ -11,8 +11,11 @@ if (!isset($_SESSION['userid'])) {
     exit;
 }
 
-require_once('../layouts/header.php');
-require_once('../layouts/navbar.php');
-require_once('../layouts/sidebar.php');
+// require_once('../layouts/header.php');
+// require_once('../layouts/navbar.php');
+// require_once('../layouts/sidebar.php');
 // require_once('../layouts/main.php');
 require_once('../layouts/footer.php');
+?>
+
+<a href="Create_activity.php">Create Activity</a>

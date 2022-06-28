@@ -13,5 +13,5 @@ if (!isset($_SESSION['userid'])) {
 
 ?>
 
-<h1>User Dashboard</h1>
+<h1>Welcome <?php echo $_SESSION['fname']; ?></h1>
 <a href="../includes/logout.inc.php">log out</a>
