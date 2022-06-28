@@ -13,7 +13,7 @@ if (isset($_POST['submit'])) {
     include '../model/CI_activities.model.php';
     include '../controller/CI_activities.contr.php';
 
-    $AddActivity = new CIActicityContr($title, $date, $venue, $description, $type, $duration);
+    $AddActivity = new CIActivityContr($title, $date, $venue, $description, $type, $duration);
     $AddActivity->AddActivities();
 
     header('Location: ../view/CI_Activities.php?success=Activitycreated');

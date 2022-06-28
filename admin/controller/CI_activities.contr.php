@@ -1,6 +1,6 @@
 <?php
 
-class CIActicityContr extends CIActivities
+class CIActivityContr extends CIActivities
 {
 
     private $title;
