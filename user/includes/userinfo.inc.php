@@ -16,5 +16,4 @@ if (isset($_POST['submit'])) {
 
   $addUserInfo->addUserInfo();
 
-  header('Location: ../view/dashboard.php?success=usercreated');
 }
