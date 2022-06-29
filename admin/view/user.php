@@ -29,3 +29,7 @@ $records = $display->getUser();
 foreach ($records as $data) {
     echo $data['first_name'] . ' ' . $data['last_name'] . ' ' .  $data['middle_name'] . ' ' . $data['email'] . ' ' . $data['address'] . '</br>';
 }
+
+?>
+
+<a href="../view/addUser.php">Add</a>

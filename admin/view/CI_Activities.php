@@ -18,4 +18,18 @@ if (!isset($_SESSION['userid'])) {
 require_once('../layouts/footer.php');
 ?>
 
-<a href="Create_activity.php">Create Activity</a>
+<a href="Create_activity.php">Create Activity</a><br>
+
+<?php
+include '../database/database.php';
+include '../model/display-data.model.php';
+
+$display = new DisplayActivity();
+$records = $display->getActivity();
+
+foreach ($records as $data) {
+    echo $data['title'] . ' ' . $data['venue'] . ' ' . $data['description'] . ' ' . $data['type'] . ' ' . $data['duration'] . ' ' . $data['date'] . '<br>';
+}
+
+
+?>
