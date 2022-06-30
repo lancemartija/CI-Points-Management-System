@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 28, 2022 at 04:05 PM
+-- Generation Time: Jun 30, 2022 at 12:55 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -34,6 +34,7 @@ CREATE TABLE `ci_activity` (
   `venue` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
   `type` varchar(255) NOT NULL,
+  `dept_id` int(11) DEFAULT NULL,
   `duration` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
   `date_created` timestamp NOT NULL DEFAULT current_timestamp(),
@@ -48,7 +49,6 @@ CREATE TABLE `ci_activity` (
 
 CREATE TABLE `department` (
   `dept_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
   `department` varchar(255) NOT NULL,
   `division` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -89,8 +89,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `first_name`, `middle_name`, `last_name`, `address`, `email`, `password`, `contact_number`, `date_created`, `date_updated`) VALUES
-(1, 'Juan', 'Bayani', 'Dela Cruz', 'Barangay Mabuti, Batangas City', 'test@email.com', '$2y$10$EbURcrgrD62IjGUM.x.eMugX5lcd8UwZw5c/L.iJTRlSnutpThox.', '09123456789', '2022-06-21 09:27:59', '2022-06-21 09:28:47'),
-(2, 'Lance Jacob', 'Gomez', 'Martija', 'Sitio Roadside, Banaba West, Batangas City', 'lance_jacob_martija@dlsl.edu.ph', '$2y$10$K8LdXtSsojG1YHWtjck4lejrANYe7BbYL9xhVoB.nFBmBgBFJMltm', '09282791861', '2022-06-21 09:49:39', '2022-06-21 09:50:08');
+(1, 'Juan', 'Bayani', 'Dela Cruz', 'Barangay Mabuti, Batangas City', 'test@email.com', '$2y$10$EbURcrgrD62IjGUM.x.eMugX5lcd8UwZw5c/L.iJTRlSnutpThox.', '09123456789', '2022-06-21 09:27:59', '2022-06-21 09:28:47');
 
 -- --------------------------------------------------------
 
@@ -155,14 +154,14 @@ CREATE TABLE `user_request_status` (
 --
 ALTER TABLE `ci_activity`
   ADD PRIMARY KEY (`activity_id`),
-  ADD KEY `fk_activity_user` (`user_id`);
+  ADD KEY `fk_activity_user` (`user_id`),
+  ADD KEY `fk_department_dept` (`dept_id`);
 
 --
 -- Indexes for table `department`
 --
 ALTER TABLE `department`
-  ADD PRIMARY KEY (`dept_id`),
-  ADD KEY `fk_dept_user` (`user_id`);
+  ADD PRIMARY KEY (`dept_id`);
 
 --
 -- Indexes for table `role`
@@ -268,13 +267,8 @@ ALTER TABLE `user_request_status`
 -- Constraints for table `ci_activity`
 --
 ALTER TABLE `ci_activity`
-  ADD CONSTRAINT `fk_activity_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE SET NULL ON UPDATE CASCADE;
-
---
--- Constraints for table `department`
---
-ALTER TABLE `department`
-  ADD CONSTRAINT `fk_dept_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_activity_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_department_dept` FOREIGN KEY (`dept_id`) REFERENCES `department` (`dept_id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
 -- Constraints for table `role`
