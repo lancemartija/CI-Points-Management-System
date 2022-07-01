@@ -53,3 +53,4 @@ $records = $display->getUser($id);
     <?php } ?>
     <button type="submit" name="edit">Submit</button>
 </form>
+<button type="button" onclick="location.href='../view/user.php'">Back</button>
