@@ -22,14 +22,53 @@ require_once('../layouts/footer.php');
 
 <?php
 include '../database/database.php';
-include '../model/display-data.model.php';
+
+class DisplayActivity extends Dbh
+{
+
+    public function getActivity()
+    {
+
+        $sql = 'SELECT * FROM ci_activity;';
+        $stmt = $this->connect()->prepare($sql);
+
+        if (!$stmt->execute()) {;
+            $stmt = null;
+            echo "error";
+            exit;
+        }
+
+        $result = $stmt->fetchAll((PDO::FETCH_ASSOC));
+        return $result;
+    }
+}
 
 $display = new DisplayActivity();
 $records = $display->getActivity();
 
-foreach ($records as $data) {
-    echo $data['title'] . ' ' . $data['venue'] . ' ' . $data['description'] . ' ' . $data['type'] . ' ' . $data['duration'] . ' ' . $data['date'] . '<br>';
-}
-
-
 ?>
+
+
+<table>
+    <tr>
+        <th>Activity Category</th>
+        <th>Activity Title</th>
+        <th>Activity Date</th>
+        <th>Activity Venue</th>
+        <th>Activity Duration</th>
+        <th>Activity Description</th>
+        <th>Activity CI Points Max Value</th>
+    </tr>
+    <?php foreach ($records as $data) { ?>
+        <tr>
+            <td><?php echo $data['type']; ?></td>
+            <td><?php echo $data['title']; ?></td>
+            <td><?php echo $data['date']; ?></td>
+            <td><?php echo $data['venue']; ?></td>
+            <td><?php echo $data['duration']; ?></td>
+            <td><?php echo $data['description']; ?></td>
+            <td><?php echo $data['Max_Value_Points']; ?></td>
+            <td><button type="button" onclick="location.href='../view/CI_activityEdit.php?i=<?php echo $data['activity_id']; ?>'">Edit</button></td>
+        </tr>
+    <?php } ?>
+</table>

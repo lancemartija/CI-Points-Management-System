@@ -37,3 +37,20 @@ class AddUser extends Dbh
         return $resultCheck;
     }
 }
+
+class EditUser extends Dbh
+{
+
+    protected function editUser($id, $fname, $mname, $lname, $address, $email, $contact)
+    {
+        $stmt = $this->connect()->prepare('UPDATE user set first_name = ? , middle_name = ?, last_name = ?, address = ?, email = ?, contact_number = ? where user_id = ?;');
+
+        if (!$stmt->execute([$fname, $mname, $lname, $address, $email, $contact, $id])) {
+            $stmt = null;
+            header("location: ../editUser.php?error=stmtfailed");
+            exit;
+        }
+
+        $stmt = null;
+    }
+}

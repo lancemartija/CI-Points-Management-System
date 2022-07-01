@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 30, 2022 at 12:55 PM
+-- Generation Time: Jul 01, 2022 at 01:38 AM
 -- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.29
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -36,10 +36,18 @@ CREATE TABLE `ci_activity` (
   `type` varchar(255) NOT NULL,
   `dept_id` int(11) DEFAULT NULL,
   `duration` int(11) NOT NULL,
+  `Max_Value_Points` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
   `date_created` timestamp NOT NULL DEFAULT current_timestamp(),
   `date_updated` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `ci_activity`
+--
+
+INSERT INTO `ci_activity` (`activity_id`, `title`, `date`, `venue`, `description`, `type`, `dept_id`, `duration`, `Max_Value_Points`, `user_id`, `date_created`, `date_updated`) VALUES
+(1, 'long', '2022-06-08', 'lipa batangas', 'to create involvement', 'internal', NULL, 6, 0, NULL, '0000-00-00 00:00:00', '2022-06-30 12:11:34');
 
 -- --------------------------------------------------------
 
@@ -89,7 +97,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `first_name`, `middle_name`, `last_name`, `address`, `email`, `password`, `contact_number`, `date_created`, `date_updated`) VALUES
-(1, 'Juan', 'Bayani', 'Dela Cruz', 'Barangay Mabuti, Batangas City', 'test@email.com', '$2y$10$EbURcrgrD62IjGUM.x.eMugX5lcd8UwZw5c/L.iJTRlSnutpThox.', '09123456789', '2022-06-21 09:27:59', '2022-06-21 09:28:47');
+(1, 'Juan', 'Bayani', 'Dela Cruz', 'Barangay Mabuti, Batangas City', 'test@email.com', '$2y$10$EbURcrgrD62IjGUM.x.eMugX5lcd8UwZw5c/L.iJTRlSnutpThox.', '09123456789', '2022-06-21 09:27:59', '2022-06-21 09:28:47'),
+(2, 'alistaire rafael', 'malabanan', 'carandang', 'Bilogbilog Tanauan City batangas', 'alistaire024@gmail.com', '$2y$10$1IMBwOAiTxdYK0IRBezPMOKlGV.HBnfaCTrDdMINbpqBKoF8ytU6S', '09568423162', '2022-06-30 12:02:13', '2022-06-30 12:02:50');
 
 -- --------------------------------------------------------
 
@@ -215,7 +224,7 @@ ALTER TABLE `user_request_status`
 -- AUTO_INCREMENT for table `ci_activity`
 --
 ALTER TABLE `ci_activity`
-  MODIFY `activity_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `activity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `department`
