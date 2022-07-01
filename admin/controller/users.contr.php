@@ -97,3 +97,59 @@ class AddUserContr extends AddUser
         return true;
     }
 }
+
+
+
+class EditUserContr extends EditUser
+{
+    private $id;
+    private $fname;
+    private $mname;
+    private $lname;
+    private $address;
+    private $contact;
+    private $email;
+
+
+    public function __construct($id, $fname, $mname, $lname, $address, $contact, $email)
+    {
+        $this->id = $id;
+        $this->fname = $fname;
+        $this->mname = $mname;
+        $this->lname = $lname;
+        $this->address = $address;
+        $this->contact = $contact;
+        $this->email = $email;
+    }
+
+    public function edit()
+    {
+        if ($this->Isempty() == false) {
+            header("Location: ../view/addUser.php?error=emptyinput");
+            exit;
+        }
+
+        if ($this->invalidEmail() == false) {
+            header("Location: ../view/addUser.php?error=InvalidEmail");
+            exit;
+        }
+
+        $this->editUser($this->id, $this->fname, $this->mname, $this->lname, $this->address, $this->email, $this->contact);
+    }
+    private function Isempty()
+    {
+        if (empty($this->id) || empty($this->fname) || empty($this->mname) || empty($this->lname) || empty($this->address) || empty($this->contact) || empty($this->email)) {
+            return false;
+        }
+        return true;
+    }
+
+    private function invalidEmail()
+    {
+        if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
+            return false;
+        }
+
+        return true;
+    }
+}

@@ -21,15 +21,53 @@ if (!isset($_SESSION['userid'])) {
 require_once('../layouts/footer.php');
 
 include '../database/database.php';
-include '../model/display-data.model.php';
+class DisplayUsers extends Dbh
+{
+
+    public function getUser()
+    {
+        $sql = 'SELECT * FROM user;';
+        $stmt = $this->connect()->prepare($sql);
+
+        if (!$stmt->execute()) {
+            $stmt = null;
+            echo "error";
+            exit;
+        }
+
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+}
+
 
 $display = new DisplayUsers();
 $records = $display->getUser();
 
-foreach ($records as $data) {
-    echo $data['first_name'] . ' ' . $data['last_name'] . ' ' .  $data['middle_name'] . ' ' . $data['email'] . ' ' . $data['address'] . '</br>';
-}
-
 ?>
 
 <a href="../view/addUser.php">Add</a>
+
+<table>
+    <tr>
+        <th>firstname</th>
+        <th>middlename</th>
+        <th>lastname</th>
+        <th>email</th>
+        <th>address</th>
+        <th>contact number</th>
+    </tr>
+    <?php foreach ($records as $data) { ?>
+        <tr>
+
+            <td><?php echo $data['first_name'] ?></td>
+            <td><?php echo $data['middle_name'] ?></td>
+            <td><?php echo $data['last_name'] ?></td>
+            <td><?php echo $data['email'] ?></td>
+            <td><?php echo $data['address'] ?></td>
+            <td><?php echo $data['contact_number'] ?></td>
+            <td><button type="submit" name="edit" onclick="location.href='../view/editUser.php?i=<?php echo $data['user_id']; ?>'">edit</button></td>
+        <?php } ?>
+        </tr>
+
+</table>
