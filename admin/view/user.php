@@ -71,3 +71,4 @@ $records = $display->getUser();
         </tr>
 
 </table>
+<button type="button" onclick="location.href='../view/dashboard.php'">Back</button>

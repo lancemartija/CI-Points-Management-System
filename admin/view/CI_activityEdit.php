@@ -64,3 +64,4 @@ $records = $display->getActivity($id);
         <button type="submit" name="edit" id="edit">submit</button>
     <?php } ?>
 </form>
+<button type="button" onclick="location.href='../view/CI_Activities.php'">Back</button>

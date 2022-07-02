@@ -72,3 +72,4 @@ $records = $display->getActivity();
         </tr>
     <?php } ?>
 </table>
+<button type="button" onclick="location.href='../view/dashboard.php'">Back</button>
