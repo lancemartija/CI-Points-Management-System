@@ -55,6 +55,8 @@ $records = $display->getActivity();
         <th>Activity Title</th>
         <th>Activity Date</th>
         <th>Activity Venue</th>
+        <th>Activity Department</th>
+        <th>Activity Division</th>
         <th>Activity Duration</th>
         <th>Activity Description</th>
         <th>Activity CI Points Max Value</th>
@@ -65,6 +67,8 @@ $records = $display->getActivity();
             <td><?php echo $data['title']; ?></td>
             <td><?php echo $data['date']; ?></td>
             <td><?php echo $data['venue']; ?></td>
+            <td><?php echo $data['department']; ?></td>
+            <td><?php echo $data['division']; ?></td>
             <td><?php echo $data['duration']; ?></td>
             <td><?php echo $data['description']; ?></td>
             <td><?php echo $data['max_ci_points']; ?></td>
