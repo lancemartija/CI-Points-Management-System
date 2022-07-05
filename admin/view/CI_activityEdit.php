@@ -1,6 +1,6 @@
 <?php
 
-$id = $_GET['i'];
+$id = $_GET['id'];
 
 
 include '../database/database.php';
