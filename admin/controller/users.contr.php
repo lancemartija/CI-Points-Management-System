@@ -50,7 +50,7 @@ class AddUserContr extends AddUser
             exit;
         }
 
-        $this->setUser($this->fname, $this->mname, $this->lname, $this->address, $this->contact, $this->email, $this->password);
+        $this->setUser($this->fname, $this->mname, $this->lname, $this->address, $this->email, $this->password, $this->contact);
     }
 
     private function Isempty()
