@@ -53,8 +53,13 @@ $records = $display->getUsers();
     <label for="department">Enter Department</label>
     <input type="text" name="department" id="venue"><br>
 
-    <label for="division">Enter Division</label>
-    <input type="text" name="division" id="venue"><br>
+    <label for="division">Division</label>
+    <select name="division" id="type">
+        <option disabled selected value> -- select an option -- </option>
+        <option value="Integrated School">Integrated School</option>
+        <option value="College">College</option>
+        <option value="ASF/ASP">ASF/ASP</option>
+    </select><br>
 
     <label for="supervisor">Supervisor</label>
     <select name="supervisor" id="type">
@@ -70,8 +75,8 @@ $records = $display->getUsers();
     <label for="description">Enter Activity Description</label>
     <input type="text" name="description" id="description"><br>
 
-    <label for="maxPoints">Enter Activity CI Points Max Value</label>
-    <input type="number" name="maxPoints" id="maxPoints"><br>
+    <label for="cipoints">Enter Activity CI Points Max Value</label>
+    <input type="number" name="cipoints" id="cipoints"><br>
 
     <button type="submit" name="add">Submit</button>
 
