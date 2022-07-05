@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 05, 2022 at 10:56 AM
+-- Generation Time: Jul 05, 2022 at 11:31 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -32,15 +32,23 @@ CREATE TABLE `ci_activity` (
   `title` varchar(255) NOT NULL,
   `date` date NOT NULL,
   `venue` varchar(255) NOT NULL,
-  `description` varchar(255) NOT NULL,
-  `type` varchar(255) NOT NULL,
   `department` varchar(255) NOT NULL,
   `division` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `type` varchar(255) NOT NULL,
   `duration` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
+  `max_ci_points` int(11) NOT NULL,
   `date_created` timestamp NOT NULL DEFAULT current_timestamp(),
   `date_updated` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `ci_activity`
+--
+
+INSERT INTO `ci_activity` (`activity_id`, `title`, `date`, `venue`, `department`, `division`, `description`, `type`, `duration`, `user_id`, `max_ci_points`, `date_created`, `date_updated`) VALUES
+(1, 'test', '2022-07-06', 'test', 'test', '<br />\r\n<b>Notice</b>:  Undefined index: id in <b>E:\\xampp\\htdocs\\ciopointswebapp\\admin\\view\\Create_activity.php</b> on line <b>63</b><br />\r\n', 'test', 'Internal', 3, NULL, 3, '2022-07-05 09:30:34', '2022-07-05 09:30:34');
 
 -- --------------------------------------------------------
 
@@ -200,7 +208,7 @@ ALTER TABLE `user_request_status`
 -- AUTO_INCREMENT for table `ci_activity`
 --
 ALTER TABLE `ci_activity`
-  MODIFY `activity_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `activity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `role`
