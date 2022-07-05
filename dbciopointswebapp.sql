@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 05, 2022 at 11:57 AM
+-- Generation Time: Jul 05, 2022 at 08:43 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -48,7 +48,7 @@ CREATE TABLE `ci_activity` (
 --
 
 INSERT INTO `ci_activity` (`activity_id`, `title`, `date`, `venue`, `department`, `division`, `description`, `type`, `duration`, `user_id`, `max_ci_points`, `date_created`, `date_updated`) VALUES
-(5, 'test', '2022-07-06', 'test', 'test', 'test', 'test', 'Internal', 3, 1, 3, '2022-07-05 09:54:14', '2022-07-05 09:54:14');
+(6, 'Tree Planting', '2022-07-07', 'Lipa City', 'CITE', 'ASF/ASP', 'Planting trees to help the environment', 'Internal', 4, 1, 3, '2022-07-05 18:43:17', '2022-07-05 18:43:17');
 
 -- --------------------------------------------------------
 
@@ -79,6 +79,7 @@ CREATE TABLE `user` (
   `contact_number` varchar(255) NOT NULL,
   `department` varchar(255) NOT NULL,
   `division` varchar(255) NOT NULL,
+  `status` varchar(255) NOT NULL,
   `date_created` timestamp NOT NULL DEFAULT current_timestamp(),
   `date_updated` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -87,8 +88,8 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `first_name`, `middle_name`, `last_name`, `address`, `email`, `password`, `contact_number`, `department`, `division`, `date_created`, `date_updated`) VALUES
-(1, 'Juan', 'Bayani', 'Dela Cruz', 'Barangay Mabuti, Batangas City', 'test@email.com', '$2y$10$EbURcrgrD62IjGUM.x.eMugX5lcd8UwZw5c/L.iJTRlSnutpThox.', '09123456789', '', '', '2022-06-21 09:27:59', '2022-06-21 09:28:47');
+INSERT INTO `user` (`user_id`, `first_name`, `middle_name`, `last_name`, `address`, `email`, `password`, `contact_number`, `department`, `division`, `status`, `date_created`, `date_updated`) VALUES
+(1, 'Juan', 'Bayani', 'Dela Cruz', 'Barangay Mabuti, Batangas City', 'test@email.com', '$2y$10$EbURcrgrD62IjGUM.x.eMugX5lcd8UwZw5c/L.iJTRlSnutpThox.', '09123456789', 'CITE', 'ASF/ASP', 'Active', '2022-06-21 09:27:59', '2022-07-05 17:25:54');
 
 -- --------------------------------------------------------
 
@@ -207,7 +208,7 @@ ALTER TABLE `user_request_status`
 -- AUTO_INCREMENT for table `ci_activity`
 --
 ALTER TABLE `ci_activity`
-  MODIFY `activity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `activity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `role`
@@ -219,7 +220,7 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `user_activity_history`
