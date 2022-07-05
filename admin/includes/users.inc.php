@@ -1,14 +1,14 @@
 <?php
 
-if (isset($_POST['submit'])) {
-    $fname = filter_var(trim($_POST['firstname']), FILTER_SANITIZE_STRING);
-    $mname = filter_var(trim($_POST['middlename']), FILTER_SANITIZE_STRING);
-    $lname = filter_var(trim($_POST['lastname']), FILTER_SANITIZE_STRING);
-    $address = filter_var(trim($_POST['address']), FILTER_SANITIZE_STRING);
-    $contact = filter_var(trim($_POST['contact']), FILTER_SANITIZE_STRING);
-    $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_STRING);
-    $password = filter_var(trim($_POST['password']), FILTER_SANITIZE_STRING);
-    $passwordRepeat = filter_var(trim($_POST['passwordRepeat']), FILTER_SANITIZE_STRING);
+if (isset($_POST['add'])) {
+    $fname = trim($_POST['firstname']);
+    $mname = trim($_POST['middlename']);
+    $lname = trim($_POST['lastname']);
+    $address = trim($_POST['address']);
+    $contact = trim($_POST['contact']);
+    $email = trim($_POST['email']);
+    $password = trim($_POST['password']);
+    $passwordRepeat = trim($_POST['passwordRepeat']);
 
     include '../database/database.php';
     include '../model/users.model.php';
@@ -18,17 +18,17 @@ if (isset($_POST['submit'])) {
 
     $AddUser->addUser();
 
-    header("location: ../view/dashboard.php?status=UserInputSuccess");
+    header("location: ../view/user.php?status=UserInputSuccess");
 }
 
 if (isset($_POST['edit'])) {
-    $id = filter_var(trim($_POST['id']), FILTER_SANITIZE_NUMBER_INT);
-    $fname = filter_var(trim($_POST['firstname']), FILTER_SANITIZE_STRING);
-    $mname = filter_var(trim($_POST['middlename']), FILTER_SANITIZE_STRING);
-    $lname = filter_var(trim($_POST['lastname']), FILTER_SANITIZE_STRING);
-    $address = filter_var(trim($_POST['address']), FILTER_SANITIZE_STRING);
-    $contact = filter_var(trim($_POST['contact']), FILTER_SANITIZE_STRING);
-    $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_STRING);
+    $id = trim($_POST['id']);
+    $fname = trim($_POST['firstname']);
+    $mname = trim($_POST['middlename']);
+    $lname = trim($_POST['lastname']);
+    $address = trim($_POST['address']);
+    $contact = trim($_POST['contact']);
+    $email = trim($_POST['email']);
 
     include '../database/database.php';
     include '../model/users.model.php';
