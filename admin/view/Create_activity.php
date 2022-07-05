@@ -56,11 +56,11 @@ $records = $display->getUsers();
     <label for="division">Enter Division</label>
     <input type="text" name="division" id="venue"><br>
 
-    <label for="division">Supervisor</label>
-    <select name="division" id="type">
+    <label for="supervisor">Supervisor</label>
+    <select name="supervisor" id="type">
         <option disabled selected value> -- select an option -- </option>
         <?php foreach ($records as $data) : ?>
-            <option value="<?= $data['id'] ?>"><?= $data['first_name'] ?></option>
+            <option value="<?= $data['user_id'] ?>"><?= $data['first_name'] ?></option>
         <?php endforeach; ?>
     </select><br>
 
