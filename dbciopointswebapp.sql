@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 05, 2022 at 11:31 AM
+-- Generation Time: Jul 05, 2022 at 11:57 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -48,7 +48,7 @@ CREATE TABLE `ci_activity` (
 --
 
 INSERT INTO `ci_activity` (`activity_id`, `title`, `date`, `venue`, `department`, `division`, `description`, `type`, `duration`, `user_id`, `max_ci_points`, `date_created`, `date_updated`) VALUES
-(1, 'test', '2022-07-06', 'test', 'test', '<br />\r\n<b>Notice</b>:  Undefined index: id in <b>E:\\xampp\\htdocs\\ciopointswebapp\\admin\\view\\Create_activity.php</b> on line <b>63</b><br />\r\n', 'test', 'Internal', 3, NULL, 3, '2022-07-05 09:30:34', '2022-07-05 09:30:34');
+(5, 'test', '2022-07-06', 'test', 'test', 'test', 'test', 'Internal', 3, 1, 3, '2022-07-05 09:54:14', '2022-07-05 09:54:14');
 
 -- --------------------------------------------------------
 
@@ -88,8 +88,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `first_name`, `middle_name`, `last_name`, `address`, `email`, `password`, `contact_number`, `department`, `division`, `date_created`, `date_updated`) VALUES
-(1, 'Juan', 'Bayani', 'Dela Cruz', 'Barangay Mabuti, Batangas City', 'test@email.com', '$2y$10$EbURcrgrD62IjGUM.x.eMugX5lcd8UwZw5c/L.iJTRlSnutpThox.', '09123456789', '', '', '2022-06-21 09:27:59', '2022-06-21 09:28:47'),
-(4, 'lance', 'gomez', 'martija', 'bahay', 'test1@email.com', '$2y$10$rBgLXbc2KX2D5T3nOPG1CuNMdIOtBfUKW/qxvqn7Usn.DcR14Nl6a', '098129382423', '', '', '2022-07-05 08:38:38', '2022-07-05 08:38:38');
+(1, 'Juan', 'Bayani', 'Dela Cruz', 'Barangay Mabuti, Batangas City', 'test@email.com', '$2y$10$EbURcrgrD62IjGUM.x.eMugX5lcd8UwZw5c/L.iJTRlSnutpThox.', '09123456789', '', '', '2022-06-21 09:27:59', '2022-06-21 09:28:47');
 
 -- --------------------------------------------------------
 
@@ -208,7 +207,7 @@ ALTER TABLE `user_request_status`
 -- AUTO_INCREMENT for table `ci_activity`
 --
 ALTER TABLE `ci_activity`
-  MODIFY `activity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `activity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `role`
