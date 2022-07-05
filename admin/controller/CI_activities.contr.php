@@ -2,20 +2,23 @@
 
 class CIActivityContr extends CIActivities
 {
-
     private $title;
     private $date;
     private $venue;
+    private $department;
+    private $division;
     private $description;
     private $type;
     private $duration;
     private $maxValue;
 
-    public function __construct($title, $date, $venue, $description, $type, $duration, $maxValue)
+    public function __construct($title, $date, $venue, $department, $division, $description, $type, $duration, $maxValue)
     {
         $this->title = $title;
         $this->date = $date;
         $this->venue = $venue;
+        $this->department = $department;
+        $this->division = $division;
         $this->description = $description;
         $this->type = $type;
         $this->duration = $duration;
@@ -29,14 +32,14 @@ class CIActivityContr extends CIActivities
             exit;
         }
 
-        $this->setActivity($this->title, $this->date, $this->venue, $this->description, $this->type, $this->duration, $this->maxValue);
+        $this->setActivity($this->title, $this->date, $this->venue, $this->department, $this->division, $this->description, $this->type, $this->duration, $this->maxValue);
     }
 
 
     private function Isempty()
     {
 
-        if (empty($this->title) || empty($this->date) || empty($this->title) || empty($this->venue) || empty($this->description) || empty($this->type) || empty($this->duration) || empty($this->maxValue)) {
+        if (empty($this->title) || empty($this->date) || empty($this->title) || empty($this->venue) || empty($this->department) || empty($this->division) || empty($this->description) || empty($this->type) || empty($this->duration) || empty($this->maxValue)) {
             return false;
         }
 
@@ -50,17 +53,21 @@ class EditActivityContr extends EditActivity
     private $title;
     private $date;
     private $venue;
+    private $department;
+    private $division;
     private $description;
     private $type;
     private $duration;
     private $maxValue;
 
-    public function __construct($id, $title, $date, $venue, $description, $type, $duration, $maxValue)
+    public function __construct($id, $title, $date, $venue, $department, $division, $description, $type, $duration, $maxValue)
     {
         $this->id = $id;
         $this->title = $title;
         $this->date = $date;
         $this->venue = $venue;
+        $this->department = $department;
+        $this->division = $division;
         $this->description = $description;
         $this->type = $type;
         $this->duration = $duration;
@@ -75,13 +82,13 @@ class EditActivityContr extends EditActivity
             exit;
         }
 
-        $this->setActivity($this->id, $this->title, $this->date, $this->venue, $this->description, $this->type, $this->duration, $this->maxValue);
+        $this->setActivity($this->id, $this->title, $this->date, $this->venue, $this->department, $this->division, $this->description, $this->type, $this->duration, $this->maxValue);
     }
 
     private function Isempty()
     {
 
-        if (empty($this->id) || empty($this->title) || empty($this->date) || empty($this->venue) || empty($this->description) || empty($this->type) || empty($this->duration) || empty($this->maxValue)) {
+        if (empty($this->id) || empty($this->title) || empty($this->date) || empty($this->venue) || empty($this->department) || empty($this->division) || empty($this->description) || empty($this->type) || empty($this->duration) || empty($this->maxValue)) {
             return false;
         }
 

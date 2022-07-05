@@ -1,10 +1,11 @@
 <?php
 
-if (isset($_POST['submit'])) {
-
+if (isset($_POST['add'])) {
     $title = $_POST['title'];
     $date = $_POST['date'];
     $venue = $_POST['venue'];
+    $department = $_POST['department'];
+    $division = $_POST['division'];
     $description = $_POST['description'];
     $type = $_POST['type'];
     $duration = $_POST['duration'];
@@ -14,10 +15,10 @@ if (isset($_POST['submit'])) {
     include '../model/CI_activities.model.php';
     include '../controller/CI_activities.contr.php';
 
-    $AddActivity = new CIActivityContr($title, $date, $venue, $description, $type, $duration, $maxValue);
+    $AddActivity = new CIActivityContr($title, $date, $venue, $department, $division, $description, $type, $duration, $maxValue);
     $AddActivity->AddActivities();
 
-    header('Location: ../view/CI_Activities.php?success=Activitycreated');
+    header('Location: ../view/CI_Activities.php?success=activitycreated');
 }
 
 
@@ -26,6 +27,8 @@ if (isset($_POST['edit'])) {
     $title = $_POST['title'];
     $date = $_POST['date'];
     $venue = $_POST['venue'];
+    $department = $_POST['department'];
+    $division = $_POST['division'];
     $description = $_POST['description'];
     $type = $_POST['type'];
     $duration = $_POST['duration'];
@@ -35,8 +38,8 @@ if (isset($_POST['edit'])) {
     include '../model/CI_activities.model.php';
     include '../controller/CI_activities.contr.php';
 
-    $EditActivity = new EditActivityContr( $id,$title, $date, $venue, $description, $type, $duration, $maxValue);
+    $EditActivity = new EditActivityContr($id, $title, $date, $venue, $department, $division, $description, $type, $duration, $maxValue);
     $EditActivity->EditActivity();
 
-    header('Location: ../view/CI_Activities.php?success=ActivityEdit');
+    header('Location: ../view/CI_Activities.php?success=activityEdit');
 }
