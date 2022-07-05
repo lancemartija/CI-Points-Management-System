@@ -24,7 +24,7 @@
         <label for="passwordRepeat">Confirm Password</label>
         <input type="password" name="passwordRepeat" id="passwordRepeat" required><br>
 
-        <button type="submit" name="submit">Submit</button>
+        <button type="submit" name="add">Submit</button>
     </form>
 </div>
 

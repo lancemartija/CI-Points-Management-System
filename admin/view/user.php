@@ -66,7 +66,7 @@ $records = $display->getUser();
             <td><?php echo $data['email'] ?></td>
             <td><?php echo $data['address'] ?></td>
             <td><?php echo $data['contact_number'] ?></td>
-            <td><button type="submit" name="edit" onclick="location.href='../view/editUser.php?i=<?php echo $data['user_id']; ?>'">edit</button></td>
+            <td><button type="submit" name="edit" onclick="location.href='../view/editUser.php?id=<?php echo $data['user_id']; ?>'">edit</button></td>
         <?php } ?>
         </tr>
 
