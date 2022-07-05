@@ -42,7 +42,7 @@
             </a>
           </li>
           <li>
-            <a href="../view/CIP_Request.php" class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group <?= ($data['title'] == 'CIP Requests') ? 'bg-gray-100' : ''; ?>">
+            <a href="../view/ciprequests.php" class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group <?= ($data['title'] == 'CIP Requests') ? 'bg-gray-100' : ''; ?>">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 transition duration-75 group-hover:text-gray-900 <?= ($data['title'] == 'CIP Requests') ? 'text-gray-900' : 'text-gray-500'; ?>" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M5 3a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H5zm0 2h10v7h-2l-1 2H8l-1-2H5V5z" clip-rule="evenodd" />
               </svg>
@@ -50,7 +50,7 @@
             </a>
           </li>
           <li>
-            <a href="../view/report.php" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 group <?= ($data['title'] == 'Reports') ? 'bg-gray-100' : ''; ?>">
+            <a href="../view/reports.php" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 group <?= ($data['title'] == 'Reports') ? 'bg-gray-100' : ''; ?>">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 transition duration-75 group-hover:text-gray-900 <?= ($data['title'] == 'Reports') ? 'text-gray-900' : 'text-gray-500'; ?>" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
               </svg>
