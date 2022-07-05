@@ -41,9 +41,9 @@
           <div class="sm:flex">
             <div class="items-center hidden mb-3 sm:flex sm:divide-x sm:divide-gray-100 sm:mb-0">
               <form class="lg:pr-3" action="#" method="GET">
-                <label for="users-search" class="sr-only">Search</label>
+                <label for="activities-search" class="sr-only">Search</label>
                 <div class="relative mt-1 lg:w-64 xl:w-96">
-                  <input type="text" name="search" id="users-search" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="Search for users">
+                  <input type="text" name="search" id="activities-search" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="Search for activities">
                 </div>
               </form>
               <div class="flex pl-0 mt-3 space-x-1 sm:pl-2 sm:mt-0">
