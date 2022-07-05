@@ -3,14 +3,13 @@
 
 class AddUser extends Dbh
 {
-
-    protected function setUser($fname, $mname, $lname, $address, $email, $password, $contact)
+    protected function setUser($fname, $mname, $lname, $address, $email, $password, $contact, $department, $division, $status)
     {
-        $stmt = $this->connect()->prepare('INSERT INTO user (first_name, middle_name, last_name, address, email, password, contact_number) values (?, ?, ?, ?, ?, ?, ?)');
+        $stmt = $this->connect()->prepare('INSERT INTO user (first_name, middle_name, last_name, address, email, password, contact_number, department, division, status) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
 
         $hashedpwd = password_hash($password, PASSWORD_DEFAULT);
 
-        if (!$stmt->execute([$fname, $mname, $lname, $address, $email, $hashedpwd, $contact])) {
+        if (!$stmt->execute([$fname, $mname, $lname, $address, $email, $hashedpwd, $contact, $department, $division, $status])) {
             $stmt = null;
             header("Location: ../view/addUser.php?error=stmtfailed");
             exit;
@@ -41,11 +40,11 @@ class AddUser extends Dbh
 class EditUser extends Dbh
 {
 
-    protected function editUser($id, $fname, $mname, $lname, $address, $email, $contact)
+    protected function editUser($id, $fname, $mname, $lname, $address, $email, $contact, $department, $division, $status)
     {
-        $stmt = $this->connect()->prepare('UPDATE user set first_name = ? , middle_name = ?, last_name = ?, address = ?, email = ?, contact_number = ? where user_id = ?;');
+        $stmt = $this->connect()->prepare('UPDATE user SET first_name = ? , middle_name = ?, last_name = ?, address = ?, email = ?, contact_number = ?, department = ?, division = ?, status = ? WHERE user_id = ?;');
 
-        if (!$stmt->execute([$fname, $mname, $lname, $address, $email, $contact, $id])) {
+        if (!$stmt->execute([$fname, $mname, $lname, $address, $email, $contact, $department, $division, $status, $id])) {
             $stmt = null;
             header("location: ../editUser.php?error=stmtfailed");
             exit;
