@@ -72,7 +72,7 @@ $records = $display->getActivity();
             <td><?php echo $data['duration']; ?></td>
             <td><?php echo $data['description']; ?></td>
             <td><?php echo $data['max_ci_points']; ?></td>
-            <td><button type="button" onclick="location.href='../view/CI_activityEdit.php?i=<?php echo $data['activity_id']; ?>'">Edit</button></td>
+            <td><button type="button" onclick="location.href='../view/CI_activityEdit.php?id=<?php echo $data['activity_id']; ?>'">Edit</button></td>
         </tr>
     <?php } ?>
 </table>
