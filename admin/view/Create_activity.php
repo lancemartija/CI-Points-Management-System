@@ -1,10 +1,44 @@
+<?php
+
+include '../database/database.php';
+
+class DisplayUsers extends Dbh
+{
+
+    public function getUsers()
+    {
+        $sql = 'SELECT * FROM user;';
+        $stmt = $this->connect()->query($sql);
+        $result = 0;
+
+        if (!$stmt) {
+            $stmt = null;
+            exit;
+        }
+
+        while ($row = $stmt->fetchAll(PDO::FETCH_ASSOC)) {
+            $result = $row;
+        }
+
+        $stmt = null;
+        return $result;
+    }
+}
+
+$display = new DisplayUsers();
+$records = $display->getUsers();
+
+
+?>
+
 <form action="../includes/CI_activity.inc.php" method="POST">
 
     <label for="type">Activity Category:</label>
     <select name="type" id="type">
-        <option value="internal">Internal</option>
-        <option value="external">external</option>
-        <option value="sponsored">CIO Sponsored</option>
+        <option disabled selected value> -- select an option -- </option>
+        <option value="Internal">Internal</option>
+        <option value="External">External</option>
+        <option value="CIO Sponsored">CIO Sponsored</option>
     </select><br>
 
     <label for="title">Enter Activity Title</label>
@@ -16,8 +50,22 @@
     <label for="venue">Enter Activity Venue</label>
     <input type="text" name="venue" id="venue"><br>
 
+    <label for="department">Enter Department</label>
+    <input type="text" name="department" id="venue"><br>
+
+    <label for="division">Enter Division</label>
+    <input type="text" name="division" id="venue"><br>
+
+    <label for="division">Supervisor</label>
+    <select name="division" id="type">
+        <option disabled selected value> -- select an option -- </option>
+        <?php foreach ($records as $data) : ?>
+            <option value="<?= $data['id'] ?>"><?= $data['first_name'] ?></option>
+        <?php endforeach; ?>
+    </select><br>
+
     <label for="duration">Enter Activity Duration</label>
-    <input type="text" name="duration" id="duration"><br>
+    <input type="number" name="duration" id="duration"><br>
 
     <label for="description">Enter Activity Description</label>
     <input type="text" name="description" id="description"><br>
@@ -25,6 +73,6 @@
     <label for="maxPoints">Enter Activity CI Points Max Value</label>
     <input type="number" name="maxPoints" id="maxPoints"><br>
 
-    <button type="submit" name="submit">Submit</button>
+    <button type="submit" name="add">Submit</button>
 
 </form>
