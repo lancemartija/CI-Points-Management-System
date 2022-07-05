@@ -1,6 +1,6 @@
 <div>
     <form action="../includes/users.inc.php" method="POST">
-        <label for="firstname">Firt Name</label>
+        <label for="firstname">First Name</label>
         <input type="text" name="firstname" id="firstname" required><br>
 
         <label for="middlename">Middle Name</label>
@@ -14,6 +14,24 @@
 
         <label for="contact">Contact Number</label>
         <input type="number" name="contact" id="contact" required><br>
+
+        <label for="department">Department</label>
+        <input type="text" name="department" id="department" required><br>
+
+        <label for="division">Division</label>
+        <select name="division" id="type">
+            <option disabled selected value> -- select an option -- </option>
+            <option value="Integrated School">Integrated School</option>
+            <option value="College">College</option>
+            <option value="ASF/ASP">ASF/ASP</option>
+        </select><br>
+
+        <label for="status">Status</label>
+        <select name="status" id="type">
+            <option disabled selected value> -- select an option -- </option>
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+        </select><br>
 
         <label for="email">Email</label>
         <input type="text" name="email" id="email" required><br>
