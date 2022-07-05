@@ -33,20 +33,16 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <div class="text-sm font-normal text-gray-500">
-                    <div class="text-base font-semibold text-gray-900"><?php echo $data['first_name'] . ' ' . $data['middle_name'] . ' ' . $data['last_name']; ?></div>
-                    <div class="text-sm font-normal text-gray-500"><?php echo $data['email'] ?></div>
+                    <div class="text-base font-semibold text-gray-900"><?= $data['first_name'] . ' ' . $data['middle_name'] . ' ' . $data['last_name']; ?></div>
+                    <div class="text-sm font-normal text-gray-500"><?= $data['email'] ?></div>
                   </div>
                 </td>
-                <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap"><?php echo $data['department']; ?></td>
-                <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap"><?php echo $data['division']; ?></td>
-                <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap"><?php echo $data['address']; ?></td>
-                <td class="p-4 text-base font-normal text-gray-900 whitespace-nowrap">
-                  <div class="flex items-center">
-                    <?php echo $data['status'] ?>
-                  </div>
-                </td>
+                <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap"><?= $data['department']; ?></td>
+                <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap"><?= $data['division']; ?></td>
+                <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap"><?= $data['address']; ?></td>
+                <td class="p-4 text-base font-normal text-gray-900 whitespace-nowrap"><?= $data['status'] ?></td>
                 <td class="p-4 space-x-2 whitespace-nowrap">
-                  <a href="../view/editUser.php?id=<?php echo $data['user_id']; ?>" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-cyan-600 hover:bg-cyan-700 focus:ring-4 focus:ring-cyan-200">
+                  <a href="../view/editUser.php?id=<?= $data['user_id']; ?>" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-cyan-600 hover:bg-cyan-700 focus:ring-4 focus:ring-cyan-200">
                     <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                       <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z"></path>
                       <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd"></path>
