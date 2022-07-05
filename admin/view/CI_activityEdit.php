@@ -38,9 +38,9 @@ $records = $display->getActivity($id);
 
         <label for="category">Activity Category</label>
         <select name="type" id="type">
-            <option value="internal" <?php echo $data['type'] == "internal" ? 'selected="selected"' : ""; ?>>internal</option>
-            <option value="external" <?php echo $data['type'] == "external" ? 'selected="selected"' : ""; ?>>external</option>
-            <option value="sponsored" <?php echo $data['type'] == "sponsored" ? 'selected="selected"' : ""; ?>>sponsored</option>
+            <option value="internal" <?php echo $data['type'] == "Internal" ? 'selected="selected"' : ""; ?>>Internal</option>
+            <option value="external" <?php echo $data['type'] == "External" ? 'selected="selected"' : ""; ?>>External</option>
+            <option value="sponsored" <?php echo $data['type'] == "CIO Sponsored" ? 'selected="selected"' : ""; ?>>CIO Sponsored</option>
         </select>
 
         <label for="title">Activity Title</label>
@@ -52,6 +52,12 @@ $records = $display->getActivity($id);
         <label for="venue">Activity Venue</label>
         <input type="text" name="venue" id="venue" value="<?php echo $data['venue']; ?>">
 
+        <label for="department">Activity Department</label>
+        <input type="text" name="department" id="department" value="<?php echo $data['department']; ?>">
+
+        <label for="division">Activity Division</label>
+        <input type="text" name="division" id="division" value="<?php echo $data['division']; ?>">
+
         <label for="duration">Activity duration</label>
         <input type="text" name="duration" id="duration" value="<?php echo $data['duration']; ?>">
 
@@ -59,7 +65,7 @@ $records = $display->getActivity($id);
         <input type="text" name="description" id="description" value="<?php echo $data['description']; ?>">
 
         <label for="maxPoints">Activity Max Value</label>
-        <input type="text" name="maxPoints" id="maxPoints" value="<?php echo $data['Max_Value_Points']; ?>">
+        <input type="text" name="maxPoints" id="maxPoints" value="<?php echo $data['max_ci_points']; ?>">
 
         <button type="submit" name="edit" id="edit">submit</button>
     <?php } ?>
