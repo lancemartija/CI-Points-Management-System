@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 06, 2022 at 03:11 PM
+-- Generation Time: Jul 06, 2022 at 06:01 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -20,6 +20,17 @@ SET time_zone = "+00:00";
 --
 -- Database: `dbciopointswebapp`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `academic_year`
+--
+
+CREATE TABLE `academic_year` (
+  `ay_id` int(11) NOT NULL,
+  `year` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -50,7 +61,8 @@ CREATE TABLE `ci_activity` (
 INSERT INTO `ci_activity` (`activity_id`, `title`, `date`, `venue`, `department`, `division`, `description`, `type`, `duration`, `user_id`, `ci_points`, `date_created`, `date_updated`) VALUES
 (1, 'test', '2022-07-12', 'test', 'test', 'Integrated School', 'test', 'Internal', 6, 5, 5, '2022-07-06 03:04:36', '2022-07-06 03:04:36'),
 (2, 'blob', '2022-07-18', 'lipa batangas', 'CITE', 'Integrated School', 'to create baked mac', 'CIO Sponsored', 6, 1, 5, '2022-07-06 03:06:08', '2022-07-06 03:06:08'),
-(3, 'Book Reading', '2022-07-14', 'Nexus Labs', 'CITE', 'College', 'Reading books with students', 'CIO Sponsored', 3, 1, 1, '2022-07-06 07:11:12', '2022-07-06 07:11:12');
+(3, 'Book Reading', '2022-07-14', 'Nexus Labs', 'CITE', 'College', 'Reading books with students', 'CIO Sponsored', 3, 1, 1, '2022-07-06 07:11:12', '2022-07-06 07:11:12'),
+(4, 'test', '2022-07-07', 'test', 'test', 'College', 'test', 'External Engagement', 3, 5, 3, '2022-07-06 13:42:04', '2022-07-06 13:42:04');
 
 -- --------------------------------------------------------
 
@@ -82,7 +94,8 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`user_id`, `first_name`, `middle_name`, `last_name`, `address`, `email`, `password`, `contact_number`, `department`, `division`, `status`, `type`, `date_created`, `date_updated`) VALUES
 (1, 'Juan', 'Bayani', 'Dela Cruz', 'Barangay Mabuti, Batangas City', 'test@email.com', '$2y$10$EbURcrgrD62IjGUM.x.eMugX5lcd8UwZw5c/L.iJTRlSnutpThox.', '09123456789', '', '', '', '', '2022-06-21 09:27:59', '2022-06-21 09:28:47'),
 (5, 'alistaire rafael', 'malabanan', 'carandang', 'Bilogbilog Tanauan City batangas', 'alistaire024@gmail.com', '$2y$10$.OGcjsAnAfopABmLaCVo/u9Ts6blIM.CBefcEweBctOOUIqFh.lJ2', '09568423162', '', '', '', '', '2022-07-05 11:40:22', '2022-07-05 11:40:55'),
-(6, 'lance', 'gomez', 'martija', 'bahay', 'test1@email.com', '$2y$10$VF5VMdenF.WPsK5MltTUc.Bl3XLqWb0N.2oObk8PUq2TpetJ2ckii', '1203980123', 'CITE', 'College', 'Active', '', '2022-07-06 07:11:56', '2022-07-06 07:11:56');
+(6, 'lance', 'gomez', 'martija', 'bahay', 'test1@email.com', '$2y$10$VF5VMdenF.WPsK5MltTUc.Bl3XLqWb0N.2oObk8PUq2TpetJ2ckii', '1203980123', 'CITE', 'College', 'Active', '', '2022-07-06 07:11:56', '2022-07-06 07:11:56'),
+(7, 'test', 'test', 'test', 'test', 'test2@email.com', '$2y$10$BjE6bN7JpKnqBZ3KKem5CuUGIGRp.58Q49CfxYl46qk4kU/NIWOVS', '09876543210', 'test', 'College', 'Active', 'User', '2022-07-06 13:47:44', '2022-07-06 13:47:44');
 
 -- --------------------------------------------------------
 
@@ -155,6 +168,12 @@ CREATE TABLE `user_request_status` (
 --
 
 --
+-- Indexes for table `academic_year`
+--
+ALTER TABLE `academic_year`
+  ADD PRIMARY KEY (`ay_id`);
+
+--
 -- Indexes for table `ci_activity`
 --
 ALTER TABLE `ci_activity`
@@ -203,16 +222,22 @@ ALTER TABLE `user_request_status`
 --
 
 --
+-- AUTO_INCREMENT for table `academic_year`
+--
+ALTER TABLE `academic_year`
+  MODIFY `ay_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `ci_activity`
 --
 ALTER TABLE `ci_activity`
-  MODIFY `activity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `activity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `user_activity_history`
