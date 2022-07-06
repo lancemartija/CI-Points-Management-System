@@ -44,11 +44,11 @@ $users = $user->getUsers();
           <div class="grid grid-cols-6 gap-6">
             <div class="col-span-6 sm:col-span-3">
               <label for="title" class="label">Activity Title</label>
-              <input type="text" name="title" class="text-gray-900 border border-gray-300 rounded-lg shadow-sm bg-gray-50 sm:text-sm block w-full p-2.5 focus:ring-2 focus:ring-cyan-600/50 focus:border-cyan-600 focus:outline-none" placeholder="Activity Title" required>
+              <input type="text" name="title" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="Activity Title" required>
             </div>
             <div class="col-span-6 sm:col-span-3">
               <label for="type" class="label">Category</label>
-              <select name="type" class="text-gray-900 border border-gray-300 rounded-lg shadow-sm bg-gray-50 sm:text-sm block w-full p-2.5 focus:ring-2 focus:ring-cyan-600/50 focus:border-cyan-600 focus:outline-none">
+              <select name="type" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5">
                 <option disabled selected value>Choose Category</option>
                 <option value="Internal Engagement">Internal Engagement</option>
                 <option value="External Engagement">External Engagement</option>
@@ -57,19 +57,19 @@ $users = $user->getUsers();
             </div>
             <div class="col-span-6 sm:col-span-3">
               <label for="date" class="label">Date</label>
-              <input type="date" name="date" class="text-gray-900 border border-gray-300 rounded-lg shadow-sm bg-gray-50 sm:text-sm block w-full p-2.5 focus:ring-2 focus:ring-cyan-600/50 focus:border-cyan-600 focus:outline-none" required>
+              <input type="date" name="date" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" required>
             </div>
             <div class="col-span-6 sm:col-span-3">
               <label for="venue" class="label">Venue</label>
-              <input type="text" name="venue" class="text-gray-900 border border-gray-300 rounded-lg shadow-sm bg-gray-50 sm:text-sm block w-full p-2.5 focus:ring-2 focus:ring-cyan-600/50 focus:border-cyan-600 focus:outline-none" placeholder="Venue" required>
+              <input type="text" name="venue" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="Venue" required>
             </div>
             <div class="col-span-6 sm:col-span-3">
               <label for="department" class="label">Department</label>
-              <input type="text" name="department" class="text-gray-900 border border-gray-300 rounded-lg shadow-sm bg-gray-50 sm:text-sm block w-full p-2.5 focus:ring-2 focus:ring-cyan-600/50 focus:border-cyan-600 focus:outline-none" placeholder="Department" required>
+              <input type="text" name="department" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="Department" required>
             </div>
             <div class="col-span-6 sm:col-span-3">
               <label for="division" class="label">Division</label>
-              <select name="division" class="text-gray-900 border border-gray-300 rounded-lg shadow-sm bg-gray-50 sm:text-sm block w-full p-2.5 focus:ring-2 focus:ring-cyan-600/50 focus:border-cyan-600 focus:outline-none">
+              <select name="division" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5">
                 <option disabled selected value>Choose Division</option>
                 <option value="Integrated School">Integrated School</option>
                 <option value="College">College</option>
@@ -78,7 +78,7 @@ $users = $user->getUsers();
             </div>
             <div class="col-span-6 sm:col-span-3">
               <label for="supervisor" class="label">Supervisor</label>
-              <select name="supervisor" class="text-gray-900 border border-gray-300 rounded-lg shadow-sm bg-gray-50 sm:text-sm block w-full p-2.5 focus:ring-2 focus:ring-cyan-600/50 focus:border-cyan-600 focus:outline-none">
+              <select name="supervisor" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5">
                 <option disabled selected value>Choose Supervisor</option>
                 <?php foreach ($users as $data) : ?>
                   <option value="<?= $data['user_id'] ?>"><?= $data['first_name'] ?></option>
@@ -87,20 +87,20 @@ $users = $user->getUsers();
             </div>
             <div class="col-span-6 sm:col-span-3">
               <label for="duration" class="label">Duration</label>
-              <input type="number" name="duration" class="text-gray-900 border border-gray-300 rounded-lg shadow-sm bg-gray-50 sm:text-sm block w-full p-2.5 focus:ring-2 focus:ring-cyan-600/50 focus:border-cyan-600 focus:outline-none" placeholder="0" required>
+              <input type="number" name="duration" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="0" required>
             </div>
             <div class="col-span-6 sm:col-span-3">
               <label for="cipoints" class="label">CI Points Amount</label>
-              <input type="number" name="cipoints" class="text-gray-900 border border-gray-300 rounded-lg shadow-sm bg-gray-50 sm:text-sm block w-full p-2.5 focus:ring-2 focus:ring-cyan-600/50 focus:border-cyan-600 focus:outline-none" placeholder="0" required>
+              <input type="number" name="cipoints" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="0" required>
             </div>
             <div class="col-span-6">
               <label for="description" class="label">Description</label>
-              <textarea name="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-cyan-500 focus:border-cyan-500" placeholder="Description"></textarea>
+              <textarea name="description" rows="4" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="Description"></textarea>
             </div>
           </div>
         </div>
         <div class="items-center p-6 border-t border-gray-200 rounded-b">
-          <button type="submit" name="add" class="text-white bg-cyan-600 hover:bg-cyan-700 focus:ring-4 focus:ring-cyan-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Add activity</button>
+          <button type="submit" name="add" class="text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:ring-green-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Add activity</button>
         </div>
       </form>
     </div>

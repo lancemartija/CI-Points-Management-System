@@ -16,31 +16,31 @@
           <div class="grid grid-cols-6 gap-6">
             <div class="col-span-6 sm:col-span-3">
               <label for="firstname" class="label">First Name</label>
-              <input type="text" name="firstname" class="text-gray-900 border border-gray-300 rounded-lg shadow-sm bg-gray-50 sm:text-sm block w-full p-2.5 focus:ring-2 focus:ring-green-600/50 focus:border-green-600 focus:outline-none" placeholder="First Name" required>
+              <input type="text" name="firstname" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="First Name" required>
             </div>
             <div class="col-span-6 sm:col-span-3">
               <label for="firstname" class="label">Middle Name</label>
-              <input type="text" name="middlename" class="text-gray-900 border border-gray-300 rounded-lg shadow-sm bg-gray-50 sm:text-sm block w-full p-2.5 focus:ring-2 focus:ring-green-600/50 focus:border-green-600 focus:outline-none" placeholder="Middle Name" required>
+              <input type="text" name="middlename" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="Middle Name" required>
             </div>
             <div class="col-span-6 sm:col-span-3">
               <label for="lastname" class="label">Last Name</label>
-              <input type="text" name="lastname" class="text-gray-900 border border-gray-300 rounded-lg shadow-sm bg-gray-50 sm:text-sm block w-full p-2.5 focus:ring-2 focus:ring-green-600/50 focus:border-green-600 focus:outline-none" placeholder="Last Name" required>
+              <input type="text" name="lastname" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="Last Name" required>
             </div>
             <div class="col-span-6 sm:col-span-3">
               <label for="address" class="label">Address</label>
-              <input type="text" name="address" class="text-gray-900 border border-gray-300 rounded-lg shadow-sm bg-gray-50 sm:text-sm block w-full p-2.5 focus:ring-2 focus:ring-green-600/50 focus:border-green-600 focus:outline-none" placeholder="Address" required>
+              <input type="text" name="address" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="Address" required>
             </div>
             <div class="col-span-6 sm:col-span-3">
               <label for="contact" class="label">Contact Number</label>
-              <input type="tel" name="contact" class="text-gray-900 border border-gray-300 rounded-lg shadow-sm bg-gray-50 sm:text-sm block w-full p-2.5 focus:ring-2 focus:ring-green-600/50 focus:border-green-600 focus:outline-none" placeholder="09123456789" pattern="[0-9]{4}[0-9]{3}[0-9]{4}" required>
+              <input type="tel" name="contact" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="09123456789" pattern="[0-9]{4}[0-9]{3}[0-9]{4}" required>
             </div>
             <div class="col-span-6 sm:col-span-3">
               <label for="department" class="label">Department</label>
-              <input type="text" name="department" class="text-gray-900 border border-gray-300 rounded-lg shadow-sm bg-gray-50 sm:text-sm block w-full p-2.5 focus:ring-2 focus:ring-green-600/50 focus:border-green-600 focus:outline-none" placeholder="Department" required>
+              <input type="text" name="department" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="Department" required>
             </div>
             <div class="col-span-6 sm:col-span-3">
               <label for="division" class="label">Division</label>
-              <select name="division" class="text-gray-900 border border-gray-300 rounded-lg shadow-sm bg-gray-50 sm:text-sm block w-full p-2.5 focus:ring-2 focus:ring-green-600/50 focus:border-green-600 focus:outline-none">
+              <select name="division" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5">
                 <option disabled selected value>Choose Division</option>
                 <option value="Integrated School">Integrated School</option>
                 <option value="College">College</option>
@@ -49,7 +49,7 @@
             </div>
             <div class="col-span-6 sm:col-span-3">
               <label for="status" class="label">Status</label>
-              <select name="status" class="text-gray-900 border border-gray-300 rounded-lg shadow-sm bg-gray-50 sm:text-sm block w-full p-2.5 focus:ring-2 focus:ring-green-600/50 focus:border-green-600 focus:outline-none">
+              <select name="status" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5">
                 <option disabled selected value>Choose Status</option>
                 <option value="Active">Active</option>
                 <option value="Inactive">Inactive</option>
@@ -57,19 +57,19 @@
             </div>
             <div class="col-span-6 sm:col-span-3">
               <label for="email" class="label">Email</label>
-              <input type="email" name="email" class="text-gray-900 border border-gray-300 rounded-lg shadow-sm bg-gray-50 sm:text-sm block w-full p-2.5 focus:ring-2 focus:ring-green-600/50 focus:border-green-600 focus:outline-none" placeholder="example@dlsl.edu.ph" required>
+              <input type="email" name="email" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="example@dlsl.edu.ph" required>
             </div>
             <div class="col-span-6 sm:col-span-3">
               <label for="password" class="label">Password</label>
-              <input type="password" name="password" class="text-gray-900 border border-gray-300 rounded-lg shadow-sm bg-gray-50 sm:text-sm block w-full p-2.5 focus:ring-2 focus:ring-green-600/50 focus:border-green-600 focus:outline-none" placeholder="••••••••" required>
+              <input type="password" name="password" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="••••••••" required>
             </div>
             <div class="col-span-6 sm:col-span-3">
               <label for="passwordRepeat" class="label">Confirm Password</label>
-              <input type="password" name="passwordRepeat" class="text-gray-900 border border-gray-300 rounded-lg shadow-sm bg-gray-50 sm:text-sm block w-full p-2.5 focus:ring-2 focus:ring-green-600/50 focus:border-green-600 focus:outline-none" placeholder="••••••••" required>
+              <input type="password" name="passwordRepeat" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="••••••••" required>
             </div>
             <div class="col-span-6 sm:col-span-3">
               <label for="type" class="label">Account Type</label>
-              <select name="type" class="text-gray-900 border border-gray-300 rounded-lg shadow-sm bg-gray-50 sm:text-sm block w-full p-2.5 focus:ring-2 focus:ring-green-600/50 focus:border-green-600 focus:outline-none">
+              <select name="type" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5">
                 <option disabled selected value>Choose Account Type</option>
                 <option value="Admin">Administrator</option>
                 <option value="User">User</option>
