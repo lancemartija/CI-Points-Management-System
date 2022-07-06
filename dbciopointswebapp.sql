@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 06, 2022 at 06:01 PM
+-- Generation Time: Jul 06, 2022 at 07:11 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -32,6 +32,14 @@ CREATE TABLE `academic_year` (
   `year` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `academic_year`
+--
+
+INSERT INTO `academic_year` (`ay_id`, `year`) VALUES
+(2, '2022-2023'),
+(3, '2023-2024');
+
 -- --------------------------------------------------------
 
 --
@@ -50,6 +58,8 @@ CREATE TABLE `ci_activity` (
   `duration` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
   `ci_points` int(11) NOT NULL,
+  `ay_id` int(11) DEFAULT NULL,
+  `semester` varchar(255) NOT NULL,
   `date_created` timestamp NOT NULL DEFAULT current_timestamp(),
   `date_updated` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -58,11 +68,11 @@ CREATE TABLE `ci_activity` (
 -- Dumping data for table `ci_activity`
 --
 
-INSERT INTO `ci_activity` (`activity_id`, `title`, `date`, `venue`, `department`, `division`, `description`, `type`, `duration`, `user_id`, `ci_points`, `date_created`, `date_updated`) VALUES
-(1, 'test', '2022-07-12', 'test', 'test', 'Integrated School', 'test', 'Internal', 6, 5, 5, '2022-07-06 03:04:36', '2022-07-06 03:04:36'),
-(2, 'blob', '2022-07-18', 'lipa batangas', 'CITE', 'Integrated School', 'to create baked mac', 'CIO Sponsored', 6, 1, 5, '2022-07-06 03:06:08', '2022-07-06 03:06:08'),
-(3, 'Book Reading', '2022-07-14', 'Nexus Labs', 'CITE', 'College', 'Reading books with students', 'CIO Sponsored', 3, 1, 1, '2022-07-06 07:11:12', '2022-07-06 07:11:12'),
-(4, 'test', '2022-07-07', 'test', 'test', 'College', 'test', 'External Engagement', 3, 5, 3, '2022-07-06 13:42:04', '2022-07-06 13:42:04');
+INSERT INTO `ci_activity` (`activity_id`, `title`, `date`, `venue`, `department`, `division`, `description`, `type`, `duration`, `user_id`, `ci_points`, `ay_id`, `semester`, `date_created`, `date_updated`) VALUES
+(1, 'test', '2022-07-12', 'test', 'test', 'Integrated School', 'test', 'Internal', 6, 5, 5, NULL, '', '2022-07-06 03:04:36', '2022-07-06 03:04:36'),
+(2, 'blob', '2022-07-18', 'lipa batangas', 'CITE', 'Integrated School', 'to create baked mac', 'CIO Sponsored', 6, 1, 5, NULL, '', '2022-07-06 03:06:08', '2022-07-06 03:06:08'),
+(3, 'Book Reading', '2022-07-14', 'Nexus Labs', 'CITE', 'College', 'Reading books with students', 'CIO Sponsored', 3, 1, 1, NULL, '', '2022-07-06 07:11:12', '2022-07-06 07:11:12'),
+(4, 'test', '2022-07-07', 'test', 'test', 'College', 'test', 'External Engagement', 3, 5, 3, NULL, '', '2022-07-06 13:42:04', '2022-07-06 13:42:04');
 
 -- --------------------------------------------------------
 
@@ -178,7 +188,8 @@ ALTER TABLE `academic_year`
 --
 ALTER TABLE `ci_activity`
   ADD PRIMARY KEY (`activity_id`),
-  ADD KEY `fk_activity_user` (`user_id`);
+  ADD KEY `fk_activity_user` (`user_id`),
+  ADD KEY `fk_activity_ay` (`ay_id`);
 
 --
 -- Indexes for table `user`
@@ -225,7 +236,7 @@ ALTER TABLE `user_request_status`
 -- AUTO_INCREMENT for table `academic_year`
 --
 ALTER TABLE `academic_year`
-  MODIFY `ay_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ay_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `ci_activity`
@@ -271,6 +282,7 @@ ALTER TABLE `user_request_status`
 -- Constraints for table `ci_activity`
 --
 ALTER TABLE `ci_activity`
+  ADD CONSTRAINT `fk_activity_ay` FOREIGN KEY (`ay_id`) REFERENCES `academic_year` (`ay_id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_activity_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
