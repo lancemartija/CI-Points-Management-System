@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 06, 2022 at 05:19 AM
+-- Generation Time: Jul 06, 2022 at 09:12 AM
 -- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -38,7 +38,7 @@ CREATE TABLE `ci_activity` (
   `type` varchar(255) NOT NULL,
   `duration` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
-  `max_ci_points` int(11) NOT NULL,
+  `ci_points` int(11) NOT NULL,
   `date_created` timestamp NOT NULL DEFAULT current_timestamp(),
   `date_updated` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -47,9 +47,10 @@ CREATE TABLE `ci_activity` (
 -- Dumping data for table `ci_activity`
 --
 
-INSERT INTO `ci_activity` (`activity_id`, `title`, `date`, `venue`, `department`, `division`, `description`, `type`, `duration`, `user_id`, `max_ci_points`, `date_created`, `date_updated`) VALUES
+INSERT INTO `ci_activity` (`activity_id`, `title`, `date`, `venue`, `department`, `division`, `description`, `type`, `duration`, `user_id`, `ci_points`, `date_created`, `date_updated`) VALUES
 (1, 'test', '2022-07-12', 'test', 'test', 'Integrated School', 'test', 'Internal', 6, 5, 5, '2022-07-06 03:04:36', '2022-07-06 03:04:36'),
-(2, 'blob', '2022-07-18', 'lipa batangas', 'CITE', 'Integrated School', 'to create baked mac', 'CIO Sponsored', 6, 1, 5, '2022-07-06 03:06:08', '2022-07-06 03:06:08');
+(2, 'blob', '2022-07-18', 'lipa batangas', 'CITE', 'Integrated School', 'to create baked mac', 'CIO Sponsored', 6, 1, 5, '2022-07-06 03:06:08', '2022-07-06 03:06:08'),
+(3, 'Book Reading', '2022-07-14', 'Nexus Labs', 'CITE', 'College', 'Reading books with students', 'CIO Sponsored', 3, 1, 1, '2022-07-06 07:11:12', '2022-07-06 07:11:12');
 
 -- --------------------------------------------------------
 
@@ -80,6 +81,7 @@ CREATE TABLE `user` (
   `contact_number` varchar(255) NOT NULL,
   `department` varchar(255) NOT NULL,
   `division` varchar(255) NOT NULL,
+  `status` varchar(255) NOT NULL,
   `date_created` timestamp NOT NULL DEFAULT current_timestamp(),
   `date_updated` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -88,9 +90,10 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `first_name`, `middle_name`, `last_name`, `address`, `email`, `password`, `contact_number`, `department`, `division`, `date_created`, `date_updated`) VALUES
-(1, 'Juan', 'Bayani', 'Dela Cruz', 'Barangay Mabuti, Batangas City', 'test@email.com', '$2y$10$EbURcrgrD62IjGUM.x.eMugX5lcd8UwZw5c/L.iJTRlSnutpThox.', '09123456789', '', '', '2022-06-21 09:27:59', '2022-06-21 09:28:47'),
-(5, 'alistaire rafael', 'malabanan', 'carandang', 'Bilogbilog Tanauan City batangas', 'alistaire024@gmail.com', '$2y$10$.OGcjsAnAfopABmLaCVo/u9Ts6blIM.CBefcEweBctOOUIqFh.lJ2', '09568423162', '', '', '2022-07-05 11:40:22', '2022-07-05 11:40:55');
+INSERT INTO `user` (`user_id`, `first_name`, `middle_name`, `last_name`, `address`, `email`, `password`, `contact_number`, `department`, `division`, `status`, `date_created`, `date_updated`) VALUES
+(1, 'Juan', 'Bayani', 'Dela Cruz', 'Barangay Mabuti, Batangas City', 'test@email.com', '$2y$10$EbURcrgrD62IjGUM.x.eMugX5lcd8UwZw5c/L.iJTRlSnutpThox.', '09123456789', '', '', '', '2022-06-21 09:27:59', '2022-06-21 09:28:47'),
+(5, 'alistaire rafael', 'malabanan', 'carandang', 'Bilogbilog Tanauan City batangas', 'alistaire024@gmail.com', '$2y$10$.OGcjsAnAfopABmLaCVo/u9Ts6blIM.CBefcEweBctOOUIqFh.lJ2', '09568423162', '', '', '', '2022-07-05 11:40:22', '2022-07-05 11:40:55'),
+(6, 'lance', 'gomez', 'martija', 'bahay', 'test1@email.com', '$2y$10$VF5VMdenF.WPsK5MltTUc.Bl3XLqWb0N.2oObk8PUq2TpetJ2ckii', '1203980123', 'CITE', 'College', 'Active', '2022-07-06 07:11:56', '2022-07-06 07:11:56');
 
 -- --------------------------------------------------------
 
@@ -220,7 +223,7 @@ ALTER TABLE `user_request_status`
 -- AUTO_INCREMENT for table `ci_activity`
 --
 ALTER TABLE `ci_activity`
-  MODIFY `activity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `activity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `role`
@@ -232,7 +235,7 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user_activity_history`
