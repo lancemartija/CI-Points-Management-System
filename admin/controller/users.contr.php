@@ -13,8 +13,9 @@ class AddUserContr extends AddUser
     private $department;
     private $division;
     private $status;
+    private $type;
 
-    public function __construct($fname, $mname, $lname, $address, $email, $password, $passwordRepeat, $contact, $department, $division, $status)
+    public function __construct($fname, $mname, $lname, $address, $email, $password, $passwordRepeat, $contact, $department, $division, $status, $type)
     {
         $this->fname = $fname;
         $this->mname = $mname;
@@ -27,6 +28,7 @@ class AddUserContr extends AddUser
         $this->department = $department;
         $this->division = $division;
         $this->status = $status;
+        $this->type = $type;
     }
 
     public function addUser()
@@ -55,12 +57,12 @@ class AddUserContr extends AddUser
             exit;
         }
 
-        $this->setUser($this->fname, $this->mname, $this->lname, $this->address, $this->email, $this->password, $this->contact, $this->department, $this->division, $this->status);
+        $this->setUser($this->fname, $this->mname, $this->lname, $this->address, $this->email, $this->password, $this->contact, $this->department, $this->division, $this->status, $this->type);
     }
 
     private function Isempty()
     {
-        if (empty($this->fname) || empty($this->mname) || empty($this->lname) || empty($this->address) || empty($this->email) || empty($this->password) || empty($this->passwordRepeat) || empty($this->contact) || empty($this->department) || empty($this->division) || empty($this->status)) {
+        if (empty($this->fname) || empty($this->mname) || empty($this->lname) || empty($this->address) || empty($this->email) || empty($this->password) || empty($this->passwordRepeat) || empty($this->contact) || empty($this->department) || empty($this->division) || empty($this->status) || empty($this->type)) {
             return false;
         }
         return true;
@@ -117,8 +119,9 @@ class EditUserContr extends EditUser
     private $department;
     private $division;
     private $status;
+    private $type;
 
-    public function __construct($id, $fname, $mname, $lname, $address, $email, $contact, $department, $division, $status)
+    public function __construct($id, $fname, $mname, $lname, $address, $email, $contact, $department, $division, $status, $type)
     {
         $this->id = $id;
         $this->fname = $fname;
@@ -130,6 +133,7 @@ class EditUserContr extends EditUser
         $this->department = $department;
         $this->division = $division;
         $this->status = $status;
+        $this->type = $type;
     }
 
     public function edit()
@@ -144,11 +148,11 @@ class EditUserContr extends EditUser
             exit;
         }
 
-        $this->editUser($this->id, $this->fname, $this->mname, $this->lname, $this->address, $this->email, $this->contact, $this->department, $this->division, $this->status);
+        $this->editUser($this->id, $this->fname, $this->mname, $this->lname, $this->address, $this->email, $this->contact, $this->department, $this->division, $this->status, $this->type);
     }
     private function Isempty()
     {
-        if (empty($this->id) || empty($this->fname) || empty($this->mname) || empty($this->lname) || empty($this->address) || empty($this->email || empty($this->contact) || empty($this->department) || empty($this->division) || empty($this->status))) {
+        if (empty($this->id) || empty($this->fname) || empty($this->mname) || empty($this->lname) || empty($this->address) || empty($this->email || empty($this->contact) || empty($this->department) || empty($this->division) || empty($this->status) || empty($this->type))) {
             return false;
         }
         return true;

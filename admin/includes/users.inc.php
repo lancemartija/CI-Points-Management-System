@@ -12,12 +12,13 @@ if (isset($_POST['add'])) {
     $department = trim($_POST['department']);
     $division = trim($_POST['division']);
     $status = trim($_POST['status']);
+    $type = trim($_POST['type']);
 
     include '../database/database.php';
     include '../model/users.model.php';
     include '../controller/users.contr.php';
 
-    $AddUser = new AddUserContr($fname, $mname, $lname, $address, $email, $password, $passwordRepeat, $contact, $department, $division, $status);
+    $AddUser = new AddUserContr($fname, $mname, $lname, $address, $email, $password, $passwordRepeat, $contact, $department, $division, $status, $type);
 
     $AddUser->addUser();
 
@@ -35,12 +36,13 @@ if (isset($_POST['edit'])) {
     $department = trim($_POST['department']);
     $division = trim($_POST['division']);
     $status = trim($_POST['status']);
+    $type = trim($_POST['type']);
 
     include '../database/database.php';
     include '../model/users.model.php';
     include '../controller/users.contr.php';
 
-    $UserEdit = new EditUserContr($id, $fname, $mname, $lname, $address, $email, $contact, $department, $division, $status);
+    $UserEdit = new EditUserContr($id, $fname, $mname, $lname, $address, $email, $contact, $department, $division, $status, $type);
     $UserEdit->edit();
 
     header("location: ../view/users.php?status=UserInputSuccess");
