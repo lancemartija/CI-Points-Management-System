@@ -60,20 +60,20 @@
               <input type="email" name="email" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="example@dlsl.edu.ph" required>
             </div>
             <div class="col-span-6 sm:col-span-3">
-              <label for="password" class="label">Password</label>
-              <input type="password" name="password" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="••••••••" required>
-            </div>
-            <div class="col-span-6 sm:col-span-3">
-              <label for="passwordRepeat" class="label">Confirm Password</label>
-              <input type="password" name="passwordRepeat" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="••••••••" required>
-            </div>
-            <div class="col-span-6 sm:col-span-3">
               <label for="type" class="label">Account Type</label>
               <select name="type" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5">
                 <option disabled selected value>Choose Account Type</option>
                 <option value="Admin">Administrator</option>
                 <option value="User">User</option>
               </select>
+            </div>
+            <div class="col-span-6 sm:col-span-3">
+              <label for="password" class="label">Password</label>
+              <input type="password" name="password" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="••••••••" required>
+            </div>
+            <div class="col-span-6 sm:col-span-3">
+              <label for="passwordRepeat" class="label">Confirm Password</label>
+              <input type="password" name="passwordRepeat" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="••••••••" required>
             </div>
           </div>
         </div>
