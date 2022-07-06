@@ -107,7 +107,7 @@
 
         include_once '../pages/users/tabledata.php';
         include_once '../pages/users/addmodal.php';
-        // include_once '../pages/users/edit.php';
+        include_once '../pages/users/editmodal.php';
       }
       ?>
     </main>
