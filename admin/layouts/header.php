@@ -8,6 +8,9 @@
   <title><?= $data['title']; ?></title>
   <link rel="stylesheet" href="<?= $data['dir']; ?>src/css/style.css?<?= time(); ?>">
   <script async defer src="<?= $data['dir']; ?>src/js/togglemodal.js"></script>
+  <?php if (isset($data['modal'])) { ?>
+    <script async defer src="<?= $data['dir']; ?>src/js/<?= $data['modal']; ?>.js"></script>
+  <?php } ?>
 </head>
 
 <body>
