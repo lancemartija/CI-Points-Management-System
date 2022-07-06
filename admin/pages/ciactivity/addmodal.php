@@ -1,7 +1,6 @@
 <?php
 class DisplayUsers extends Dbh
 {
-
   public function getUsers()
   {
     $sql = 'SELECT * FROM user;';
@@ -20,10 +19,30 @@ class DisplayUsers extends Dbh
     $stmt = null;
     return $result;
   }
+
+  public function getYears()
+  {
+    $sql = 'SELECT * FROM academic_year;';
+    $stmt = $this->connect()->query($sql);
+    $result = 0;
+
+    if (!$stmt) {
+      $stmt = null;
+      exit;
+    }
+
+    while ($row = $stmt->fetchAll(PDO::FETCH_ASSOC)) {
+      $result = $row;
+    }
+
+    $stmt = null;
+    return $result;
+  }
 }
 
-$user = new DisplayUsers();
-$users = $user->getUsers();
+$display = new DisplayUsers();
+$users = $display->getUsers();
+$years = $display->getYears();
 ?>
 
 <div class="fixed left-0 right-0 z-50 items-center justify-center hidden overflow-x-hidden overflow-y-auto bg-gray-900/50 top-4 md:inset-0 h-modal sm:h-full" id="addmodal" aria-modal="true" role="dialog">
@@ -92,6 +111,24 @@ $users = $user->getUsers();
             <div class="col-span-6 sm:col-span-3">
               <label for="cipoints" class="label">CI Points Amount</label>
               <input type="number" name="cipoints" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="0" required>
+            </div>
+            <div class="col-span-6 sm:col-span-3">
+              <label for="year" class="label">Academic Year</label>
+              <select name="year" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5">
+                <option disabled selected value>Choose Academic Year</option>
+                <?php foreach ($years as $data) : ?>
+                  <option value="<?= $data['ay_id'] ?>"><?= $data['year'] ?></option>
+                <?php endforeach; ?>
+              </select>
+            </div>
+            <div class="col-span-6 sm:col-span-3">
+              <label for="semester" class="label">Semester</label>
+              <select name="semester" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5">
+                <option disabled selected value>Choose Academic Year</option>
+                <option value="First Semester">First Semester</option>
+                <option value="Second Semester">Second Semester</option>
+                <option value="Summer">Summer</option>
+              </select>
             </div>
             <div class="col-span-6">
               <label for="description" class="label">Description</label>

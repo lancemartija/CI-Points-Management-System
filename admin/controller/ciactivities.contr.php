@@ -12,8 +12,10 @@ class CIActivityContr extends CIActivities
     private $duration;
     private $supervisor;
     private $cipoints;
+    private $year;
+    private $semester;
 
-    public function __construct($title, $date, $venue, $department, $division, $description, $type, $duration, $supervisor, $cipoints)
+    public function __construct($title, $date, $venue, $department, $division, $description, $type, $duration, $supervisor, $cipoints, $year, $semester)
     {
         $this->title = $title;
         $this->date = $date;
@@ -25,6 +27,8 @@ class CIActivityContr extends CIActivities
         $this->duration = $duration;
         $this->supervisor = $supervisor;
         $this->cipoints = $cipoints;
+        $this->year = $year;
+        $this->semester = $semester;
     }
 
     public function AddActivities()
@@ -34,13 +38,13 @@ class CIActivityContr extends CIActivities
             exit;
         }
 
-        $this->setActivity($this->title, $this->date, $this->venue, $this->department, $this->division, $this->description, $this->type, $this->duration, $this->supervisor, $this->cipoints);
+        $this->setActivity($this->title, $this->date, $this->venue, $this->department, $this->division, $this->description, $this->type, $this->duration, $this->supervisor, $this->cipoints, $this->year, $this->semester);
     }
 
 
     private function isEmpty()
     {
-        if (empty($this->title) || empty($this->date) || empty($this->venue) || empty($this->department) || empty($this->division) || empty($this->supervisor) || empty($this->type) || empty($this->duration) || empty($this->cipoints)) {
+        if (empty($this->title) || empty($this->date) || empty($this->venue) || empty($this->department) || empty($this->division) || empty($this->supervisor) || empty($this->type) || empty($this->duration) || empty($this->cipoints) || empty($this->year) || empty($this->semester)) {
             return false;
         }
 
@@ -61,8 +65,10 @@ class EditActivityContr extends EditActivity
     private $type;
     private $duration;
     private $cipoints;
+    private $year;
+    private $semester;
 
-    public function __construct($id, $title, $date, $venue, $department, $division, $description, $type, $duration, $supervisor, $cipoints)
+    public function __construct($id, $title, $date, $venue, $department, $division, $description, $type, $duration, $supervisor, $cipoints, $year, $semester)
     {
         $this->id = $id;
         $this->title = $title;
@@ -75,6 +81,8 @@ class EditActivityContr extends EditActivity
         $this->duration = $duration;
         $this->supervisor = $supervisor;
         $this->cipoints = $cipoints;
+        $this->year = $year;
+        $this->semester = $semester;
     }
 
     public function EditActivity()
@@ -84,12 +92,12 @@ class EditActivityContr extends EditActivity
             exit;
         }
 
-        $this->setActivity($this->id, $this->title, $this->date, $this->venue, $this->department, $this->division, $this->description, $this->type, $this->duration, $this->supervisor, $this->cipoints);
+        $this->setActivity($this->id, $this->title, $this->date, $this->venue, $this->department, $this->division, $this->description, $this->type, $this->duration, $this->supervisor, $this->cipoints, $this->year, $this->semester);
     }
 
     private function isEmpty()
     {
-        if (empty($this->title) || empty($this->date) || empty($this->venue) || empty($this->type) || empty($this->duration) || empty($this->supervisor) || empty($this->cipoints)) {
+        if (empty($this->title) || empty($this->date) || empty($this->venue) || empty($this->type) || empty($this->duration) || empty($this->supervisor) || empty($this->cipoints) || empty($this->year) || empty($this->semester)) {
             return false;
         }
 

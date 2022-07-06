@@ -11,12 +11,14 @@ if (isset($_POST['add'])) {
     $duration = $_POST['duration'];
     $supervisor = $_POST['supervisor'];
     $cipoints = $_POST['cipoints'];
+    $year = $_POST['year'];
+    $semester = $_POST['semester'];
 
     include_once '../database/database.php';
     include_once '../model/ciactivities.model.php';
     include_once '../controller/ciactivities.contr.php';
 
-    $AddActivity = new CIActivityContr($title, $date, $venue, $department, $division, $description, $type, $duration, $supervisor, $cipoints);
+    $AddActivity = new CIActivityContr($title, $date, $venue, $department, $division, $description, $type, $duration, $supervisor, $cipoints, $year, $semester);
     $AddActivity->AddActivities();
 
     header('Location: ../view/ciactivities.php?success=addedsuccessfully');
@@ -35,12 +37,14 @@ if (isset($_POST['edit'])) {
     $duration = $_POST['duration'];
     $supervisor = $_POST['supervisor'];
     $cipoints = $_POST['cipoints'];
+    $year = $_POST['year'];
+    $semester = $_POST['semester'];
 
     include_once '../database/database.php';
     include_once '../model/ciactivities.model.php';
     include_once '../controller/ciactivities.contr.php';
 
-    $EditActivity = new EditActivityContr($id, $title, $date, $venue, $department, $division, $description, $type, $duration, $supervisor, $cipoints);
+    $EditActivity = new EditActivityContr($id, $title, $date, $venue, $department, $division, $description, $type, $duration, $supervisor, $cipoints, $year, $semester);
     $EditActivity->EditActivity();
 
     header('Location: ../view/ciactivities.php?success=editedsuccessfully');

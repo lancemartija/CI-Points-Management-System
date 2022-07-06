@@ -17,7 +17,7 @@ class DisplayActivity extends Dbh
 {
     public function getActivity()
     {
-        $sql = 'SELECT DISTINCT ci.activity_id, ci.title, ci.date, ci.venue, ci.department, ci.division, ci.description, ci.type, ci.duration, ci.ci_points, u.first_name, u.middle_name, u.last_name FROM ci_activity ci, user u WHERE ci.user_id = u.user_id;';
+        $sql = 'SELECT DISTINCT ci.activity_id, ci.title, ci.date, ci.venue, ci.department, ci.division, ci.description, ci.type, ci.duration, ci.ci_points, ay.year, ci.semester, u.first_name, u.middle_name, u.last_name FROM ci_activity ci, user u, academic_year ay WHERE ci.user_id = u.user_id AND ci.ay_id = ay.ay_id;';
         $stmt = $this->connect()->prepare($sql);
 
         if (!$stmt->execute()) {
