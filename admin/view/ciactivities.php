@@ -13,9 +13,9 @@ if (!isset($_SESSION['userid'])) {
 
 include_once '../database/database.php';
 
-class DisplayUsers extends Dbh
+class DisplayActivity extends Dbh
 {
-    public function getUser()
+    public function getActivity()
     {
         $sql = 'SELECT * FROM ci_activity;';
         $stmt = $this->connect()->prepare($sql);
@@ -54,8 +54,8 @@ class DisplayUsers extends Dbh
 }
 
 
-$display = new DisplayUsers();
-$records = $display->getUser();
+$display = new DisplayActivity();
+$records = $display->getActivity();
 
 include_once '../layouts/header.php';
 include_once '../layouts/navbar.php';
