@@ -81,6 +81,8 @@
       <!-- END OF HEADER -->
 
       <?php
+      include_once '../pages/ciactivity/addmodal.php';
+
       if (!empty($records)) {
         if (isset($_GET['search']) && !empty(trim($_GET['search']))) {
           $query = $_GET['search'];
