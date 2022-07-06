@@ -20,6 +20,9 @@
               <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase">
                 Status
               </th>
+              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase">
+                Type
+              </th>
               <th scope="col" class="p-4">
               </th>
             </tr>
@@ -41,6 +44,7 @@
                 <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap"><?= $data['division']; ?></td>
                 <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap"><?= $data['address']; ?></td>
                 <td class="p-4 text-base font-normal text-gray-900 whitespace-nowrap"><?= $data['status'] ?></td>
+                <td class="p-4 text-base font-normal text-gray-900 whitespace-nowrap"><?= $data['type'] ?></td>
                 <td class="p-4 space-x-2 whitespace-nowrap">
                   <a href="../view/editUser.php?id=<?= $data['user_id']; ?>" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-cyan-600 hover:bg-cyan-700 focus:ring-4 focus:ring-cyan-200">
                     <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
