@@ -11,7 +11,7 @@ class AddUser extends Dbh
 
         if (!$stmt->execute([$fname, $mname, $lname, $address, $email, $hashedpwd, $contact, $department, $division, $status, $type])) {
             $stmt = null;
-            header("Location: ../view/addUser.php?error=stmtfailed");
+            header("Location: ../view/users.php?error=stmtfailed");
             exit;
         }
 
