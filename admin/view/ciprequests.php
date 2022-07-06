@@ -11,11 +11,11 @@ if (!isset($_SESSION['userid'])) {
     exit;
 }
 include_once '../database/database.php';
-// require_once('../layouts/header.php');
-// require_once('../layouts/navbar.php');
-// require_once('../layouts/sidebar.php');
-// require_once('../pages/ciprequests/main.php');
-// require_once('../layouts/footer.php');
+// include_once '../layouts/header.php';
+// include_once '../layouts/navbar.php';
+// include_once '../layouts/sidebar.php';
+// include_once '../pages/ciprequests/main.php';
+// include_once '../layouts/footer.php';
 
 
 
@@ -62,5 +62,3 @@ $records = $display->getData();
 </table>
 
 <button type="button" onclick="location.href='../view/dashboard.php'">Back</button>
-
-

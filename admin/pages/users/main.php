@@ -100,7 +100,7 @@
           }
         }
 
-        require_once('../pages/users/tabledata.php');
+        include_once '../pages/users/tabledata.php';
       }
       ?>
     </main>

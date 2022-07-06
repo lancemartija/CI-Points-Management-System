@@ -11,8 +11,8 @@ if (!isset($_SESSION['userid'])) {
     exit;
 }
 
-require_once('../layouts/header.php');
-require_once('../layouts/navbar.php');
-require_once('../layouts/sidebar.php');
-// require_once('../layouts/main.php');
-require_once('../layouts/footer.php');
+include_once '../layouts/header.php';
+include_once '../layouts/navbar.php';
+include_once '../layouts/sidebar.php';
+// include_once '../layouts/main.php';
+include_once '../layouts/footer.php';

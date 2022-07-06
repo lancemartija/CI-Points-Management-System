@@ -4,7 +4,7 @@ $data = [
   'title' => 'admin',
   'dir' => '../'
 ];
-require_once("layouts/header.php");
+include_once "layouts/header.php";
 ?>
 
 <main class="bg-gray-50">
@@ -43,4 +43,4 @@ require_once("layouts/header.php");
   </div>
 </main>
 
-<?php require_once("layouts/footer.php"); ?>
+<?php include_once "layouts/footer.php"); ?>
