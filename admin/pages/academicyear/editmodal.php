@@ -1,9 +1,9 @@
 <div class="fixed left-0 right-0 z-50 items-center justify-center hidden overflow-x-hidden overflow-y-auto bg-gray-900/50 top-4 md:inset-0 h-modal sm:h-full" id="editmodal" aria-modal="true" role="dialog">
-  <div class="relative w-full h-full max-w-2xl px-4 md:h-auto">
+  <div class="relative w-full h-full max-w-sm px-4 md:h-auto">
     <div class="relative bg-white rounded-lg shadow">
       <div class="flex items-start justify-between p-5 border-b rounded-t">
         <h3 class="text-xl font-semibold">
-          Add new academic year
+          Edit academic year
         </h3>
         <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center" data-close-button>
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
