@@ -1,8 +1,8 @@
 <?php
 $data = [
-  'title' => 'Users',
+  'title' => 'Academic Year',
   'dir' => '../../',
-  'modal' => 'editusermodal'
+  'modal' => 'yearmodal'
 ];
 
 session_start();
@@ -14,11 +14,11 @@ if (!isset($_SESSION['userid'])) {
 
 include_once '../database/database.php';
 
-class DisplayUsers extends Dbh
+class DisplayYear extends Dbh
 {
-  public function getUser()
+  public function getYear()
   {
-    $sql = 'SELECT * FROM user;';
+    $sql = 'SELECT * FROM academic_year;';
     $stmt = $this->connect()->prepare($sql);
 
     if (!$stmt->execute()) {
@@ -32,10 +32,10 @@ class DisplayUsers extends Dbh
 
   public function getSearchData($query)
   {
-    $stmt = $this->connect()->prepare('SELECT * FROM user WHERE first_name = ? OR middle_name = ? OR last_name = ? OR department = ? OR status = ?;');
+    $stmt = $this->connect()->prepare('SELECT * FROM academic_year WHERE year = ?;');
     $result = 0;
 
-    if (!$stmt->execute([$query, $query, $query, $query, $query])) {
+    if (!$stmt->execute([$query])) {
       $stmt = null;
       exit;
     }
@@ -54,12 +54,11 @@ class DisplayUsers extends Dbh
   }
 }
 
-
-$display = new DisplayUsers();
-$records = $display->getUser();
+$display = new DisplayYear();
+$records = $display->getYear();
 
 include_once '../layouts/header.php';
 include_once '../layouts/navbar.php';
 include_once '../layouts/sidebar.php';
-include_once '../pages/users/main.php';
+include_once '../pages/academicyear/main.php';
 include_once '../layouts/footer.php';

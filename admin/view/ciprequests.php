@@ -1,56 +1,56 @@
 <?php
 $data = [
-    'title' => 'CIP Requests',
-    'dir' => '../../'
+  'title' => 'CIP Requests',
+  'dir' => '../../'
 ];
 
 session_start();
 
 if (!isset($_SESSION['userid'])) {
-    header('Location: ../../index.php');
-    exit;
+  header('Location: ../../index.php');
+  exit;
 }
 
 include_once '../database/database.php';
 
 class DisplayUsers extends Dbh
 {
-    public function getUser()
-    {
-        $sql = 'SELECT * FROM user_request;';
-        $stmt = $this->connect()->prepare($sql);
+  public function getUser()
+  {
+    $sql = 'SELECT * FROM user_request;';
+    $stmt = $this->connect()->prepare($sql);
 
-        if (!$stmt->execute()) {
-            $stmt = null;
-            exit;
-        }
-
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        return $result;
+    if (!$stmt->execute()) {
+      $stmt = null;
+      exit;
     }
 
-    // public function getSearchData($query)
-    // {
-    //     $stmt = $this->connect()->prepare('SELECT * FROM user_request WHERE title = ? OR department = ? OR type = ?;');
-    //     $result = 0;
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+  }
 
-    //     if (!$stmt->execute([$query, $query, $query])) {
-    //         $stmt = null;
-    //         exit;
-    //     }
+  // public function getSearchData($query)
+  // {
+  //     $stmt = $this->connect()->prepare('SELECT * FROM user_request WHERE title = ? OR department = ? OR type = ?;');
+  //     $result = 0;
 
-    //     if ($stmt->rowCount() == 0) {
-    //         $stmt = null;
-    //         return $result;
-    //     }
+  //     if (!$stmt->execute([$query, $query, $query])) {
+  //         $stmt = null;
+  //         exit;
+  //     }
 
-    //     while ($row = $stmt->fetchAll(PDO::FETCH_ASSOC)) {
-    //         $result = $row;
-    //     }
+  //     if ($stmt->rowCount() == 0) {
+  //         $stmt = null;
+  //         return $result;
+  //     }
 
-    //     $stmt = null;
-    //     return $result;
-    // }
+  //     while ($row = $stmt->fetchAll(PDO::FETCH_ASSOC)) {
+  //         $result = $row;
+  //     }
+
+  //     $stmt = null;
+  //     return $result;
+  // }
 }
 
 

@@ -1,14 +1,14 @@
 <?php
 $data = [
-    'title' => 'Reports',
-    'dir' => '../../'
+  'title' => 'Reports',
+  'dir' => '../../'
 ];
 
 session_start();
 
 if (!isset($_SESSION['userid'])) {
-    header('Location: ../../index.php');
-    exit;
+  header('Location: ../../index.php');
+  exit;
 }
 
 include_once '../layouts/header.php';
