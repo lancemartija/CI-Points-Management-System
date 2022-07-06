@@ -33,34 +33,34 @@ class AddUserContr extends AddUser
 
     public function addUser()
     {
-        if ($this->Isempty() == false) {
-            header("Location: ../view/addUser.php?error=emptyinput");
+        if ($this->isEmpty() == false) {
+            header("Location: ../view/users.php?error=emptyinput");
             exit;
         }
 
         if ($this->invalidEmail() == false) {
-            header("Location: ../view/addUser.php?error=InvalidEmail");
+            header("Location: ../view/users.php?error=InvalidEmail");
             exit;
         }
 
         if ($this->pwdMatch() == false) {
-            header("Location: ../view/addUser.php?error=PwdnotMatch");
+            header("Location: ../view/users.php?error=PwdnotMatch");
             exit;
         }
         if ($this->emailTakenCheck() == false) {
-            header("Location: ../view/addUser.php?error=EmailTaken");
+            header("Location: ../view/users.php?error=EmailTaken");
             exit;
         }
 
         if ($this->StrongPwd() == false) {
-            header("Location: ../view/addUser.php?error=WeakPassword");
+            header("Location: ../view/users.php?error=WeakPassword");
             exit;
         }
 
         $this->setUser($this->fname, $this->mname, $this->lname, $this->address, $this->email, $this->password, $this->contact, $this->department, $this->division, $this->status, $this->type);
     }
 
-    private function Isempty()
+    private function isEmpty()
     {
         if (empty($this->fname) || empty($this->mname) || empty($this->lname) || empty($this->address) || empty($this->email) || empty($this->password) || empty($this->passwordRepeat) || empty($this->contact) || empty($this->department) || empty($this->division) || empty($this->status) || empty($this->type)) {
             return false;
@@ -138,19 +138,19 @@ class EditUserContr extends EditUser
 
     public function edit()
     {
-        if ($this->Isempty() == false) {
-            header("Location: ../view/addUser.php?error=emptyinput");
+        if ($this->isEmpty() == false) {
+            header("Location: ../view/users.php?error=emptyinput");
             exit;
         }
 
         if ($this->invalidEmail() == false) {
-            header("Location: ../view/addUser.php?error=InvalidEmail");
+            header("Location: ../view/users.php?error=invalidemail");
             exit;
         }
 
         $this->editUser($this->id, $this->fname, $this->mname, $this->lname, $this->address, $this->email, $this->contact, $this->department, $this->division, $this->status, $this->type);
     }
-    private function Isempty()
+    private function isEmpty()
     {
         if (empty($this->id) || empty($this->fname) || empty($this->mname) || empty($this->lname) || empty($this->address) || empty($this->email || empty($this->contact) || empty($this->department) || empty($this->division) || empty($this->status) || empty($this->type))) {
             return false;
