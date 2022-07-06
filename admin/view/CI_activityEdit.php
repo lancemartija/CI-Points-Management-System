@@ -57,7 +57,7 @@ $users = $user->getUsers();
 
 ?>
 
-<form action="../includes/CI_activity.inc.php" method="POST">
+<form action="../includes/ciactivities.inc.php" method="POST">
     <?php foreach ($records as $data) { ?>
         <input type="hidden" name="id" value="<?php echo $data['activity_id']; ?>" readonly>
 

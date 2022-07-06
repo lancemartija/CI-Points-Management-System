@@ -27,11 +27,9 @@ class DisplayUsers extends Dbh
 
 $display = new DisplayUsers();
 $records = $display->getUsers();
-
-
 ?>
 
-<form action="../includes/CI_activity.inc.php" method="POST">
+<form action="../includes/ciactivities.inc.php" method="POST">
 
     <label for="type">Activity Category:</label>
     <select name="type" id="type">
