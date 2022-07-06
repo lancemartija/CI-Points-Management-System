@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 06, 2022 at 07:11 PM
+-- Generation Time: Jul 06, 2022 at 08:38 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -38,7 +38,7 @@ CREATE TABLE `academic_year` (
 
 INSERT INTO `academic_year` (`ay_id`, `year`) VALUES
 (2, '2022-2023'),
-(3, '2023-2024');
+(4, '2023-2024');
 
 -- --------------------------------------------------------
 
@@ -69,10 +69,11 @@ CREATE TABLE `ci_activity` (
 --
 
 INSERT INTO `ci_activity` (`activity_id`, `title`, `date`, `venue`, `department`, `division`, `description`, `type`, `duration`, `user_id`, `ci_points`, `ay_id`, `semester`, `date_created`, `date_updated`) VALUES
-(1, 'test', '2022-07-12', 'test', 'test', 'Integrated School', 'test', 'Internal', 6, 5, 5, NULL, '', '2022-07-06 03:04:36', '2022-07-06 03:04:36'),
-(2, 'blob', '2022-07-18', 'lipa batangas', 'CITE', 'Integrated School', 'to create baked mac', 'CIO Sponsored', 6, 1, 5, NULL, '', '2022-07-06 03:06:08', '2022-07-06 03:06:08'),
-(3, 'Book Reading', '2022-07-14', 'Nexus Labs', 'CITE', 'College', 'Reading books with students', 'CIO Sponsored', 3, 1, 1, NULL, '', '2022-07-06 07:11:12', '2022-07-06 07:11:12'),
-(4, 'test', '2022-07-07', 'test', 'test', 'College', 'test', 'External Engagement', 3, 5, 3, NULL, '', '2022-07-06 13:42:04', '2022-07-06 13:42:04');
+(1, 'test', '2022-07-12', 'test', 'test', 'Integrated School', 'test', 'Internal', 6, 5, 5, 2, '', '2022-07-06 03:04:36', '2022-07-06 17:56:47'),
+(2, 'blob', '2022-07-18', 'lipa batangas', 'CITE', 'Integrated School', 'to create baked mac', 'CIO Sponsored', 6, 1, 5, 4, '', '2022-07-06 03:06:08', '2022-07-06 17:56:50'),
+(3, 'Book Reading', '2022-07-14', 'Nexus Labs', 'CITE', 'College', 'Reading books with students', 'CIO Sponsored', 3, 1, 1, 2, '', '2022-07-06 07:11:12', '2022-07-06 17:56:52'),
+(4, 'test', '2022-07-07', 'test', 'test', 'College', 'test', 'External Engagement', 3, 5, 3, 2, '', '2022-07-06 13:42:04', '2022-07-06 17:56:55'),
+(5, 'test', '2022-08-03', 'test', 'test', 'College', 'test', 'Internal Engagement', 3, 6, 3, 2, 'First Semester', '2022-07-06 18:16:27', '2022-07-06 18:16:27');
 
 -- --------------------------------------------------------
 
@@ -236,13 +237,13 @@ ALTER TABLE `user_request_status`
 -- AUTO_INCREMENT for table `academic_year`
 --
 ALTER TABLE `academic_year`
-  MODIFY `ay_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ay_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `ci_activity`
 --
 ALTER TABLE `ci_activity`
-  MODIFY `activity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `activity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `user`
