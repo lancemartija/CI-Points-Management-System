@@ -108,6 +108,7 @@
         }
 
         include_once '../pages/users/tabledata.php';
+        include_once '../pages/users/viewmodal.php';
         include_once '../pages/users/editmodal.php';
       }
       ?>

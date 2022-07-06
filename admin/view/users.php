@@ -2,7 +2,7 @@
 $data = [
   'title' => 'Users',
   'dir' => '../../',
-  'modal' => 'editusermodal'
+  'modal' => 'usermodal'
 ];
 
 session_start();
