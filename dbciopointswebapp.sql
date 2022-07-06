@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 06, 2022 at 09:12 AM
+-- Generation Time: Jul 06, 2022 at 03:11 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -55,18 +55,6 @@ INSERT INTO `ci_activity` (`activity_id`, `title`, `date`, `venue`, `department`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `role`
---
-
-CREATE TABLE `role` (
-  `role_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `is_admin` varchar(3) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `user`
 --
 
@@ -82,6 +70,7 @@ CREATE TABLE `user` (
   `department` varchar(255) NOT NULL,
   `division` varchar(255) NOT NULL,
   `status` varchar(255) NOT NULL,
+  `type` varchar(255) NOT NULL,
   `date_created` timestamp NOT NULL DEFAULT current_timestamp(),
   `date_updated` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -90,10 +79,10 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `first_name`, `middle_name`, `last_name`, `address`, `email`, `password`, `contact_number`, `department`, `division`, `status`, `date_created`, `date_updated`) VALUES
-(1, 'Juan', 'Bayani', 'Dela Cruz', 'Barangay Mabuti, Batangas City', 'test@email.com', '$2y$10$EbURcrgrD62IjGUM.x.eMugX5lcd8UwZw5c/L.iJTRlSnutpThox.', '09123456789', '', '', '', '2022-06-21 09:27:59', '2022-06-21 09:28:47'),
-(5, 'alistaire rafael', 'malabanan', 'carandang', 'Bilogbilog Tanauan City batangas', 'alistaire024@gmail.com', '$2y$10$.OGcjsAnAfopABmLaCVo/u9Ts6blIM.CBefcEweBctOOUIqFh.lJ2', '09568423162', '', '', '', '2022-07-05 11:40:22', '2022-07-05 11:40:55'),
-(6, 'lance', 'gomez', 'martija', 'bahay', 'test1@email.com', '$2y$10$VF5VMdenF.WPsK5MltTUc.Bl3XLqWb0N.2oObk8PUq2TpetJ2ckii', '1203980123', 'CITE', 'College', 'Active', '2022-07-06 07:11:56', '2022-07-06 07:11:56');
+INSERT INTO `user` (`user_id`, `first_name`, `middle_name`, `last_name`, `address`, `email`, `password`, `contact_number`, `department`, `division`, `status`, `type`, `date_created`, `date_updated`) VALUES
+(1, 'Juan', 'Bayani', 'Dela Cruz', 'Barangay Mabuti, Batangas City', 'test@email.com', '$2y$10$EbURcrgrD62IjGUM.x.eMugX5lcd8UwZw5c/L.iJTRlSnutpThox.', '09123456789', '', '', '', '', '2022-06-21 09:27:59', '2022-06-21 09:28:47'),
+(5, 'alistaire rafael', 'malabanan', 'carandang', 'Bilogbilog Tanauan City batangas', 'alistaire024@gmail.com', '$2y$10$.OGcjsAnAfopABmLaCVo/u9Ts6blIM.CBefcEweBctOOUIqFh.lJ2', '09568423162', '', '', '', '', '2022-07-05 11:40:22', '2022-07-05 11:40:55'),
+(6, 'lance', 'gomez', 'martija', 'bahay', 'test1@email.com', '$2y$10$VF5VMdenF.WPsK5MltTUc.Bl3XLqWb0N.2oObk8PUq2TpetJ2ckii', '1203980123', 'CITE', 'College', 'Active', '', '2022-07-06 07:11:56', '2022-07-06 07:11:56');
 
 -- --------------------------------------------------------
 
@@ -118,7 +107,8 @@ CREATE TABLE `user_cip` (
   `cip_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `total_cip` int(11) DEFAULT NULL,
-  `date_issued` timestamp NOT NULL DEFAULT current_timestamp()
+  `academic_year` varchar(255) NOT NULL,
+  `semester` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -172,13 +162,6 @@ ALTER TABLE `ci_activity`
   ADD KEY `fk_activity_user` (`user_id`);
 
 --
--- Indexes for table `role`
---
-ALTER TABLE `role`
-  ADD PRIMARY KEY (`role_id`),
-  ADD KEY `fk_role_user` (`user_id`);
-
---
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -226,12 +209,6 @@ ALTER TABLE `ci_activity`
   MODIFY `activity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `role`
---
-ALTER TABLE `role`
-  MODIFY `role_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
@@ -270,12 +247,6 @@ ALTER TABLE `user_request_status`
 --
 ALTER TABLE `ci_activity`
   ADD CONSTRAINT `fk_activity_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE SET NULL ON UPDATE CASCADE;
-
---
--- Constraints for table `role`
---
-ALTER TABLE `role`
-  ADD CONSTRAINT `fk_role_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `user_activity_history`
