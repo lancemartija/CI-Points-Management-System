@@ -102,6 +102,7 @@
         }
 
         include_once '../pages/academicyear/tabledata.php';
+        include_once '../pages/academicyear/viewmodal.php';
         include_once '../pages/academicyear/editmodal.php';
         include_once '../pages/academicyear/deletemodal.php';
       }

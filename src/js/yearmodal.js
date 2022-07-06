@@ -1,8 +1,17 @@
+const viewUserBtn = document.querySelectorAll('[data-view-button]')
 const editUserBtn = document.querySelectorAll('[data-edit-button]')
 const deleteUserBtn = document.querySelectorAll('[data-delete-button]')
 
 const idField = document.querySelectorAll('#id')
-const yearField = document.querySelector('#year')
+const yearField = document.querySelectorAll('#year')
+
+viewUserBtn.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    let year = btn.getAttribute('data-year')
+
+    yearField[0].value = year
+  })
+})
 
 editUserBtn.forEach((btn) => {
   btn.addEventListener('click', () => {
@@ -10,7 +19,7 @@ editUserBtn.forEach((btn) => {
     let year = btn.getAttribute('data-year')
 
     idField[0].value = id
-    yearField.value = year
+    yearField[1].value = year
   })
 })
 
