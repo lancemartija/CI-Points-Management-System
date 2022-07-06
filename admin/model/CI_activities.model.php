@@ -4,7 +4,7 @@ class CIActivities extends Dbh
 {
     protected function setActivity($title, $date, $venue, $department, $division, $description, $type, $duration, $supervisor, $cipoints)
     {
-        $stmt = $this->connect()->prepare('INSERT INTO ci_activity (title, date, venue, department, division, description, type, duration, user_id, max_ci_points) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);');
+        $stmt = $this->connect()->prepare('INSERT INTO ci_activity (title, date, venue, department, division, description, type, duration, user_id, ci_points) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);');
 
         if (!$stmt->execute([$title, $date, $venue, $department, $division, $description, $type, $duration, $supervisor, $cipoints])) {
             $stmt = null;
