@@ -22,7 +22,7 @@ if (isset($_POST['add'])) {
 
     $AddUser->addUser();
 
-    header("location: ../view/users.php?status=UserInputSuccess");
+    header("location: ../view/users.php?status=addedsuccessfully");
 }
 
 if (isset($_POST['edit'])) {
@@ -45,5 +45,5 @@ if (isset($_POST['edit'])) {
     $UserEdit = new EditUserContr($id, $fname, $mname, $lname, $address, $email, $contact, $department, $division, $status, $type);
     $UserEdit->edit();
 
-    header("location: ../view/users.php?status=UserInputSuccess");
+    header("location: ../view/users.php?status=editedsuccessfully");
 }
