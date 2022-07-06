@@ -25,7 +25,6 @@
             </tr>
           </thead>
           <tbody class="bg-white divide-y divide-gray-200">
-
             <?php foreach ($records as $data) { ?>
               <tr class="hover:bg-gray-100">
                 <td class="flex items-center p-4 mr-12 space-x-6 whitespace-nowrap lg:mr-0">
