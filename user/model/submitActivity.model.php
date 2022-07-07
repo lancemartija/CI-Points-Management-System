@@ -1,6 +1,5 @@
 <?php
 
-
 class Submit extends Dbh
 {
   protected function setSubmit($userID, $actID, $fileName, $fileType, $fileData, $numberHrs)
