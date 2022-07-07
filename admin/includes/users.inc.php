@@ -18,9 +18,9 @@ if (isset($_POST['add'])) {
     include '../model/users.model.php';
     include '../controller/users.contr.php';
 
-    $AddUser = new AddUserContr($fname, $mname, $lname, $address, $email, $password, $passwordRepeat, $contact, $department, $division, $status, $type);
+    $addUser = new AddUserContr($fname, $mname, $lname, $address, $email, $password, $passwordRepeat, $contact, $department, $division, $status, $type);
 
-    $AddUser->addUser();
+    $addUser->addUser();
 
     header("location: ../view/users.php?status=addedsuccessfully");
 }
@@ -42,8 +42,21 @@ if (isset($_POST['edit'])) {
     include '../model/users.model.php';
     include '../controller/users.contr.php';
 
-    $UserEdit = new EditUserContr($id, $fname, $mname, $lname, $address, $email, $contact, $department, $division, $status, $type);
-    $UserEdit->edit();
+    $userEdit = new EditUserContr($id, $fname, $mname, $lname, $address, $email, $contact, $department, $division, $status, $type);
+    $userEdit->edit();
 
     header("location: ../view/users.php?status=editedsuccessfully");
+}
+
+if (isset($_POST['delete'])) {
+    $id = trim($_POST['id']);
+
+    include '../database/database.php';
+    include '../model/users.model.php';
+    include '../controller/users.contr.php';
+
+    $deleteUser = new DeleteUserContr($id);
+    $deleteUser->deleteUser();
+
+    header("location: ../view/users.php?status=deletedsuccessfully");
 }

@@ -1,5 +1,6 @@
 const viewUserBtn = document.querySelectorAll('[data-view-button]')
 const editUserBtn = document.querySelectorAll('[data-edit-button]')
+const deleteUserBtn = document.querySelectorAll('[data-delete-button]')
 
 const idField = document.querySelectorAll('#id')
 const fnameField = document.querySelectorAll('#fname')
@@ -64,5 +65,13 @@ editUserBtn.forEach((btn) => {
     statusField[1].value = status
     emailField[1].value = email
     typeField[1].value = type
+  })
+})
+
+deleteUserBtn.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    let id = btn.getAttribute('data-id')
+
+    idField[1].value = id
   })
 })
