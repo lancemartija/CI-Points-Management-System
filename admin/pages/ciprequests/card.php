@@ -4,15 +4,16 @@
       <div class="inline-block min-w-full align-middle">
         <div class="overflow-hidden shadow">
           <div class="max-w-sm p-6 mb-3 mr-3 bg-white border border-gray-200 rounded-lg">
-            <a href="#">
+            <a href="userrequests.php?id=<?= $data['user_id']; ?><?= (isset($_GET['filter'])) ? '&status=' . $data['request_status'] : '' ?>">
               <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900"><?= $data['last_name'] . ', ' . $data['first_name'] . ' ' . $data['middle_name'][0] . '.'; ?></h5>
             </a>
             <p class="mb-3 font-normal text-gray-700">Has <span class="font-bold"><?= $data['COUNT(ur.activity_id)']; ?></span> <?= (isset($_GET['filter'])) ? $data['request_status'] : 'total'; ?> request(s).</p>
             <a href="userrequests.php?id=<?= $data['user_id']; ?><?= (isset($_GET['filter'])) ? '&status=' . $data['request_status'] : '' ?>" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gray-500 rounded-lg hover:bg-gray-600 focus:ring-4 focus:ring-gray-400/50">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M5 3a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H5zm0 2h10v7h-2l-1 2H8l-1-2H5V5z" clip-rule="evenodd" />
+              View request
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
               </svg>
-              Open request box
+              </svg>
             </a>
           </div>
         </div>
