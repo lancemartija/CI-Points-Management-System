@@ -45,6 +45,13 @@
                 <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap"><?= $data['description']; ?></td>
                 <td class="p-4 text-base font-normal text-gray-900 whitespace-nowrap"><?= $data['ci_points'] ?></td>
                 <td class="p-4 space-x-2 whitespace-nowrap">
+                  <button type="button" data-view-button data-title="<?= $data['title']; ?>" data-date="<?= $data['date']; ?>" data-venue="<?= $data['venue']; ?>" data-department="<?= $data['department']; ?>" data-division="<?= $data['division']; ?>" data-description="<?= $data['description']; ?>" data-type="<?= $data['type']; ?>" data-duration="<?= $data['duration']; ?>" data-cipoints="<?= $data['ci_points']; ?>" data-year="<?= $data['year']; ?>" data-semester="<?= $data['semester']; ?>" data-supervisor="<?= $data['first_name'] . ' ' . $data['middle_name'] . ' ' . $data['last_name']; ?>" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gray-600 rounded-lg hover:bg-gray-700 focus:ring-4 focus:ring-gray-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                      <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+                    </svg>
+                    View
+                  </button>
                   <a href="../view/CI_activityEdit.php?id=<?= $data['activity_id']; ?>" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-cyan-600 hover:bg-cyan-700 focus:ring-4 focus:ring-cyan-200">
                     <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                       <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z"></path>
