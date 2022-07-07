@@ -15,31 +15,31 @@
         <div class="p-6 space-y-6">
           <div class="grid grid-cols-6 gap-6">
             <div class="col-span-6 sm:col-span-3">
-              <label for="firstname" class="label">First Name</label>
+              <label for="firstname" class="block mb-2 text-sm font-medium text-gray-900">First Name</label>
               <input type="text" name="firstname" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="First Name" required>
             </div>
             <div class="col-span-6 sm:col-span-3">
-              <label for="firstname" class="label">Middle Name</label>
+              <label for="firstname" class="block mb-2 text-sm font-medium text-gray-900">Middle Name</label>
               <input type="text" name="middlename" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="Middle Name" required>
             </div>
             <div class="col-span-6 sm:col-span-3">
-              <label for="lastname" class="label">Last Name</label>
+              <label for="lastname" class="block mb-2 text-sm font-medium text-gray-900">Last Name</label>
               <input type="text" name="lastname" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="Last Name" required>
             </div>
             <div class="col-span-6 sm:col-span-3">
-              <label for="address" class="label">Address</label>
+              <label for="address" class="block mb-2 text-sm font-medium text-gray-900">Address</label>
               <input type="text" name="address" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="Address" required>
             </div>
             <div class="col-span-6 sm:col-span-3">
-              <label for="contact" class="label">Contact Number</label>
+              <label for="contact" class="block mb-2 text-sm font-medium text-gray-900">Contact Number</label>
               <input type="tel" name="contact" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="09123456789" pattern="[0-9]{4}[0-9]{3}[0-9]{4}" required>
             </div>
             <div class="col-span-6 sm:col-span-3">
-              <label for="department" class="label">Department</label>
+              <label for="department" class="block mb-2 text-sm font-medium text-gray-900">Department</label>
               <input type="text" name="department" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="Department" required>
             </div>
             <div class="col-span-6 sm:col-span-3">
-              <label for="division" class="label">Division</label>
+              <label for="division" class="block mb-2 text-sm font-medium text-gray-900">Division</label>
               <select name="division" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5">
                 <option disabled selected value>Choose Division</option>
                 <option value="Integrated School">Integrated School</option>
@@ -48,7 +48,7 @@
               </select>
             </div>
             <div class="col-span-6 sm:col-span-3">
-              <label for="status" class="label">Status</label>
+              <label for="status" class="block mb-2 text-sm font-medium text-gray-900">Status</label>
               <select name="status" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5">
                 <option disabled selected value>Choose Status</option>
                 <option value="Active">Active</option>
@@ -56,11 +56,11 @@
               </select>
             </div>
             <div class="col-span-6 sm:col-span-3">
-              <label for="email" class="label">Email</label>
+              <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Email</label>
               <input type="email" name="email" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="example@dlsl.edu.ph" required>
             </div>
             <div class="col-span-6 sm:col-span-3">
-              <label for="type" class="label">Account Type</label>
+              <label for="type" class="block mb-2 text-sm font-medium text-gray-900">Account Type</label>
               <select name="type" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5">
                 <option disabled selected value>Choose Account Type</option>
                 <option value="Admin">Administrator</option>
@@ -68,11 +68,11 @@
               </select>
             </div>
             <div class="col-span-6 sm:col-span-3">
-              <label for="password" class="label">Password</label>
+              <label for="password" class="block mb-2 text-sm font-medium text-gray-900">Password</label>
               <input type="password" name="password" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="••••••••" required>
             </div>
             <div class="col-span-6 sm:col-span-3">
-              <label for="passwordRepeat" class="label">Confirm Password</label>
+              <label for="passwordRepeat" class="block mb-2 text-sm font-medium text-gray-900">Confirm Password</label>
               <input type="password" name="passwordRepeat" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="••••••••" required>
             </div>
           </div>

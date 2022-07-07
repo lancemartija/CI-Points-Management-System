@@ -16,31 +16,31 @@
         <div class="p-6 space-y-6">
           <div class="grid grid-cols-6 gap-6">
             <div class="col-span-6 sm:col-span-3">
-              <label for="firstname" class="label">First Name</label>
+              <label for="firstname" class="block mb-2 text-sm font-medium text-gray-900">First Name</label>
               <input id="fname" type="text" name="firstname" value="<?= $data['first_name']; ?>" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="First Name" required>
             </div>
             <div class="col-span-6 sm:col-span-3">
-              <label for="firstname" class="label">Middle Name</label>
+              <label for="firstname" class="block mb-2 text-sm font-medium text-gray-900">Middle Name</label>
               <input id="mname" type="text" name="middlename" value="<?= $data['middle_name']; ?>" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="Middle Name" required>
             </div>
             <div class="col-span-6 sm:col-span-3">
-              <label for="lastname" class="label">Last Name</label>
+              <label for="lastname" class="block mb-2 text-sm font-medium text-gray-900">Last Name</label>
               <input id="lname" type="text" name="lastname" value="<?= $data['last_name']; ?>" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="Last Name" required>
             </div>
             <div class="col-span-6 sm:col-span-3">
-              <label for="address" class="label">Address</label>
+              <label for="address" class="block mb-2 text-sm font-medium text-gray-900">Address</label>
               <input id="address" type="text" name="address" value="<?= $data['address']; ?>" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="Address" required>
             </div>
             <div class="col-span-6 sm:col-span-3">
-              <label for="contact" class="label">Contact Number</label>
+              <label for="contact" class="block mb-2 text-sm font-medium text-gray-900">Contact Number</label>
               <input id="contact" type="tel" name="contact" value="<?= $data['contact_number']; ?>" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="09123456789" pattern="[0-9]{4}[0-9]{3}[0-9]{4}" required>
             </div>
             <div class="col-span-6 sm:col-span-3">
-              <label for="department" class="label">Department</label>
+              <label for="department" class="block mb-2 text-sm font-medium text-gray-900">Department</label>
               <input id="department" type="text" name="department" value="<?= $data['department']; ?>" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="Department" required>
             </div>
             <div class="col-span-6 sm:col-span-3">
-              <label for="division" class="label">Division</label>
+              <label for="division" class="block mb-2 text-sm font-medium text-gray-900">Division</label>
               <select id="division" name="division" value="<?= $data['division']; ?>" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5">
                 <option disabled selected value>Choose Division</option>
                 <option value="Integrated School">Integrated School</option>
@@ -49,7 +49,7 @@
               </select>
             </div>
             <div class="col-span-6 sm:col-span-3">
-              <label for="status" class="label">Status</label>
+              <label for="status" class="block mb-2 text-sm font-medium text-gray-900">Status</label>
               <select id="status" name="status" value="<?= $data['status']; ?>" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5">
                 <option disabled selected value>Choose Status</option>
                 <option value="Active">Active</option>
@@ -57,11 +57,11 @@
               </select>
             </div>
             <div class="col-span-6 sm:col-span-3">
-              <label for="email" class="label">Email</label>
+              <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Email</label>
               <input id="email" type="email" name="email" value="<?= $data['email']; ?>" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="example@dlsl.edu.ph" required>
             </div>
             <div class="col-span-6 sm:col-span-3">
-              <label for="type" class="label">Account Type</label>
+              <label for="type" class="block mb-2 text-sm font-medium text-gray-900">Account Type</label>
               <select id="type" name="type" value="<?= $data['type']; ?>" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5">
                 <option disabled selected value>Choose Account Type</option>
                 <option value="Admin">Administrator</option>
