@@ -11,6 +11,8 @@ class UserInfo extends Dbh
       header("Location: ../view/userinfo.php?error=stmtfailed");
       exit;
     }
+    session_start();
+    $_SESSION['fname'] = $fname;
 
     $stmt = null;
   }
