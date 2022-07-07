@@ -58,7 +58,7 @@
       <!-- END OF HEADER -->
 
       <form method="get">
-        <ul class="flex flex-wrap m-6 text-sm font-medium text-center text-gray-500">
+        <ul class="flex flex-wrap m-3 text-sm font-medium text-center text-gray-500">
           <li class="mr-2">
             <a href="ciprequests.php" class="inline-flex px-4 py-3 rounded-lg <?= (isset($_GET['filter'])) ? 'hover:text-gray-900 hover:bg-gray-200' : 'text-gray-900 bg-gray-200'; ?>">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 20 20" fill="currentColor">

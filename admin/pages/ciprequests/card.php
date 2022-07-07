@@ -1,4 +1,4 @@
-<div class="flex flex-wrap m-6">
+<div class="flex flex-wrap m-3">
   <?php foreach ($records as $data) : ?>
     <div class="overflow-x-auto">
       <div class="inline-block min-w-full align-middle">
