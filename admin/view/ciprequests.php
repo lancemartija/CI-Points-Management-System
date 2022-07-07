@@ -13,11 +13,11 @@ if (!isset($_SESSION['userid'])) {
 
 include_once '../database/database.php';
 
-class DisplayUserRequests extends Dbh
+class DisplayData extends Dbh
 {
   public function getUserRequest()
   {
-    $sql = 'SELECT u.user_id, u.first_name, u.middle_name, u.last_name, COUNT(ur.activity_id) FROM user_request ur LEFT JOIN user u ON ur.user_id = u.user_id GROUP BY ur.user_id;';
+    $sql = 'SELECT u.user_id, u.first_name, u.middle_name, u.last_name, ur.request_status, COUNT(ur.activity_id) FROM user_request ur LEFT JOIN user u ON ur.user_id = u.user_id GROUP BY ur.user_id;';
     $stmt = $this->connect()->prepare($sql);
 
     if (!$stmt->execute()) {
@@ -31,7 +31,7 @@ class DisplayUserRequests extends Dbh
 
   public function getSearchData($query)
   {
-    $stmt = $this->connect()->prepare('SELECT u.user_id, u.first_name, u.middle_name, u.last_name, COUNT(ur.activity_id) FROM user_request ur LEFT JOIN user u ON ur.user_id = u.user_id WHERE u.first_name = ? OR u.last_name = ? GROUP BY ur.user_id;');
+    $stmt = $this->connect()->prepare('SELECT u.user_id, u.first_name, u.middle_name, u.last_name, ur.request_status, COUNT(ur.activity_id) FROM user_request ur LEFT JOIN user u ON ur.user_id = u.user_id WHERE u.first_name = ? OR u.last_name = ? GROUP BY ur.user_id;');
     $result = 0;
 
     if (!$stmt->execute([$query, $query])) {
@@ -51,10 +51,33 @@ class DisplayUserRequests extends Dbh
     $stmt = null;
     return $result;
   }
+
+  public function getFilteredData($query)
+  {
+    $stmt = $this->connect()->prepare('SELECT u.user_id, u.first_name, u.middle_name, u.last_name, ur.request_status, COUNT(ur.activity_id) FROM user_request ur LEFT JOIN user u ON ur.user_id = u.user_id WHERE ur.request_status = ? GROUP BY ur.user_id;');
+    $result = 0;
+
+    if (!$stmt->execute([$query])) {
+      $stmt = null;
+      exit;
+    }
+
+    if ($stmt->rowCount() == 0) {
+      $stmt = null;
+      return $result;
+    }
+
+    while ($row = $stmt->fetchAll(PDO::FETCH_ASSOC)) {
+      $result = $row;
+    }
+
+    $stmt = null;
+    return $result;
+  }
 }
 
 
-$display = new DisplayUserRequests();
+$display = new DisplayData();
 $records = $display->getUserRequest();
 
 include_once '../layouts/header.php';
