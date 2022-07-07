@@ -111,7 +111,7 @@
         include_once '../pages/ciactivity/tabledata.php';
         include_once '../pages/ciactivity/addmodal.php';
         include_once '../pages/ciactivity/viewmodal.php';
-        // include_once '../pages/ciactivity/editmodal.php';
+        include_once '../pages/ciactivity/editmodal.php';
       }
       ?>
     </main>
