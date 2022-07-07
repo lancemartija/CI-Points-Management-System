@@ -9,9 +9,10 @@ class submitContr extends submit
     private $fileName;
     private $fileType;
     private $fileData;
+    private $fileSize;
 
 
-    public function __construct($userID, $actID, $fileName, $fileType, $fileData, $numberHrs)
+    public function __construct($userID, $actID, $fileName, $fileType, $fileData, $numberHrs, $fileSize)
     {
         $this->userID = $userID;
         $this->actID = $actID;
@@ -19,6 +20,7 @@ class submitContr extends submit
         $this->fileType = $fileType;
         $this->fileData = $fileData;
         $this->numberHrs = $numberHrs;
+        $this->fileSize = $fileSize;
     }
 
     public function submitAct()
@@ -29,6 +31,11 @@ class submitContr extends submit
         }
 
         if ($this->VerifyFile() == false) {
+            header("location: ../view/ci_activity.php?id=$this->userID&userid=$this->userID&error=filetype_error");
+            exit;
+        }
+
+        if ($this->SizeFile() == false) {
             header("location: ../view/ci_activity.php?id=$this->userID&userid=$this->userID&error=filetype_error");
             exit;
         }
@@ -49,7 +56,21 @@ class submitContr extends submit
 
     private function VerifyFile()
     {
-        if ($this->fileType === 'image/png' || $this->fileType === 'application/pdf' || $this->fileType === 'image/jpeg') {
+        if (
+            $this->fileType === 'image/png' || $this->fileType === 'application/pdf' ||
+            $this->fileType === 'image/jpeg' || $this->fileType === 'text/plain' ||
+            $this->fileType === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+            || $this->fileType === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' ||
+            $this->fileType === 'text/csv'
+        ) {
+            return true;
+        }
+        return false;
+    }
+
+    private function SizeFile()
+    {
+        if ($this->fileSize < 5000000) {
             return true;
         }
         return false;
