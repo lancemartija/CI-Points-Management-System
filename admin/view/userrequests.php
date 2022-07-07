@@ -17,7 +17,7 @@ class DisplayData extends Dbh
 {
   public function getUserData($id)
   {
-    $stmt = $this->connect()->prepare('SELECT ur.supporting_docs_name, ur.supporting_docs, ur.supporting_docs, ur.rendered_hours, ur.date_requested, ur.request_status, ci.title, ci.date, ci.type, ci.description, ci.ci_points, u.user_id, u.first_name, u.middle_name, u.last_name, u.email FROM user_request ur INNER JOIN ci_activity ci ON ur.activity_id = ci.activity_id AND ur.user_id = ? INNER JOIN user u  WHERE ur.user_id = u.user_id;');
+    $stmt = $this->connect()->prepare('SELECT ur.request_id, ur.supporting_docs_name, ur.supporting_docs, ur.supporting_docs, ur.rendered_hours, ur.date_requested, ur.request_status, ci.title, ci.date, ci.type, ci.description, ci.ci_points, u.user_id, u.first_name, u.middle_name, u.last_name, u.email FROM user_request ur INNER JOIN ci_activity ci ON ur.activity_id = ci.activity_id AND ur.user_id = ? INNER JOIN user u  ON ur.user_id = u.user_id;');
     $result = 0;
 
     if (!$stmt->execute([$id])) {
@@ -40,7 +40,7 @@ class DisplayData extends Dbh
 
   public function getFilteredData($id, $status)
   {
-    $stmt = $this->connect()->prepare('SELECT ur.supporting_docs_name, ur.supporting_docs, ur.supporting_docs, ur.rendered_hours, ur.date_requested, ur.request_status, ci.title, ci.date, ci.type, ci.description, ci.ci_points, u.user_id, u.first_name, u.middle_name, u.last_name, u.email FROM user_request ur INNER JOIN ci_activity ci ON ur.activity_id = ci.activity_id AND ur.user_id = ? AND ur.request_status = ? INNER JOIN user u WHERE ur.user_id = u.user_id;');
+    $stmt = $this->connect()->prepare('SELECT ur.request_id, ur.supporting_docs_name, ur.supporting_docs, ur.supporting_docs, ur.rendered_hours, ur.date_requested, ur.request_status, ci.title, ci.date, ci.type, ci.description, ci.ci_points, u.user_id, u.first_name, u.middle_name, u.last_name, u.email FROM user_request ur INNER JOIN ci_activity ci ON ur.activity_id = ci.activity_id AND ur.user_id = ? AND ur.request_status = ? INNER JOIN user u ON ur.user_id = u.user_id;');
     $result = 0;
 
     if (!$stmt->execute([$id, $status])) {
@@ -61,12 +61,12 @@ class DisplayData extends Dbh
     return $result;
   }
 
-  public function getSearchData($id, $query)
+  public function getSearchData($id, $status, $query)
   {
-    $stmt = $this->connect()->prepare('SELECT * FROM user_request ur INNER JOIN ci_activity ci ON ur.activity_id = ci.activity_id AND ur.user_id = ?;');
+    $stmt = $this->connect()->prepare('SELECT ur.request_id, ur.supporting_docs_name, ur.supporting_docs, ur.supporting_docs, ur.rendered_hours, ur.date_requested, ur.request_status, ci.title, ci.date, ci.type, ci.description, ci.ci_points, u.user_id, u.first_name, u.middle_name, u.last_name, u.email FROM user_request ur INNER JOIN ci_activity ci ON ur.activity_id = ci.activity_id AND ur.user_id = ? OR ur.request_status = ? INNER JOIN user u ON ur.user_id = u.user_id WHERE ci.title = ?;');
     $result = 0;
 
-    if (!$stmt->execute([$query, $id])) {
+    if (!$stmt->execute([$id, $status, $query])) {
       $stmt = null;
       exit;
     }
