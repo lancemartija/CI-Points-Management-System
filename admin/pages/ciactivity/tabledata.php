@@ -18,9 +18,6 @@
                 Supervisor
               </th>
               <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase">
-                Description
-              </th>
-              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase">
                 CI Points
               </th>
               <th scope="col" class="p-4">
@@ -42,7 +39,6 @@
                 <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap"><?= $data['date']; ?></td>
                 <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap"><?= $data['venue']; ?></td>
                 <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap"><?= $data['first_name'] . ' ' . $data['middle_name'] . ' ' . $data['last_name']; ?></td>
-                <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap"><?= $data['description']; ?></td>
                 <td class="p-4 text-base font-normal text-gray-900 whitespace-nowrap"><?= $data['ci_points'] ?></td>
                 <td class="p-4 space-x-2 whitespace-nowrap">
                   <button type="button" data-view-button data-title="<?= $data['title']; ?>" data-date="<?= $data['date']; ?>" data-venue="<?= $data['venue']; ?>" data-department="<?= $data['department']; ?>" data-division="<?= $data['division']; ?>" data-description="<?= $data['description']; ?>" data-type="<?= $data['type']; ?>" data-duration="<?= $data['duration']; ?>" data-cipoints="<?= $data['ci_points']; ?>" data-year="<?= $data['year']; ?>" data-semester="<?= $data['semester']; ?>" data-supervisor="<?= $data['first_name'] . ' ' . $data['middle_name'] . ' ' . $data['last_name']; ?>" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gray-600 rounded-lg hover:bg-gray-700 focus:ring-4 focus:ring-gray-200">
