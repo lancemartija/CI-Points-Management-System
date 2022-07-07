@@ -23,7 +23,7 @@ editUserBtn.forEach((btn) => {
   })
 })
 
-editUserBtn.forEach((btn) => {
+deleteUserBtn.forEach((btn) => {
   btn.addEventListener('click', () => {
     let id = btn.getAttribute('data-id')
 
