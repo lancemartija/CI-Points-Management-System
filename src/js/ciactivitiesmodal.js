@@ -1,6 +1,6 @@
-const viewUserBtn = document.querySelectorAll('[data-view-button]')
-const editUserBtn = document.querySelectorAll('[data-edit-button]')
-const deleteUserBtn = document.querySelectorAll('[data-delete-button]')
+const viewActivityBtn = document.querySelectorAll('[data-view-button]')
+const editActivityBtn = document.querySelectorAll('[data-edit-button]')
+const deleteActivityBtn = document.querySelectorAll('[data-delete-button]')
 
 const idField = document.querySelectorAll('#id')
 const titleField = document.querySelectorAll('#title')
@@ -16,7 +16,7 @@ const yearField = document.querySelectorAll('#year')
 const semesterField = document.querySelectorAll('#semester')
 const supervisorField = document.querySelectorAll('#supervisor')
 
-viewUserBtn.forEach((btn) => {
+viewActivityBtn.forEach((btn) => {
   btn.addEventListener('click', () => {
     let title = btn.getAttribute('data-title')
     let date = btn.getAttribute('data-date')
@@ -46,7 +46,7 @@ viewUserBtn.forEach((btn) => {
   })
 })
 
-editUserBtn.forEach((btn) => {
+editActivityBtn.forEach((btn) => {
   btn.addEventListener('click', () => {
     let id = btn.getAttribute('data-id')
     let title = btn.getAttribute('data-title')
@@ -78,7 +78,7 @@ editUserBtn.forEach((btn) => {
   })
 })
 
-deleteUserBtn.forEach((btn) => {
+deleteActivityBtn.forEach((btn) => {
   btn.addEventListener('click', () => {
     let id = btn.getAttribute('data-id')
 
