@@ -63,10 +63,10 @@ class DisplayData extends Dbh
 
   public function getSearchData($id, $status, $query)
   {
-    $stmt = $this->connect()->prepare('SELECT ur.request_id, ur.supporting_docs_name, ur.supporting_docs, ur.supporting_docs, ur.rendered_hours, ur.date_requested, ur.request_status, ci.title, ci.date, ci.type, ci.description, ci.ci_points, u.user_id, u.first_name, u.middle_name, u.last_name, u.email FROM user_request ur INNER JOIN ci_activity ci ON ur.activity_id = ci.activity_id AND ur.user_id = ? OR ur.request_status = ? INNER JOIN user u ON ur.user_id = u.user_id WHERE ci.title = ?;');
+    $stmt = $this->connect()->prepare('SELECT ur.request_id, ur.supporting_docs_name, ur.supporting_docs, ur.supporting_docs, ur.rendered_hours, ur.date_requested, ur.request_status, ci.title, ci.date, ci.type, ci.description, ci.ci_points, u.user_id, u.first_name, u.middle_name, u.last_name, u.email FROM user_request ur INNER JOIN ci_activity ci ON ur.activity_id = ci.activity_id AND ur.user_id = ? OR ur.request_status = ? INNER JOIN user u ON ur.user_id = u.user_id WHERE ci.title = ? OR ur.request_status = ?;');
     $result = 0;
 
-    if (!$stmt->execute([$id, $status, $query])) {
+    if (!$stmt->execute([$id, $status, $query, $query])) {
       $stmt = null;
       exit;
     }
