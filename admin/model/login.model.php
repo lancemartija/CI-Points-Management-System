@@ -27,7 +27,7 @@ class Login extends Dbh
       exit;
     } else {
       $pwd = $pwdHashed[0]['password'];
-      $stmt = $this->connect()->prepare('SELECT * FROM user WHERE email = ? AND password = ?;');
+      $stmt = $this->connect()->prepare('SELECT * FROM user WHERE email = ? AND password = ? AND type = "Admin";');
 
       if (!$stmt->execute([$uid, $pwd])) {
         $stmt = null;
@@ -37,7 +37,7 @@ class Login extends Dbh
 
       if ($stmt->rowCount() == 0) {
         $stmt = null;
-        header("Location: ../index.php?error=usernotfound");
+        header("Location: ../index.php?error=AdminNotFound");
         exit;
       }
 
