@@ -1,5 +1,5 @@
 <div class="fixed left-0 right-0 z-50 items-center justify-center hidden overflow-x-hidden overflow-y-auto bg-gray-900/50 top-4 md:inset-0 h-modal sm:h-full" id="viewmodal" aria-modal="true" role="dialog">
-  <div class="relative w-full h-full max-w-2xl px-4 md:h-auto">
+  <div class="relative w-full h-full max-w-4xl px-4 md:h-auto">
     <div class="relative bg-white rounded-lg shadow">
       <div class="flex items-start justify-between p-5 border-b rounded-t">
         <h3 class="text-xl font-semibold">
@@ -12,8 +12,8 @@
         </button>
       </div>
       <div class="p-6 space-y-6">
-        <div class="grid grid-cols-6 gap-6">
-          <div class="col-span-6 sm:col-span-3">
+        <div class="grid grid-cols-9 gap-6">
+          <div class="col-span-9 sm:col-span-3">
             <label for="title" class="block mb-2 text-sm font-medium text-gray-900">Activity Title</label>
             <input id="title" type="text" name="title" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" readonly>
           </div>
@@ -57,7 +57,7 @@
             <label for="semester" class="block mb-2 text-sm font-medium text-gray-900">Semester</label>
             <input id="semester" type="text" name="semester" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" readonly>
           </div>
-          <div class="col-span-6">
+          <div class="col-span-9">
             <label for="description" class="block mb-2 text-sm font-medium text-gray-900">Description</label>
             <textarea id="description" name="description" rows="4" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" readonly></textarea>
           </div>
