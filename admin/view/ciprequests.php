@@ -13,9 +13,9 @@ if (!isset($_SESSION['userid'])) {
 
 include_once '../database/database.php';
 
-class DisplayUsers extends Dbh
+class DisplayUserRequests extends Dbh
 {
-  public function getUser()
+  public function getUserRequest()
   {
     $sql = 'SELECT * FROM user_request;';
     $stmt = $this->connect()->prepare($sql);
@@ -54,8 +54,8 @@ class DisplayUsers extends Dbh
 }
 
 
-$display = new DisplayUsers();
-$records = $display->getUser();
+$display = new DisplayUserRequests();
+$records = $display->getUserRequest();
 
 include_once '../layouts/header.php';
 include_once '../layouts/navbar.php';
