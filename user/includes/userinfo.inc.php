@@ -16,4 +16,5 @@ if (isset($_POST['submit'])) {
 
   $addUserInfo->addUserInfo();
 
+  header('location: ../view/dashboard.php?register=success');
 }
