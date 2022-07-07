@@ -13,4 +13,4 @@
   <?php } ?>
 </head>
 
-<body>
+<body class="bg-gray-50">
