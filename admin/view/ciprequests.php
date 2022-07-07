@@ -17,7 +17,7 @@ class DisplayUserRequests extends Dbh
 {
   public function getUserRequest()
   {
-    $sql = 'SELECT u.first_name, u.middle_name, u.last_name, COUNT(ur.activity_id) FROM user_request ur LEFT JOIN user u ON ur.user_id = u.user_id GROUP BY ur.user_id;';
+    $sql = 'SELECT u.user_id, u.first_name, u.middle_name, u.last_name, COUNT(ur.activity_id) FROM user_request ur LEFT JOIN user u ON ur.user_id = u.user_id GROUP BY ur.user_id;';
     $stmt = $this->connect()->prepare($sql);
 
     if (!$stmt->execute()) {
@@ -31,7 +31,7 @@ class DisplayUserRequests extends Dbh
 
   public function getSearchData($query)
   {
-    $stmt = $this->connect()->prepare('SELECT u.first_name, u.middle_name, u.last_name, COUNT(ur.activity_id) FROM user_request ur LEFT JOIN user u ON ur.user_id = u.user_id WHERE u.first_name = ? OR u.last_name = ? GROUP BY ur.user_id;');
+    $stmt = $this->connect()->prepare('SELECT u.user_id, u.first_name, u.middle_name, u.last_name, COUNT(ur.activity_id) FROM user_request ur LEFT JOIN user u ON ur.user_id = u.user_id WHERE u.first_name = ? OR u.last_name = ? GROUP BY ur.user_id;');
     $result = 0;
 
     if (!$stmt->execute([$query, $query])) {
