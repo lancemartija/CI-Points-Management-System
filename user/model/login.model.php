@@ -27,7 +27,7 @@ class Login extends Dbh
       exit;
     } else {
       $pwd = $pwdHashed[0]['password'];
-      $stmt = $this->connect()->prepare('SELECT * FROM user WHERE email = ? AND password = ? AND type = "User"; ');
+      $stmt = $this->connect()->prepare('SELECT * FROM user WHERE email = ? AND password = ?; ');
 
       if (!$stmt->execute([$uid, $pwd])) {
         $stmt = null;
