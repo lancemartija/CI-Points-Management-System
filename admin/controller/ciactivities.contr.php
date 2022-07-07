@@ -44,7 +44,7 @@ class CIActivityContr extends CIActivities
 
     private function isEmpty()
     {
-        if (empty($this->title) || empty($this->date) || empty($this->venue) || empty($this->department) || empty($this->division) || empty($this->supervisor) || empty($this->type) || empty($this->duration) || empty($this->cipoints) || empty($this->year) || empty($this->semester)) {
+        if (empty($this->title) || empty($this->date) || empty($this->venue) || empty($this->department) || empty($this->division) || empty($this->type) || empty($this->duration) || empty($this->cipoints) || empty($this->semester)) {
             return false;
         }
 
@@ -97,7 +97,7 @@ class EditActivityContr extends EditActivity
 
     private function isEmpty()
     {
-        if (empty($this->title) || empty($this->date) || empty($this->venue) || empty($this->type) || empty($this->duration) || empty($this->supervisor) || empty($this->cipoints) || empty($this->year) || empty($this->semester)) {
+        if (empty($this->title) || empty($this->date) || empty($this->venue) || empty($this->type) || empty($this->duration) || empty($this->cipoints) || empty($this->year) || empty($this->semester)) {
             return false;
         }
 
