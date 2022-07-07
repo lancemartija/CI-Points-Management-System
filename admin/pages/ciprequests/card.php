@@ -1,9 +1,9 @@
-<div class="flex flex-wrap m-6 space-x-4">
+<div class="flex flex-wrap m-6">
   <?php foreach ($records as $data) : ?>
     <div class="overflow-x-auto">
       <div class="inline-block min-w-full align-middle">
         <div class="overflow-hidden shadow">
-          <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg">
+          <div class="max-w-sm p-6 mb-3 mr-3 bg-white border border-gray-200 rounded-lg">
             <a href="#">
               <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900"><?= $data['last_name'] . ', ' . $data['first_name'] . ' ' . $data['middle_name'][0] . '.'; ?></h5>
             </a>
