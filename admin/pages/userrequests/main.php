@@ -47,28 +47,28 @@
             <div class="flex items-center">
               <h1 class="mr-2 text-xl font-semibold text-gray-900 sm:text-2xl"><?= $records[0]['first_name']; ?>'s requests</h1>
               <?php if (isset($_GET['status']) && $_GET['status'] == 'pending') { ?>
-                <span type="button" class="inline-flex px-3 py-2 text-sm font-medium text-center text-gray-900 capitalize bg-yellow-500 rounded-full">
+                <span class="inline-flex px-3 py-2 text-sm font-medium text-center text-gray-900 capitalize bg-yellow-500 rounded-full">
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
                   </svg>
                   <?= $_GET['status']; ?>
                 </span>
               <?php } else if (isset($_GET['status']) && $_GET['status'] == 'approved') { ?>
-                <span type="button" class="inline-flex px-3 py-2 text-sm font-medium text-center text-white capitalize bg-green-600 rounded-full">
+                <span class="inline-flex px-3 py-2 text-sm font-medium text-center text-white capitalize bg-green-600 rounded-full">
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                   </svg>
                   <?= $_GET['status']; ?>
                 </span>
               <?php } else if (isset($_GET['status']) && $_GET['status'] == 'rejected') { ?>
-                <span type="button" class="inline-flex px-3 py-2 text-sm font-medium text-center text-white capitalize bg-red-600 rounded-full">
+                <span class="inline-flex px-3 py-2 text-sm font-medium text-center text-white capitalize bg-red-600 rounded-full">
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M13.477 14.89A6 6 0 015.11 6.524l8.367 8.368zm1.414-1.414L6.524 5.11a6 6 0 018.367 8.367zM18 10a8 8 0 11-16 0 8 8 0 0116 0z" clip-rule="evenodd" />
                   </svg>
                   <?= $_GET['status']; ?>
                 </span>
               <?php } else if (!isset($_GET['status'])) { ?>
-                <span type="button" class="inline-flex px-3 py-2 text-sm font-medium text-center text-gray-900 capitalize bg-gray-200 rounded-full">
+                <span class="inline-flex px-3 py-2 text-sm font-medium text-center text-gray-900 capitalize bg-gray-200 rounded-full">
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
                     <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
                     <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
@@ -95,6 +95,15 @@
                   </svg>
                 </button>
               </form>
+              <div class="flex pl-0 mt-3 space-x-1 sm:pl-2 sm:mt-0">
+                <a href="userrequests.php?id=<?= $_GET['id']; ?><?= (isset($_GET['status'])) ? '&status=' . $_GET['status'] : '' ?>" class="text-gray-900 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 border border-gray-200 font-medium inline-flex items-center rounded-lg text-base px-3 py-2 text-center;">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg>
+                  <span>View all</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -105,7 +114,7 @@
       if (!empty($records)) {
         if (isset($_GET['search']) && !empty(trim($_GET['search']))) {
           $query = $_GET['search'];
-          $records = $display->getSearchData($query);
+          $records = $display->getSearchData($_GET['id'], $_GET['status'] = '', $query);
 
           if (empty($records)) {
             echo '<div class="flex flex-col items-center justify-center pt-12"><svg class="w-72 h-72" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 647.63626 632.17383" xmlns:xlink="http://www.w3.org/1999/xlink">
