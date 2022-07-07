@@ -62,11 +62,11 @@ $years = $display->getYears();
         <div class="p-6 space-y-6">
           <div class="grid grid-cols-6 gap-6">
             <div class="col-span-6 sm:col-span-3">
-              <label for="title" class="label">Activity Title</label>
+              <label for="title" class="block mb-2 text-sm font-medium text-gray-900">Activity Title</label>
               <input type="text" name="title" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="Activity Title" required>
             </div>
             <div class="col-span-6 sm:col-span-3">
-              <label for="type" class="label">Category</label>
+              <label for="type" class="block mb-2 text-sm font-medium text-gray-900">Category</label>
               <select name="type" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5">
                 <option disabled selected value>Choose Category</option>
                 <option value="Internal Engagement">Internal Engagement</option>
@@ -75,19 +75,19 @@ $years = $display->getYears();
               </select>
             </div>
             <div class="col-span-6 sm:col-span-3">
-              <label for="date" class="label">Date</label>
+              <label for="date" class="block mb-2 text-sm font-medium text-gray-900">Date</label>
               <input type="date" name="date" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" required>
             </div>
             <div class="col-span-6 sm:col-span-3">
-              <label for="venue" class="label">Venue</label>
+              <label for="venue" class="block mb-2 text-sm font-medium text-gray-900">Venue</label>
               <input type="text" name="venue" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="Venue" required>
             </div>
             <div class="col-span-6 sm:col-span-3">
-              <label for="department" class="label">Department</label>
+              <label for="department" class="block mb-2 text-sm font-medium text-gray-900">Department</label>
               <input type="text" name="department" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="Department" required>
             </div>
             <div class="col-span-6 sm:col-span-3">
-              <label for="division" class="label">Division</label>
+              <label for="division" class="block mb-2 text-sm font-medium text-gray-900">Division</label>
               <select name="division" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5">
                 <option disabled selected value>Choose Division</option>
                 <option value="Integrated School">Integrated School</option>
@@ -96,7 +96,7 @@ $years = $display->getYears();
               </select>
             </div>
             <div class="col-span-6 sm:col-span-3">
-              <label for="supervisor" class="label">Supervisor</label>
+              <label for="supervisor" class="block mb-2 text-sm font-medium text-gray-900">Supervisor</label>
               <select name="supervisor" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5">
                 <option disabled selected value>Choose Supervisor</option>
                 <?php foreach ($users as $data) : ?>
@@ -105,15 +105,15 @@ $years = $display->getYears();
               </select>
             </div>
             <div class="col-span-6 sm:col-span-3">
-              <label for="duration" class="label">Duration</label>
+              <label for="duration" class="block mb-2 text-sm font-medium text-gray-900">Duration</label>
               <input type="number" name="duration" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="0" required>
             </div>
             <div class="col-span-6 sm:col-span-3">
-              <label for="cipoints" class="label">CI Points Amount</label>
+              <label for="cipoints" class="block mb-2 text-sm font-medium text-gray-900">CI Points Amount</label>
               <input type="number" name="cipoints" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="0" required>
             </div>
             <div class="col-span-6 sm:col-span-3">
-              <label for="year" class="label">Academic Year</label>
+              <label for="year" class="block mb-2 text-sm font-medium text-gray-900">Academic Year</label>
               <select name="year" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5">
                 <option disabled selected value>Choose Academic Year</option>
                 <?php foreach ($years as $data) : ?>
@@ -122,7 +122,7 @@ $years = $display->getYears();
               </select>
             </div>
             <div class="col-span-6 sm:col-span-3">
-              <label for="semester" class="label">Semester</label>
+              <label for="semester" class="block mb-2 text-sm font-medium text-gray-900">Semester</label>
               <select name="semester" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5">
                 <option disabled selected value>Choose Academic Year</option>
                 <option value="First Semester">First Semester</option>
@@ -131,7 +131,7 @@ $years = $display->getYears();
               </select>
             </div>
             <div class="col-span-6">
-              <label for="description" class="label">Description</label>
+              <label for="description" class="block mb-2 text-sm font-medium text-gray-900">Description</label>
               <textarea name="description" rows="4" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" placeholder="Description"></textarea>
             </div>
           </div>
