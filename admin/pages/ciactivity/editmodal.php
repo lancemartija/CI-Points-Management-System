@@ -101,7 +101,7 @@ $years = $display->getYears();
               <select id="supervisor" name="supervisor" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5">
                 <option disabled selected value>Choose Supervisor</option>
                 <?php foreach ($users as $data) : ?>
-                  <option value="<?= $data['user_id']; ?>"><?= $data['first_name'] . ' ' . $data['middle_name'] . ' ' . $data['last_name']; ?></option>
+                  <option value="<?= $data['user_id']; ?>"><?= $data['last_name'] . ', ' . $data['first_name'] . ' ' . $data['middle_name'][0] . '.'; ?></option>
                 <?php endforeach; ?>
               </select>
             </div>
