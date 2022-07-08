@@ -7,7 +7,7 @@
             <a href="userrequests.php?id=<?= $data['user_id']; ?><?= (isset($_GET['filter'])) ? '&status=' . $data['request_status'] : '' ?>">
               <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900"><?= $data['last_name'] . ', ' . $data['first_name'] . ' ' . $data['middle_name'][0] . '.'; ?></h5>
             </a>
-            <p class="mb-3 font-normal text-gray-700">Has <span class="font-bold"><?= $data['COUNT(ur.activity_id)']; ?></span> <?= (isset($_GET['filter'])) ? $data['request_status'] : 'total'; ?> request(s).</p>
+            <p class="mb-3 font-normal text-gray-700">Has <span class="font-bold"><?= $data['total']; ?></span> <?= (isset($_GET['filter'])) ? $data['request_status'] : 'total'; ?> request(s).</p>
             <a href="userrequests.php?id=<?= $data['user_id']; ?><?= (isset($_GET['filter'])) ? '&status=' . $data['request_status'] : '' ?>" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gray-500 rounded-lg hover:bg-gray-600 focus:ring-4 focus:ring-gray-400/50">
               View request
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
