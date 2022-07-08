@@ -49,6 +49,14 @@ include_once "../layouts/header.php";
             <label for="contact-number" class="block mb-2 text-sm font-medium text-gray-900">Contact Number</label>
             <input type="tel" name="contact-number" id="contact-number" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5" placeholder="09123456789" pattern="[0-9]{4}[0-9]{3}[0-9]{4}" required>
           </div>
+          <div>
+            <label for="Department" class="block mb-2 text-sm font-medium text-gray-900">Department</label>
+            <input type="text" name="Department" id="Department" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5" placeholder="CITE" required>
+          </div>
+          <div>
+            <label for="Division" class="block mb-2 text-sm font-medium text-gray-900">Division</label>
+            <input type="text" name="Division" id="Division" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5" placeholder="College" required>
+          </div>
           <button type="submit" name="submit" class="w-full px-5 py-3 text-base font-medium text-center text-white bg-green-600 rounded-lg hover:bg-green-700 focus:ring-4 focus:ring-green-200 sm:w-auto">Save info</button>
         </form>
       </div>
