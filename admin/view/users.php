@@ -5,6 +5,16 @@ $data = [
   'modal' => 'usermodal'
 ];
 
+$results_per_page = 20;
+
+if (isset($_GET['page'])) {
+  $page  = $_GET['page'];
+} else {
+  $page = 1;
+};
+
+$start_from = ($page - 1) * $results_per_page;
+
 session_start();
 
 if (!isset($_SESSION['userid'])) {
@@ -16,9 +26,22 @@ include_once '../database/database.php';
 
 class DisplayUsers extends Dbh
 {
-  public function getUser()
+  public function getCount()
   {
-    $sql = 'SELECT * FROM user;';
+    $stmt = $this->connect()->prepare('SELECT COUNT(user_id) AS total FROM user;');
+
+    if (!$stmt->execute()) {
+      $stmt = null;
+      exit;
+    }
+
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+  }
+
+  public function getUser($start_from, $results_per_page)
+  {
+    $sql = 'SELECT * FROM user LIMIT ' . $start_from . ', ' . $results_per_page . ';';
     $stmt = $this->connect()->prepare($sql);
 
     if (!$stmt->execute()) {
@@ -30,7 +53,7 @@ class DisplayUsers extends Dbh
     return $result;
   }
 
-  public function getSearchData($query)
+  public function getUserSearchData($query)
   {
     $stmt = $this->connect()->prepare('SELECT * FROM user WHERE first_name = ? OR middle_name = ? OR last_name = ? OR department = ? OR status = ?;');
     $result = 0;
@@ -54,9 +77,10 @@ class DisplayUsers extends Dbh
   }
 }
 
-
-$display = new DisplayUsers();
-$records = $display->getUser();
+$user = new DisplayUsers();
+$records = $user->getUser($start_from, $results_per_page);
+$count = $user->getCount();
+$total_pages = ceil($count[0]['total'] / $results_per_page);
 
 include_once '../layouts/header.php';
 include_once '../layouts/navbar.php';
