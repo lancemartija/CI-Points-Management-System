@@ -3,7 +3,7 @@ class DisplayUserSelections extends Dbh
 {
   public function getUsers()
   {
-    $sql = 'SELECT * FROM user;';
+    $sql = 'SELECT * FROM user WHERE status = "active" ORDER BY last_name ASC;';
     $stmt = $this->connect()->query($sql);
     $result = 0;
 
