@@ -137,6 +137,8 @@
         }
 
         include_once '../pages/userrequests/tabledata.php';
+        include_once '../pages/userrequests/approvemodal.php';
+        include_once '../pages/userrequests/rejectmodal.php';
       }
       ?>
     </main>
