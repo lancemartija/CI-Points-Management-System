@@ -51,8 +51,8 @@
               <label for="status" class="block mb-2 text-sm font-medium text-gray-900">Status</label>
               <select name="status" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5">
                 <option disabled selected value>Choose Status</option>
-                <option value="Active">Active</option>
-                <option value="Inactive">Inactive</option>
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
               </select>
             </div>
             <div class="col-span-6 sm:col-span-3">

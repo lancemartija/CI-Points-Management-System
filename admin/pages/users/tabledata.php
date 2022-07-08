@@ -45,8 +45,17 @@
                 <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap"><?= $data['department']; ?></td>
                 <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap"><?= $data['division']; ?></td>
                 <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap"><?= $data['address']; ?></td>
-                <td class="p-4 text-base font-normal text-gray-900 whitespace-nowrap"><?= $data['status'] ?></td>
-                <td class="p-4 text-base font-normal text-gray-900 whitespace-nowrap"><?= $data['type'] ?></td>
+                <td class="p-4 text-base font-normal text-gray-900 whitespace-nowrap">
+                  <div class="flex items-center capitalize">
+                    <?php if ($data['status'] == 'active') { ?>
+                      <div class="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div>
+                    <?php } else if ($data['status'] == 'inactive') { ?>
+                      <div class="h-2.5 w-2.5 rounded-full bg-red-500 mr-2"></div>
+                    <?php } ?>
+                    <?= $data['status'] ?>
+                  </div>
+                </td>
+                <td class="p-4 text-base font-normal text-gray-900 capitalize whitespace-nowrap"><?= $data['type'] ?></td>
                 <td class="p-4 space-x-2 whitespace-nowrap">
                   <a href="../view/usercipoints.php?id=<?= $data['user_id']; ?>" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black bg-yellow-500 rounded-lg hover:bg-yellow-600 focus:ring-4 focus:ring-yellow-400/50">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 20 20" fill="currentColor">

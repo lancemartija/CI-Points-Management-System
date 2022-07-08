@@ -52,8 +52,8 @@
               <label for="status" class="block mb-2 text-sm font-medium text-gray-900">Status</label>
               <select id="status" name="status" value="<?= $data['status']; ?>" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5">
                 <option disabled selected value>Choose Status</option>
-                <option value="Active">Active</option>
-                <option value="Inactive">Inactive</option>
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
               </select>
             </div>
             <div class="col-span-6 sm:col-span-3">
@@ -64,8 +64,8 @@
               <label for="type" class="block mb-2 text-sm font-medium text-gray-900">Account Type</label>
               <select id="type" name="type" value="<?= $data['type']; ?>" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5">
                 <option disabled selected value>Choose Account Type</option>
-                <option value="Admin">Administrator</option>
-                <option value="User">User</option>
+                <option value="admin">Administrator</option>
+                <option value="user">User</option>
               </select>
             </div>
           </div>
