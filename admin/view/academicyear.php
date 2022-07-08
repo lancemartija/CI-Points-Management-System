@@ -18,7 +18,7 @@ class DisplayYear extends Dbh
 {
   public function getYear()
   {
-    $sql = 'SELECT * FROM academic_year;';
+    $sql = 'SELECT * FROM academic_year ORDER BY year + 0;';
     $stmt = $this->connect()->prepare($sql);
 
     if (!$stmt->execute()) {
