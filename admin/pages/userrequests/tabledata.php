@@ -76,13 +76,13 @@
                 </td>
                 <td class="p-4 space-x-2 whitespace-nowrap">
                   <?php if ($data['request_status'] == 'pending') { ?>
-                    <button type="button" data-approve-button data-id="<?= $data['request_id']; ?>" data-user-id="<?= $data['user_id']; ?>" data-cipoints="<?= $data['ci_points']; ?>" data-year="<?= $data['ay_id']; ?>" data-semester="<?= $data['semester']; ?>" class="inline-flex items-center justify-center w-1/2 px-3 py-2 text-sm font-medium text-center text-white bg-green-600 rounded-lg hover:bg-green-700 focus:ring-4 focus:ring-green-200 sm:w-auto">
+                    <button type="button" data-approve-button data-id="<?= $data['request_id']; ?>" data-userid="<?= $data['user_id']; ?>" data-cipoints="<?= $data['ci_points']; ?>" data-year="<?= $data['ay_id']; ?>" data-semester="<?= $data['semester']; ?>" class="inline-flex items-center justify-center w-1/2 px-3 py-2 text-sm font-medium text-center text-white bg-green-600 rounded-lg hover:bg-green-700 focus:ring-4 focus:ring-green-200 sm:w-auto">
                       <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                       </svg>
                       Approve
                     </button>
-                    <button type="button" data-reject-button data-id="<?= $data['request_id']; ?>" data-user-id="<?= $data['user_id']; ?>" data-cipoints="<?= $data['ci_points']; ?>" data-year="<?= $data['ay_id']; ?>" data-semester="<?= $data['semester']; ?>" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300">
+                    <button type="button" data-reject-button data-id="<?= $data['request_id']; ?>" data-userid="<?= $data['user_id']; ?>" data-cipoints="<?= $data['ci_points']; ?>" data-year="<?= $data['ay_id']; ?>" data-semester="<?= $data['semester']; ?>" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300">
                       <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
                       </svg>
