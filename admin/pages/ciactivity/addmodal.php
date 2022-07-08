@@ -99,6 +99,7 @@ $years = $display->getYears();
               <label for="supervisor" class="block mb-2 text-sm font-medium text-gray-900">Supervisor</label>
               <select name="supervisor" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5">
                 <option disabled selected value>Choose Supervisor</option>
+                <option value>None</option>
                 <?php foreach ($users as $data) : ?>
                   <option value="<?= $data['user_id'] ?>"><?= $data['last_name'] . ', ' . $data['first_name'] . ' ' . $data['middle_name'][0] . '.'; ?></option>
                 <?php endforeach; ?>

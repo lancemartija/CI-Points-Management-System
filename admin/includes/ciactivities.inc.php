@@ -9,7 +9,7 @@ if (isset($_POST['add'])) {
     $description = $_POST['description'];
     $type = $_POST['type'];
     $duration = $_POST['duration'];
-    $supervisor = $_POST['supervisor'];
+    $supervisor = ($_POST['supervisor'] == NULL) ? NULL : $_POST['supervisor'];
     $cipoints = $_POST['cipoints'];
     $year = $_POST['year'];
     $semester = $_POST['semester'];
@@ -35,7 +35,7 @@ if (isset($_POST['edit'])) {
     $description = $_POST['description'];
     $type = $_POST['type'];
     $duration = $_POST['duration'];
-    $supervisor = $_POST['supervisor'];
+    $supervisor = ($_POST['supervisor'] == NULL) ? NULL : $_POST['supervisor'];
     $cipoints = $_POST['cipoints'];
     $year = $_POST['year'];
     $semester = $_POST['semester'];

@@ -39,7 +39,6 @@ class AddUser extends Dbh
 
 class EditUser extends Dbh
 {
-
   protected function editUser($id, $fname, $mname, $lname, $address, $email, $contact, $department, $division, $status, $type)
   {
     $stmt = $this->connect()->prepare('UPDATE user SET first_name = ? , middle_name = ?, last_name = ?, address = ?, email = ?, contact_number = ?, department = ?, division = ?, status = ?, type = ? WHERE user_id = ?;');
