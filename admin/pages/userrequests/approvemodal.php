@@ -15,6 +15,10 @@
         <h3 class="mt-5 mb-6 text-xl font-normal text-gray-500">Are you sure you want to approve this request?</h3>
         <form action="../includes/userrequests.inc.php" method="post">
           <input id="id" type="hidden" name="id" readonly>
+          <input id="userid" type="hidden" name="userid" readonly>
+          <input id="cipoints" type="hidden" name="cipoints" readonly>
+          <input id="year" type="hidden" name="year" readonly>
+          <input id="semester" type="hidden" name="semester" readonly>
           <button type="submit" name="delete" class="text-white bg-green-600 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-base inline-flex items-center px-3 py-2.5 text-center mr-2">
             Yes, I'm sure
           </button>
