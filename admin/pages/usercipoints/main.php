@@ -53,13 +53,7 @@
       </div>
       <!-- END OF HEADER -->
 
-      <?php
-      // if (empty($cip)) {
-      //   include_once '../pages/usercipoints/card.php';
-      // } else {
-      //   exit;
-      // }
-      ?>
+      <?php include_once '../pages/usercipoints/card.php'; ?>
 
       <form method=" get">
         <ul class="flex flex-wrap m-3 text-sm font-medium text-center text-gray-500">

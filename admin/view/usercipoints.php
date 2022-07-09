@@ -136,6 +136,7 @@ class UserCIPData extends Dbh
 }
 
 $usercip = new UserCIPData();
+$cip = $usercip->getCIPoints($_GET['id']);
 
 if (!isset($_GET['status'])) {
   $records = $usercip->getUserCIPData($_GET['id'], $start_from, $results_per_page);
