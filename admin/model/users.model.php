@@ -5,7 +5,7 @@ class AddUser extends Dbh
 {
   protected function setUser($fname, $mname, $lname, $address, $email, $password, $contact, $department, $division, $status, $type)
   {
-    $stmt = $this->connect()->prepare('INSERT INTO user (first_name, middle_name, last_name, address, email, password, contact_number, department, division, status, type) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?); INSERT INTO user_cip (user_id) SELECT u.user_id FROM user u WHERE NOT EXISTS (SELECT user_id FROM user_cip WHERE user_id = u.user_id);');
+    $stmt = $this->connect()->prepare('INSERT INTO user (first_name, middle_name, last_name, address, email, password, contact_number, department, division, status, type) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);');
 
     $hashedpwd = password_hash($password, PASSWORD_DEFAULT);
 
