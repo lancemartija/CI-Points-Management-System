@@ -53,7 +53,7 @@ class DisplayUserRequestData extends Dbh
 
   public function getUserRequest($start_from, $results_per_page)
   {
-    $sql = 'SELECT u.user_id, u.first_name, u.middle_name, u.last_name, ur.request_status, COUNT(ur.activity_id) AS total FROM user_request ur LEFT JOIN user u ON ur.user_id = u.user_id GROUP BY ur.user_id ORDER BY u.last_name DESC LIMIT ' . $start_from . ', ' . $results_per_page . ';';
+    $sql = 'SELECT u.user_id, u.first_name, u.middle_name, u.last_name, ur.request_status, COUNT(ur.activity_id) AS total FROM user_request ur LEFT JOIN user u ON ur.user_id = u.user_id GROUP BY ur.user_id ORDER BY u.last_name ASC LIMIT ' . $start_from . ', ' . $results_per_page . ';';
     $stmt = $this->connect()->prepare($sql);
 
     if (!$stmt->execute()) {
@@ -67,7 +67,7 @@ class DisplayUserRequestData extends Dbh
 
   public function getCardSearchData($query)
   {
-    $stmt = $this->connect()->prepare('SELECT u.user_id, u.first_name, u.middle_name, u.last_name, ur.request_status, COUNT(ur.activity_id) AS total FROM user_request ur LEFT JOIN user u ON ur.user_id = u.user_id WHERE u.first_name = ? OR u.last_name = ? GROUP BY ur.user_id ORDER BY u.last_name DESC;');
+    $stmt = $this->connect()->prepare('SELECT u.user_id, u.first_name, u.middle_name, u.last_name, ur.request_status, COUNT(ur.activity_id) AS total FROM user_request ur LEFT JOIN user u ON ur.user_id = u.user_id WHERE u.first_name = ? OR u.last_name = ? GROUP BY ur.user_id ORDER BY u.last_name ASC;');
     $result = 0;
 
     if (!$stmt->execute([$query, $query])) {
@@ -90,7 +90,7 @@ class DisplayUserRequestData extends Dbh
 
   public function getFilteredCard($query, $start_from, $results_per_page)
   {
-    $stmt = $this->connect()->prepare('SELECT u.user_id, u.first_name, u.middle_name, u.last_name, ur.request_status, COUNT(ur.activity_id) AS total FROM user_request ur LEFT JOIN user u ON ur.user_id = u.user_id WHERE ur.request_status = ? GROUP BY ur.user_id ORDER BY u.last_name DESC LIMIT ' . $start_from . ', ' . $results_per_page . ';');
+    $stmt = $this->connect()->prepare('SELECT u.user_id, u.first_name, u.middle_name, u.last_name, ur.request_status, COUNT(ur.activity_id) AS total FROM user_request ur LEFT JOIN user u ON ur.user_id = u.user_id WHERE ur.request_status = ? GROUP BY ur.user_id ORDER BY u.last_name ASC LIMIT ' . $start_from . ', ' . $results_per_page . ';');
     $result = 0;
 
     if (!$stmt->execute([$query])) {
