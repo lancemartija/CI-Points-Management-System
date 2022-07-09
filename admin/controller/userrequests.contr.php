@@ -34,7 +34,7 @@ class ApproveUserRequestContr extends ApproveUserRequest
 
   private function isEmpty()
   {
-    if (empty($this->status) || empty($this->id) ||  empty($this->userid) || empty($this->cipoints) || empty($this->year) || empty($this->semester)) {
+    if (empty($this->id) ||  empty($this->userid) || empty($this->cipoints) || empty($this->year) || empty($this->semester)) {
       return false;
     }
 
@@ -69,7 +69,7 @@ class RejectUserRequestContr extends RejectUserRequest
 
   private function isEmpty()
   {
-    if (empty($this->status) || empty($this->id) || empty($this->userid)) {
+    if (empty($this->id) || empty($this->userid)) {
       return false;
     }
 
