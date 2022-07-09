@@ -114,7 +114,7 @@
       if (!empty($records)) {
         if (isset($_GET['search']) && !empty(trim($_GET['search']))) {
           $query = $_GET['search'];
-          $records = $request->getRequestSearchData($_GET['id'], $_GET['status'] = '', $query);
+          $records = $request->getRequestSearchData($_GET['id'], $_GET['status'] = '', $query, $start_from, $results_per_page);
 
           if (empty($records)) {
             echo '<div class="flex flex-col items-center justify-center pt-12"><svg class="w-72 h-72" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 647.63626 632.17383" xmlns:xlink="http://www.w3.org/1999/xlink">
