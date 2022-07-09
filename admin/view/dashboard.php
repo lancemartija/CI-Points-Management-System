@@ -11,8 +11,14 @@ if (!isset($_SESSION['userid'])) {
   exit;
 }
 
+include_once '../pages/dashboard/classes.php';
 include_once '../layouts/header.php';
 include_once '../layouts/navbar.php';
-include_once '../layouts/sidebar.php';
-// include_once '../layouts/main.php';
-include_once '../layouts/footer.php';
+?>
+<div class="flex pt-16 overflow-hidden bg-white">
+  <?php
+  include_once '../layouts/sidebar.php';
+  include_once '../pages/dashboard/main.php';
+  include_once '../layouts/footer.php';
+  ?>
+</div>
