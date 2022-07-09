@@ -41,7 +41,7 @@ class DisplayActivity extends Dbh
 
   public function getActivity($start_from, $results_per_page)
   {
-    $stmt = $this->connect()->prepare('SELECT DISTINCT ci.activity_id, ci.title, ci.date, ci.venue, ci.department, ci.division, ci.description, ci.type, ci.duration, ci.ci_points, ci.semester, ay.ay_id, ay.year, u.user_id, u.first_name, u.middle_name, u.last_name FROM ci_activity ci LEFT JOIN user u ON ci.user_id = u.user_id LEFT JOIN academic_year ay ON ci.ay_id = ay.ay_id LIMIT ' . $start_from . ', ' . $results_per_page . ';');
+    $stmt = $this->connect()->prepare('SELECT ci.activity_id, ci.title, ci.date, ci.venue, ci.department, ci.division, ci.description, ci.type, ci.duration, ci.ci_points, ci.semester, ay.ay_id, ay.year, u.user_id, u.first_name, u.middle_name, u.last_name FROM ci_activity ci LEFT JOIN user u ON ci.user_id = u.user_id LEFT JOIN academic_year ay ON ci.ay_id = ay.ay_id LIMIT ' . $start_from . ', ' . $results_per_page . ';');
 
     if (!$stmt->execute()) {
       $stmt = null;
@@ -54,7 +54,7 @@ class DisplayActivity extends Dbh
 
   public function getActivitySearchData($query)
   {
-    $stmt = $this->connect()->prepare('SELECT DISTINCT ci.activity_id, ci.title, ci.date, ci.venue, ci.department, ci.division, ci.description, ci.type, ci.duration, ci.ci_points, ci.semester, ay.ay_id, ay.year, u.user_id, u.first_name, u.middle_name, u.last_name FROM ci_activity ci LEFT JOIN user u ON ci.user_id = u.user_id LEFT JOIN academic_year ay ON ci.ay_id = ay.ay_id WHERE ci.title = ? OR ci.department = ? OR ci.type = ?;');
+    $stmt = $this->connect()->prepare('SELECT ci.activity_id, ci.title, ci.date, ci.venue, ci.department, ci.division, ci.description, ci.type, ci.duration, ci.ci_points, ci.semester, ay.ay_id, ay.year, u.user_id, u.first_name, u.middle_name, u.last_name FROM ci_activity ci LEFT JOIN user u ON ci.user_id = u.user_id LEFT JOIN academic_year ay ON ci.ay_id = ay.ay_id WHERE ci.title = ? OR ci.department = ? OR ci.type = ?;');
     $result = 0;
 
     if (!$stmt->execute([$query, $query, $query])) {
