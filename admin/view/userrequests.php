@@ -26,11 +26,11 @@ include_once '../database/database.php';
 
 class RequestData extends Dbh
 {
-  public function getRequestCount()
+  public function getRequestCount($id)
   {
     $stmt = $this->connect()->prepare('SELECT COUNT(request_id) AS total FROM user_request WHERE user_id = ?;');
 
-    if (!$stmt->execute([$_GET['id']])) {
+    if (!$stmt->execute([$id])) {
       $stmt = null;
       exit;
     }
@@ -38,6 +38,7 @@ class RequestData extends Dbh
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $result;
   }
+
   public function getFilteredRequestCount($id, $status)
   {
     $stmt = $this->connect()->prepare('SELECT COUNT(request_id) AS total FROM user_request WHERE user_id = ? AND request_status = ?;');
@@ -125,7 +126,7 @@ $request = new RequestData();
 
 if (!isset($_GET['status'])) {
   $records = $request->getRequestData($_GET['id'], $start_from, $results_per_page);
-  $count = $request->getRequestCount();
+  $count = $request->getRequestCount($_GET['id']);
   $total_pages = ceil($count[0]['total'] / $results_per_page);
 } else {
   $records = $request->getFilteredData($_GET['id'], $_GET['status'], $start_from, $results_per_page);
