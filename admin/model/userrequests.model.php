@@ -28,9 +28,6 @@ class ApproveUserRequest extends Dbh
     $stmt = null;
   }
 
-  # '1', '5', '2022-2023', 'Second Semester'
-  #$userid, $cipoints, $year, $semester
-
   protected function udpateStatus($status, $id, $userid)
   {
     $stmt = $this->connect()->prepare('UPDATE user_request SET request_status = ? WHERE request_id = ?;');
