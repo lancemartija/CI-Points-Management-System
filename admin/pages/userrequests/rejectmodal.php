@@ -14,12 +14,15 @@
         </svg>
         <h3 class="mt-5 mb-6 text-xl font-normal text-gray-500">Are you sure you want to reject this request?</h3>
         <form action="../includes/userrequests.inc.php" method="post">
+          <?php if (isset($_GET['status'])) { ?>
+            <input type="hidden" name="status" value="<?= $_GET['status']; ?>" readonly>
+          <?php } ?>
           <input id="id" type="hidden" name="id" readonly>
           <input id="userid" type="hidden" name="userid" readonly>
           <input id="cipoints" type="hidden" name="cipoints" readonly>
           <input id="year" type="hidden" name="year" readonly>
           <input id="semester" type="hidden" name="semester" readonly>
-          <button type="submit" name="delete" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-base inline-flex items-center px-3 py-2.5 text-center mr-2">
+          <button type="submit" name="reject" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-base inline-flex items-center px-3 py-2.5 text-center mr-2">
             Yes, I'm sure
           </button>
           <button type="button" class="text-gray-900 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 border border-gray-200 font-medium inline-flex items-center rounded-lg text-base px-3 py-2.5 text-center" data-close-button>

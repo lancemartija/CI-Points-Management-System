@@ -134,6 +134,11 @@ if (!isset($_GET['status'])) {
   $total_pages = ceil($count[0]['total'] / $results_per_page);
 }
 
+if (empty($records)) {
+  header('Location: ../view/ciprequests.php');
+  exit;
+}
+
 include_once '../layouts/header.php';
 include_once '../layouts/navbar.php';
 include_once '../layouts/sidebar.php';
