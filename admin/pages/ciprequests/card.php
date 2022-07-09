@@ -1,3 +1,16 @@
+<?php
+if (isset($_GET['filter']) && $_GET['filter'] == 'pending') {
+  $style = 'text-black bg-yellow-500 hover:bg-yellow-600 focus:ring-yellow-400/50';
+} else if (isset($_GET['filter']) && $_GET['filter'] == 'approved') {
+  $style = 'text-white bg-green-600 hover:bg-green-700 focus:ring-green-200';
+} else if (isset($_GET['filter']) && $_GET['filter'] == 'rejected') {
+  $style = 'text-white bg-red-600 hover:bg-red-800 focus:ring-red-300';
+} else {
+  $style = 'text-white bg-cyan-600 hover:bg-cyan-700 focus:ring-cyan-200';
+}
+?>
+
+
 <div class="flex flex-wrap m-3">
   <?php foreach ($records as $data) : ?>
     <div class="overflow-x-auto">
@@ -8,7 +21,7 @@
               <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900"><?= $data['last_name'] . ', ' . $data['first_name'] . ' ' . $data['middle_name'][0] . '.'; ?></h5>
             </a>
             <p class="mb-3 font-normal text-gray-700">Has <span class="font-bold"><?= $data['total']; ?></span> <?= (isset($_GET['filter'])) ? $data['request_status'] : 'total'; ?> request(s).</p>
-            <a href="userrequests.php?id=<?= $data['user_id']; ?><?= (isset($_GET['filter'])) ? '&status=' . $data['request_status'] : '' ?>" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gray-500 rounded-lg hover:bg-gray-600 focus:ring-4 focus:ring-gray-400/50">
+            <a href="userrequests.php?id=<?= $data['user_id']; ?><?= (isset($_GET['filter'])) ? '&status=' . $data['request_status'] : '' ?>" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center rounded-lg focus:ring-4  <?= $style; ?>">
               View request
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
