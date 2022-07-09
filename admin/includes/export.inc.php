@@ -12,4 +12,8 @@ if (isset($_POST['export'])) {
     $data =  new ExportUserContr($file, $headers);
 
     $data->export();
+
+    header('Content-Type: text/csv; charset=utf-8');
+    header('Content-Disposition: attachment; filename=user.csv');
+    fclose($file);
 }
