@@ -17,3 +17,21 @@ if (isset($_POST['export'])) {
     header('Content-Disposition: attachment; filename=user.csv');
     fclose($file);
 }
+
+
+if (isset($_POST['ci_export'])) {
+    $file = fopen('php://output', 'w');
+    $header = ['Title', 'Category', 'Date', 'Venue', 'Department', 'Division', 'Supervisor', 'Duration', 'CI_Points_Amount', 'Academic_Year', 'Semester', 'Description'];
+
+    include '../database/database.php';
+    include '../model/export.model.php';
+    include '../controller/export.contr.php';
+
+    $data = new ExportActivityContr($file, $header);
+
+    $data->exportAct();
+
+    header('Content-Type: text/csv; charset=utf-8');
+    header('Content-Disposition: attachment; filename=CI_Activity.csv');
+    fclose($file);
+}

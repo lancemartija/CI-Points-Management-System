@@ -24,3 +24,27 @@ class ExportUserContr extends ExportUser
         }
     }
 }
+
+
+class ExportActivityContr extends ExportActivity
+{
+
+    private $file;
+    private $headers;
+    public function __construct($file, $headers)
+    {
+        $this->file = $file;
+        $this->headers = $headers;
+    }
+
+    public function exportAct()
+    {
+        fputcsv($this->file, $this->headers);
+        $data = $this->getActivity();
+
+        foreach ($data as $rows) {
+            $ActData = array($rows['title'], $rows['type'], $rows['date'], $rows['venue'], $rows['department'], $rows['division'], $rows['user_id'], $rows['duration'], $rows['ci_points'], $rows['year'], $rows['semester'], $rows['description']);
+            fputcsv($this->file, $ActData);
+        }
+    }
+}
