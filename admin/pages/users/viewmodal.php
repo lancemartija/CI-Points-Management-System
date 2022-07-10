@@ -15,43 +15,43 @@
         <div class="grid grid-cols-9 gap-6">
           <div class="col-span-6 sm:col-span-3">
             <label for="firstname" class="block mb-2 text-sm font-medium text-gray-900">First Name</label>
-            <input id="fname" type="text" name="firstname" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" readonly>
+            <input id="fname" type="text" name="firstname" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5" disabled readonly>
           </div>
           <div class="col-span-6 sm:col-span-3">
             <label for="firstname" class="block mb-2 text-sm font-medium text-gray-900">Middle Name</label>
-            <input id="mname" type="text" name="middlename" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" readonly>
+            <input id="mname" type="text" name="middlename" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5" disabled readonly>
           </div>
           <div class="col-span-6 sm:col-span-3">
             <label for="lastname" class="block mb-2 text-sm font-medium text-gray-900">Last Name</label>
-            <input id="lname" type="text" name="lastname" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" readonly>
+            <input id="lname" type="text" name="lastname" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5" disabled readonly>
           </div>
           <div class="col-span-6 sm:col-span-3">
             <label for="address" class="block mb-2 text-sm font-medium text-gray-900">Address</label>
-            <input id="address" type="text" name="address" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" readonly>
+            <input id="address" type="text" name="address" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5" disabled readonly>
           </div>
           <div class="col-span-6 sm:col-span-3">
             <label for="contact" class="block mb-2 text-sm font-medium text-gray-900">Contact Number</label>
-            <input id="contact" type="text" name="contact" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" readonly>
+            <input id="contact" type="text" name="contact" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5" disabled readonly>
           </div>
           <div class="col-span-6 sm:col-span-3">
             <label for="department" class="block mb-2 text-sm font-medium text-gray-900">Department</label>
-            <input id="department" type="text" name="department" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" readonly>
+            <input id="department" type="text" name="department" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5" disabled readonly>
           </div>
           <div class="col-span-6 sm:col-span-3">
             <label for="division" class="block mb-2 text-sm font-medium text-gray-900">Division</label>
-            <input id="division" type="text" name="division" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" readonly>
+            <input id="division" type="text" name="division" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5" disabled readonly>
           </div>
           <div class="col-span-6 sm:col-span-3">
             <label for="status" class="block mb-2 text-sm font-medium text-gray-900">Status</label>
-            <input id="status" type="text" name="status" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" readonly>
+            <input id="status" type="text" name="status" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5" disabled readonly>
           </div>
           <div class="col-span-6 sm:col-span-3">
             <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Email</label>
-            <input id="email" type="email" name="email" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" readonly>
+            <input id="email" type="email" name="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5" disabled readonly>
           </div>
           <div class="col-span-6 sm:col-span-3">
             <label for="type" class="block mb-2 text-sm font-medium text-gray-900">Account Type</label>
-            <input id="type" type="text" name="type" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" readonly>
+            <input id="type" type="text" name="type" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5" disabled readonly>
           </div>
         </div>
       </div>

@@ -15,51 +15,51 @@
         <div class="grid grid-cols-9 gap-6">
           <div class="col-span-9 sm:col-span-3">
             <label for="title" class="block mb-2 text-sm font-medium text-gray-900">Activity Title</label>
-            <input id="title" type="text" name="title" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" readonly>
+            <input id="title" type="text" name="title" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5" disabled readonly>
           </div>
           <div class="col-span-6 sm:col-span-3">
             <label for="type" class="block mb-2 text-sm font-medium text-gray-900">Category</label>
-            <input id="type" type="text" name="type" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" readonly>
+            <input id="type" type="text" name="type" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5" disabled readonly>
           </div>
           <div class="col-span-6 sm:col-span-3">
             <label for="date" class="block mb-2 text-sm font-medium text-gray-900">Date</label>
-            <input id="date" type="text" name="date" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" readonly>
+            <input id="date" type="text" name="date" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5" disabled readonly>
           </div>
           <div class="col-span-6 sm:col-span-3">
             <label for="venue" class="block mb-2 text-sm font-medium text-gray-900">Venue</label>
-            <input id="venue" type="text" name="venue" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" readonly>
+            <input id="venue" type="text" name="venue" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5" disabled readonly>
           </div>
           <div class="col-span-6 sm:col-span-3">
             <label for="department" class="block mb-2 text-sm font-medium text-gray-900">Department</label>
-            <input id="department" type="text" name="department" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" readonly>
+            <input id="department" type="text" name="department" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5" disabled readonly>
           </div>
           <div class="col-span-6 sm:col-span-3">
             <label for="division" class="block mb-2 text-sm font-medium text-gray-900">Division</label>
-            <input id="division" type="text" name="division" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" readonly>
+            <input id="division" type="text" name="division" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5" disabled readonly>
           </div>
           <div class="col-span-6 sm:col-span-3">
             <label for="supervisor" class="block mb-2 text-sm font-medium text-gray-900">Supervisor</label>
-            <input id="supervisor" type="text" name="supervisor" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" readonly>
+            <input id="supervisor" type="text" name="supervisor" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5" disabled readonly>
           </div>
           <div class="col-span-6 sm:col-span-3">
             <label for="duration" class="block mb-2 text-sm font-medium text-gray-900">Duration</label>
-            <input id="duration" type="text" name="duration" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" readonly>
+            <input id="duration" type="text" name="duration" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5" disabled readonly>
           </div>
           <div class="col-span-6 sm:col-span-3">
             <label for="cipoints" class="block mb-2 text-sm font-medium text-gray-900">CI Points Amount</label>
-            <input id="cipoints" type="text" name="cipoints" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" readonly>
+            <input id="cipoints" type="text" name="cipoints" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5" disabled readonly>
           </div>
           <div class="col-span-6 sm:col-span-3">
             <label for="year" class="block mb-2 text-sm font-medium text-gray-900">Academic Year</label>
-            <input id="year" type="text" name="title" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" readonly>
+            <input id="year" type="text" name="title" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5" disabled readonly>
           </div>
           <div class="col-span-6 sm:col-span-3">
             <label for="semester" class="block mb-2 text-sm font-medium text-gray-900">Semester</label>
-            <input id="semester" type="text" name="semester" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" readonly>
+            <input id="semester" type="text" name="semester" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5" disabled readonly>
           </div>
           <div class="col-span-9">
             <label for="description" class="block mb-2 text-sm font-medium text-gray-900">Description</label>
-            <textarea id="description" name="description" rows="4" class="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none sm:text-sm rounded-lg focus:ring-gray-200 focus:ring-4 block w-full p-2.5" readonly></textarea>
+            <textarea id="description" name="description" rows="4" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5" disabled readonly></textarea>
           </div>
         </div>
       </div>
