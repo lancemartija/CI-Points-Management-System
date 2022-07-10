@@ -45,7 +45,7 @@ $users = $display->getUsers();
 $years = $display->getYears();
 ?>
 
-<div class="fixed left-0 right-0 z-50 items-center justify-center hidden overflow-x-hidden overflow-y-auto bg-gray-900/50 top-4 md:inset-0 h-modal sm:h-full" id="addmodal" aria-modal="true" role="dialog">
+<div class="fixed left-0 right-0 z-50 items-center justify-center hidden overflow-x-hidden overflow-y-auto bg-gray-900/50 top-4 md:inset-0 h-modal sm:h-full" id="addactivitymodal" aria-modal="true" role="dialog">
   <div class="relative w-full h-full max-w-4xl px-4 md:h-auto">
     <div class="relative bg-white rounded-lg shadow">
       <div class="flex items-start justify-between p-5 border-b rounded-t">

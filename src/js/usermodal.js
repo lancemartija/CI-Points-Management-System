@@ -1,6 +1,13 @@
+const addUserBtn = document.querySelector('[data-add-button]')
 const viewUserBtn = document.querySelectorAll('[data-view-button]')
 const editUserBtn = document.querySelectorAll('[data-edit-button]')
 const deleteUserBtn = document.querySelectorAll('[data-delete-button]')
+const closeUserBtn = document.querySelectorAll('[data-close-button]')
+
+const addUserModal = document.querySelector('#addusermodal')
+const viewUserModal = document.querySelector('#viewusermodal')
+const editUserModal = document.querySelector('#editusermodal')
+const deleteUserModal = document.querySelector('#deleteusermodal')
 
 const idField = document.querySelectorAll('#id')
 const fnameField = document.querySelectorAll('#fname')
@@ -13,6 +20,11 @@ const divisionField = document.querySelectorAll('#division')
 const statusField = document.querySelectorAll('#status')
 const emailField = document.querySelectorAll('#email')
 const typeField = document.querySelectorAll('#type')
+
+addUserBtn.addEventListener('click', () => {
+  addUserModal.classList.remove('hidden')
+  addUserModal.classList.add('flex')
+})
 
 viewUserBtn.forEach((btn) => {
   btn.addEventListener('click', () => {
@@ -37,6 +49,9 @@ viewUserBtn.forEach((btn) => {
     statusField[0].value = status
     emailField[0].value = email
     typeField[0].value = type
+
+    viewUserModal.classList.remove('hidden')
+    viewUserModal.classList.add('flex')
   })
 })
 
@@ -65,6 +80,9 @@ editUserBtn.forEach((btn) => {
     statusField[1].value = status
     emailField[1].value = email
     typeField[1].value = type
+
+    editUserModal.classList.remove('hidden')
+    editUserModal.classList.add('flex')
   })
 })
 
@@ -73,5 +91,30 @@ deleteUserBtn.forEach((btn) => {
     let id = btn.getAttribute('data-id')
 
     idField[1].value = id
+
+    deleteUserModal.classList.remove('hidden')
+    deleteUserModal.classList.add('flex')
   })
 })
+
+closeUserBtn.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    addUserModal.classList.add('hidden')
+    addUserModal.classList.remove('flex')
+    viewUserModal.classList.add('hidden')
+    viewUserModal.classList.remove('flex')
+    editUserModal.classList.add('hidden')
+    editUserModal.classList.remove('flex')
+    deleteUserModal.classList.add('hidden')
+    deleteUserModal.classList.remove('flex')
+  })
+})
+
+addUserModal.classList.add('hidden')
+addUserModal.classList.remove('flex')
+viewUserModal.classList.add('hidden')
+viewUserModal.classList.remove('flex')
+editUserModal.classList.add('hidden')
+editUserModal.classList.remove('flex')
+deleteUserModal.classList.add('hidden')
+deleteUserModal.classList.remove('flex')

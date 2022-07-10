@@ -1,4 +1,4 @@
-<div class="fixed left-0 right-0 z-50 items-center justify-center hidden overflow-x-hidden overflow-y-auto bg-gray-900/50 top-4 md:inset-0 h-modal sm:h-full" id="approvemodal" aria-modal="true" role="dialog">
+<div class="fixed left-0 right-0 z-50 items-center justify-center hidden overflow-x-hidden overflow-y-auto bg-gray-900/50 top-4 md:inset-0 h-modal sm:h-full" id="approvecipmodal" aria-modal="true" role="dialog">
   <div class="relative w-full h-full max-w-md px-4 md:h-auto">
     <div class="relative bg-white rounded-lg shadow">
       <div class="flex justify-end p-2">

@@ -1,6 +1,13 @@
+const addActivityBtn = document.querySelector('[data-add-button]')
 const viewActivityBtn = document.querySelectorAll('[data-view-button]')
 const editActivityBtn = document.querySelectorAll('[data-edit-button]')
 const deleteActivityBtn = document.querySelectorAll('[data-delete-button]')
+const closeActivityBtn = document.querySelectorAll('[data-close-button]')
+
+const addActivityModal = document.querySelector('#addactivitymodal')
+const viewActivityModal = document.querySelector('#viewactivitymodal')
+const editActivityModal = document.querySelector('#editactivitymodal')
+const deleteActivityModal = document.querySelector('#deleteactivitymodal')
 
 const idField = document.querySelectorAll('#id')
 const titleField = document.querySelectorAll('#title')
@@ -15,6 +22,11 @@ const cipointsField = document.querySelectorAll('#cipoints')
 const yearField = document.querySelectorAll('#year')
 const semesterField = document.querySelectorAll('#semester')
 const supervisorField = document.querySelectorAll('#supervisor')
+
+addActivityBtn.addEventListener('click', () => {
+  addActivityModal.classList.remove('hidden')
+  addActivityModal.classList.add('flex')
+})
 
 viewActivityBtn.forEach((btn) => {
   btn.addEventListener('click', () => {
@@ -43,6 +55,9 @@ viewActivityBtn.forEach((btn) => {
     yearField[0].value = year
     semesterField[0].value = semester
     supervisorField[0].value = superivsor
+
+    viewActivityModal.classList.remove('hidden')
+    viewActivityModal.classList.add('flex')
   })
 })
 
@@ -75,6 +90,9 @@ editActivityBtn.forEach((btn) => {
     yearField[1].value = year
     semesterField[1].value = semester
     supervisorField[1].value = superivsor
+
+    editActivityModal.classList.remove('hidden')
+    editActivityModal.classList.add('flex')
   })
 })
 
@@ -83,5 +101,30 @@ deleteActivityBtn.forEach((btn) => {
     let id = btn.getAttribute('data-id')
 
     idField[1].value = id
+
+    deleteActivityModal.classList.remove('hidden')
+    deleteActivityModal.classList.add('flex')
   })
 })
+
+closeActivityBtn.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    addActivityModal.classList.add('hidden')
+    addActivityModal.classList.remove('flex')
+    viewActivityModal.classList.add('hidden')
+    viewActivityModal.classList.remove('flex')
+    editActivityModal.classList.add('hidden')
+    editActivityModal.classList.remove('flex')
+    deleteActivityModal.classList.add('hidden')
+    deleteActivityModal.classList.remove('flex')
+  })
+})
+
+addActivityModal.classList.add('hidden')
+addActivityModal.classList.remove('flex')
+viewActivityModal.classList.add('hidden')
+viewActivityModal.classList.remove('flex')
+editActivityModal.classList.add('hidden')
+editActivityModal.classList.remove('flex')
+deleteActivityModal.classList.add('hidden')
+deleteActivityModal.classList.remove('flex')
