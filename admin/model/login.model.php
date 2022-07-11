@@ -27,9 +27,9 @@ class Login extends Dbh
       exit;
     } else {
       $pwd = $pwdHashed[0]['password'];
-      $stmt = $this->connect()->prepare('SELECT * FROM user WHERE email = ? AND password = ? AND type = "admin";');
+      $stmt = $this->connect()->prepare('SELECT * FROM user WHERE email = ? AND password = ? AND type = ? AND status = ? ;');
 
-      if (!$stmt->execute([$uid, $pwd])) {
+      if (!$stmt->execute([$uid, $pwd, "admin", "active"])) {
         $stmt = null;
         header("Location: ../index.php?error=stmtfailed");
         exit;
