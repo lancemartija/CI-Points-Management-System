@@ -1,6 +1,6 @@
 <?php
 $data = [
-  'title' => 'Dashboard',
+  'title' => 'User Dashboard',
   'dir' => '../../'
 ];
 
@@ -11,9 +11,14 @@ if (!isset($_SESSION['userid'])) {
   exit;
 }
 
+include_once '../pages/dashboard/classes.php';
+include_once '../layouts/header.php';
+include_once '../layouts/navbar.php';
 ?>
-
-<h1>Welcome <?php echo $_SESSION['fname']; ?></h1>
-<h1><?php echo $_SESSION['userid']; ?></h1>
-<a href="../includes/logout.inc.php">sign out</a><br>
-<a href="ci_activity.php?id=<?php echo $_SESSION['userid']; ?>"> CI Activity</a>
+<div class="flex pt-16 overflow-hidden bg-white">
+  <?php
+  include_once '../layouts/sidebar.php';
+  include_once '../pages/dashboard/main.php';
+  include_once '../layouts/footer.php';
+  ?>
+</div>

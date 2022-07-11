@@ -9,4 +9,4 @@
   <link rel="stylesheet" href="<?= $data['dir']; ?>src/css/style.css?<?= time(); ?>">
 </head>
 
-<body>
+<body class="bg-gray-50">
