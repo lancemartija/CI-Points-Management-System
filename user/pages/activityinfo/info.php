@@ -52,7 +52,7 @@
             <p class="text-base font-semibold leading-none text-gray-900"><?= $data['duration']; ?> hour(s)</p>
           </div>
           <div class="mt-4 ">
-            <p class="text-base font-normal text-gray-500">Academic Year</p>
+            <p class="text-base font-normal text-gray-500">Academic year</p>
             <p class="text-base font-semibold leading-none text-gray-900 capitalize"><?= $data['year']; ?></p>
           </div>
           <div class="mt-4">
