@@ -61,7 +61,7 @@ $records = $display->getActivity($id);
         <label for="hours">Rendered Hours: </label>
         <input type="number" name="number" id="number" required>
 
-        <input type="file" name="files[]" id="files" required multiple><br>
+        <input type="file" name="files" id="files" required><br>
 
 
     <?php } ?>
