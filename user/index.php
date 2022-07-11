@@ -30,6 +30,9 @@ include_once "layouts/header.php";
           <div class="flex items-start">
             <div class="text-sm">
               <span class="text-red-600"><?= (isset($_GET['error']) && $_GET['error'] == 'invalid') ? 'Invalid Username or Password' : ((isset($_GET['error']) && $_GET['error'] == 'usernotfound') ? 'User not found. Please try again.' : ''); ?></span>
+
+              <span class="text-red-600"><?= (isset($_GET['error']) && $_GET['error'] == 'UserInActive') ? 'User inactive. Please contact admin.' : ''; ?></span>
+
             </div>
             <a href="#" class="ml-auto text-sm text-emerald-500 hover:underline">Lost Password?</a>
           </div>

@@ -48,3 +48,28 @@ class ExportActivityContr extends ExportActivity
         }
     }
 }
+
+
+
+class ReportExportContr extends ReportExport
+{
+
+    private $file;
+    private $headers;
+    public function __construct($file, $headers)
+    {
+        $this->file = $file;
+        $this->headers = $headers;
+    }
+
+    public function RptExport()
+    {
+        fputcsv($this->file, $this->headers);
+        $data = $this->getReports();
+
+        foreach ($data as $rows) {
+            $RptData = array($rows['first_name'], $rows['middle_name'], $rows['last_name'], $rows['email'], $rows['semester'], $rows['year'], $rows['total_cip']);
+            fputcsv($this->file, $RptData);
+        }
+    }
+}
