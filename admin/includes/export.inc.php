@@ -35,3 +35,19 @@ if (isset($_POST['ci_export'])) {
     header('Content-Disposition: attachment; filename=CI_Activity.csv');
     fclose($file);
 }
+
+if (isset($_POST['Rptexport'])) {
+    $file = fopen('php://output', 'w');
+    $header = ['firstname', 'middlename', 'lastname', 'Email', 'Semester', 'Academic Year', 'CI Points'];
+
+    include '../database/database.php';
+    include '../model/export.model.php';
+    include '../controller/export.contr.php';
+
+    $data = new ReportExportContr($file, $header);
+    $data->RptExport();
+
+    header('Content-Type: text/csv; charset=utf-8');
+    header('Content-Disposition: attachment; filename=Reports.csv');
+    fclose($file);
+}

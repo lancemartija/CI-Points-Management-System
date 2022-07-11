@@ -35,3 +35,22 @@ class ExportActivity extends Dbh
         return $result;
     }
 }
+
+
+class ReportExport extends Dbh
+{
+
+    protected function getReports()
+    {
+        $stmt = $this->connect()->prepare('SELECT * FROM user u LEFT JOIN user_cip cip ON u.user_id = cip.user_id LEFT JOIN academic_year ay ON cip.ay_id = ay.ay_id ORDER BY ay.year + 0, cip.total_cip + 0');
+
+        if (!$stmt->execute()) {
+            $stmt = null;
+            header("location: ../view/users.php?error=stmtfailed");
+            exit;
+        }
+
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+}
