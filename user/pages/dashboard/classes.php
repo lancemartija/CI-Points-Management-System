@@ -6,7 +6,7 @@ class UserProfile extends Dbh
 {
   public function getUserProfileInfo($userid)
   {
-    $stmt = $this->connect()->prepare('SELECT * FROM user WHERE user_id = ?;');
+    $stmt = $this->connect()->prepare('SELECT * FROM user u LEFT JOIN user_cip cip ON u.user_id = cip.user_id LEFT JOIN academic_year ay ON cip.ay_id = ay.ay_id WHERE u.user_id = ?;');
 
     if (!$stmt->execute([$userid])) {
       $stmt = null;

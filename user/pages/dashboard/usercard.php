@@ -1,7 +1,7 @@
 <div>
   <p class="mb-4 text-xl font-semibold leading-none text-gray-900 sm:text-2xl">Profile</p>
   <?php foreach ($userInfo as $data) : ?>
-    <div class="p-6 bg-white rounded-lg shadow sm:p-6 xl:p-8 ">
+    <div class="p-6 bg-white rounded-lg shadow sm:p-6 xl:p-8">
       <div>
         <div class="flex items-center">
           <div class="border-4 border-gray-900 rounded-lg">
