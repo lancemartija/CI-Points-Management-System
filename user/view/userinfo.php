@@ -11,8 +11,6 @@ if (!isset($_SESSION['userid'])) {
   exit;
 }
 
-echo $_SESSION['userid'];
-
 include_once "../layouts/header.php";
 ?>
 
