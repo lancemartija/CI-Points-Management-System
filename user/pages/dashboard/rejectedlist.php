@@ -1,6 +1,6 @@
 <div class="p-6 bg-white rounded-lg shadow">
   <div class="flex items-center justify-between mb-4">
-    <h3 class="text-xl font-bold leading-none text-gray-900">List of Rejected Requests</h3>
+    <h3 class="text-xl font-bold leading-none text-gray-900">Rejected Requests</h3>
     <a href="../view/ciprequests.php?filter=pending" class="inline-flex items-center p-2 text-sm font-medium rounded-lg text-cyan-600 hover:bg-gray-100">
       View all
     </a>
