@@ -105,8 +105,6 @@ class AddUserContr extends AddUser
   }
 }
 
-
-
 class EditUserContr extends EditUser
 {
   private $id;
