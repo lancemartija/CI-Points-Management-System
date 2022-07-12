@@ -60,7 +60,7 @@ class SubmitRequestContr extends SubmitRequest
 
   private function SizeFile()
   {
-    if ($this->fileSize < 3000000) {
+    if ($this->filesize < 3000000) {
       return true;
     }
     return false;
