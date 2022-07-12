@@ -1,1 +1,1 @@
-# softeng2
+# CI Points Management System
